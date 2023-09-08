@@ -11,14 +11,5 @@
 
     <artifactId>co-main</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.cccs7</groupId>
-            <artifactId>co-common-web</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-    </dependencies>
-
 
 </project>
