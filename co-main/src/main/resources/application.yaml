@@ -1,0 +1,29 @@
+server:
+  port: 8089
+
+spring:
+  datasource:
+    username: root
+    password: C020611.
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: jdbc:mysql://101.34.208.43:3306/cccs7_security?serverTimeZone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/cccs7_security?serverTimeZone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 20
+      min-idle: 20
+      max-active: 100
+      max-wait: 60000
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        #        login-username: cccs7
+        login-username: cccs7
+        login-password: C020611.
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-mills: 2000
+        wall:
+          enabled: true

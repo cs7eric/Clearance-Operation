@@ -1,5 +1,8 @@
 package com.cccs7;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 /**
  * <p> $END </p>
  *
@@ -7,8 +10,9 @@ package com.cccs7;
  * @Description $END
  * @Date 2023/9/8 12:18
  */
-public class Main {
+@SpringBootApplication
+public class MainApplication {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        SpringApplication.run(MainApplication.class);
     }
 }
