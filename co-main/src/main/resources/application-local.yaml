@@ -27,3 +27,18 @@ spring:
           slow-sql-mills: 2000
         wall:
           enabled: true
+
+swagger:
+  base-package: "com.cccs7"
+  title: clearance-operation
+  contact-name: cccs7
+  contact-url: https://github.com/cs7eric/cccs7-frame
+  email: csq020611@gmail.com
+  version: 1.0
+  description: 反诈平台
+
+log:
+  aspect:
+    enable: true
+logging:
+  config: classpath:log4j2-spring.xml

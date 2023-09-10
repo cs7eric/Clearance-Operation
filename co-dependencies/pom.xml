@@ -51,6 +51,7 @@
         <servlet.version>4.0.1</servlet.version>
         <fastjson2.version>2.0.25</fastjson2.version>
         <guava.version>32.0.1-jre</guava.version>
+        <springfox.starter.version>3.0.0</springfox.starter.version>
     </properties>
 
     <dependencies>
@@ -87,16 +88,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-web</artifactId>
                 <version>${spring.boot.web.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger-ui</artifactId>
-                <version>${swagger.ui.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.springfox</groupId>
-                <artifactId>springfox-swagger2</artifactId>
-                <version>${swagger.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -241,6 +232,15 @@
                 <artifactId>guava</artifactId>
                 <version>${guava.version}</version>
             </dependency>
+
+            <!--            swagger-->
+            <!-- https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox.starter.version}</version>
+            </dependency>
+
 
 
         </dependencies>

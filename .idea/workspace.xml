@@ -4,28 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat:封装web模块">
-      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-mybatisplus/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-mybatisplus/src/main/java/com/cccs7/mybatisplus/config/MybatisPlusConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-mybatisplus/src/main/java/com/cccs7/mybatisplus/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-mybatisplus/src/main/java/com/cccs7/mybatisplus/entity/PageResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-mybatisplus/src/main/java/com/cccs7/mybatisplus/handler/MyMetaObjectHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-mybatisplus/src/main/java/com/cccs7/mybatisplus/interceptor/SqlBeautyInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/MainApplication.java" afterDir="false" />
+    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat:封装mybatis-plus模块">
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-log/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-log/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-log/src/main/java/com/cccs7/log/LogAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-log/src/main/resources/log4j2-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-swagger/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-swagger/src/main/java/com/cccs7/swagger/bean/SwaggerInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-swagger/src/main/java/com/cccs7/swagger/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/resources/log4j2-spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/co-common-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-web/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-dependencies/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/MainApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-beta.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-beta.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-test.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-test.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/banner.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,11 +50,6 @@
         <option name="userSettingsFile" value="D:\C\cccs7-envi-workplace\linux-repo\maven-repo\apache-maven-3.8.6\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
-    <option name="enabledProfiles">
-      <list>
-        <option value="local" />
-      </list>
-    </option>
   </component>
   <component name="ProjectId" id="2UbUhJaKUjm7BfDqn5W4nkVMZAd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -86,7 +77,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "spring.boot",
     "spring.configuration.checksum": "74343420f1e644952f1cb5f7bf1b70ae",
     "vue.rearranger.settings.migration": "true"
   }
@@ -94,8 +85,12 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\CSQ\clearup-operation\co-main\src\main\resources" />
-      <recent name="D:\CSQ\clearup-operation" />
       <recent name="D:\CSQ\clearup-operation\co-common" />
+      <recent name="D:\CSQ\clearup-operation\co-common\co-common-swagger\src\main\java\com\cccs7\swagger" />
+      <recent name="D:\CSQ\clearup-operation" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cccs7.swagger.bean" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MainApplication">
@@ -137,7 +132,7 @@
       <workItem from="1694145179290" duration="29000" />
       <workItem from="1694145261737" duration="819000" />
       <workItem from="1694146533035" duration="809000" />
-      <workItem from="1694273399904" duration="3855000" />
+      <workItem from="1694273399904" duration="8672000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
@@ -146,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694273630938</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat:封装mybatis-plus模块">
+      <created>1694324625488</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1694324625488</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +165,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -177,6 +179,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat:封装web模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat:封装web模块" />
+    <MESSAGE value="feat:封装mybatis-plus模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat:封装mybatis-plus模块" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

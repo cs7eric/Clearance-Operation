@@ -16,6 +16,8 @@
     <modules>
         <module>co-common-web</module>
         <module>co-common-mybatisplus</module>
+        <module>co-common-swagger</module>
+        <module>co-common-log</module>
     </modules>
 
 

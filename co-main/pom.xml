@@ -24,6 +24,16 @@
             <artifactId>co-common-mybatisplus</artifactId>
             <version>${co.common.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.cccs7</groupId>
+            <artifactId>co-common-swagger</artifactId>
+            <version>${co.common.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.cccs7</groupId>
+            <artifactId>co-common-log</artifactId>
+            <version>${co.common.version}</version>
+        </dependency>
 
 
     </dependencies>
