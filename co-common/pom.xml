@@ -18,6 +18,8 @@
         <module>co-common-mybatisplus</module>
         <module>co-common-swagger</module>
         <module>co-common-log</module>
+        <module>co-common-redis</module>
+        <module>co-common-security</module>
     </modules>
 
 

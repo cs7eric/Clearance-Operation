@@ -1,5 +1,6 @@
 package com.cccs7.co;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @ComponentScan("com.cccs7")
 @EnableWebMvc
+@MapperScan("com.cccs7.co")
 @SpringBootApplication
 public class MainApplication {
     public static void main(String[] args) {
@@ -22,3 +24,5 @@ public class MainApplication {
         SpringApplication.run(MainApplication.class);
     }
 }
+
+

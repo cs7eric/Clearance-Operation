@@ -19,7 +19,7 @@ import java.util.function.Function;
  * @Description 本地缓存工具类
  * @Date 2023/8/8 14:09
  */
-@Component
+//@Component
 public class GuavaCacheUtil<K, V> {
 
     @Value("${guava.cache.switch}")

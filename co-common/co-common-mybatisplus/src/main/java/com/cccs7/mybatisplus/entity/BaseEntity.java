@@ -8,6 +8,12 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * 基础实体类
+ *
+ * @Author cccs7
+ * @Date 2023/09/13
+ */
 @Data
 public class BaseEntity implements Serializable {
     @TableField(value = "create_by", fill = FieldFill.INSERT)
@@ -26,6 +32,6 @@ public class BaseEntity implements Serializable {
     @TableField(value = "del_flag", fill = FieldFill.INSERT)
     private Integer delFlag;
 
-//    @TableField(value = "version", fill = FieldFill.INSERT)
-//    private Integer version;
+    @TableField(value = "version", fill = FieldFill.INSERT)
+    private Integer version;
 }
