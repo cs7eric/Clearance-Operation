@@ -1,0 +1,33 @@
+08:50:31.522  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 31656 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+08:50:31.523  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+08:50:34.116  [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8089"]
+08:50:34.116  [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+08:50:34.117  [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.75]
+08:50:34.323  [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:50:35.165  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+08:50:44.378  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+08:50:45.312  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+08:50:45.324  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+08:50:45.351  [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+08:53:43.416  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 40428 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+08:53:43.417  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+08:53:46.228  [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8089"]
+08:53:46.228  [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+08:53:46.229  [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.75]
+08:53:46.462  [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:53:47.180  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+08:53:57.283  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+08:53:58.361  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+08:53:58.369  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+08:53:58.416  [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+09:08:46.131  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 35708 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+09:08:46.132  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+09:08:48.622  [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8089"]
+09:08:48.623  [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+09:08:48.624  [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.75]
+09:08:48.815  [main] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:08:49.409  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+09:08:57.978  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+09:08:58.880  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+09:08:58.893  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+09:08:58.939  [main] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
