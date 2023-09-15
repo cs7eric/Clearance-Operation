@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-common-log/swagger:2023/09/10日志集成">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/filter/JwtAuthenticationTokenFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/filter/JwtFilterProviderImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/LoginServiceImpl.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +140,7 @@
       <workItem from="1694273399904" duration="8997000" />
       <workItem from="1694399506356" duration="6464000" />
       <workItem from="1694616363683" duration="2816000" />
-      <workItem from="1694738546918" duration="1468000" />
+      <workItem from="1694738546918" duration="1921000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
