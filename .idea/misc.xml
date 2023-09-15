@@ -13,11 +13,6 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
-    <option name="ignoredFiles">
-      <set>
-        <option value="$PROJECT_DIR$/co-common/co-common-security/pom.xml" />
-      </set>
-    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_20" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
   <component name="SuppressionsComponent">

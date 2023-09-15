@@ -1,15 +1,10 @@
 package com.cccs7.co.bean.entity;
 
-import java.util.Date;
-
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.cccs7.mybatisplus.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.io.Serializable;
 
 /**
  * (CoUser)表实体类
@@ -21,7 +16,7 @@ import java.io.Serializable;
 @Data
 @TableName(value = "co_user")
 @EqualsAndHashCode(callSuper = true)
-public class CoUser extends BaseEntity {
+public class User extends BaseEntity {
 
     @TableId
     private Long id;

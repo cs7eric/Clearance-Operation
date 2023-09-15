@@ -12,6 +12,5 @@
         <module>co-common</module>
         <module>co-dependencies</module>
         <module>co-main</module>
-
     </modules>
 </project>

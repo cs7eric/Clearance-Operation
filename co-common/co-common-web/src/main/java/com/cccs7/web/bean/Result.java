@@ -5,9 +5,12 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
+ * 结果
  * 统一结果返回类
- *
  * 该类表示API调用的标准化响应格式。
+ *
+ * @Author cccs7
+ * @Date 2023/09/15
  */
 @Data
 public class Result<T> implements Serializable {
@@ -16,6 +19,12 @@ public class Result<T> implements Serializable {
     private Integer code; // 响应关联的结果代码
     private String message; // 提供附加信息的结果消息
     private T data; // 响应关联的数据载荷
+
+
+    public Result(Integer code, String message) {
+        this.code = code;
+        this.message = message;
+    }
 
     private Result(boolean success, Integer code, String message, T data) {
         this.success = success;

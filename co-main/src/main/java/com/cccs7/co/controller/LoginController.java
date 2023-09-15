@@ -1,7 +1,8 @@
 package com.cccs7.co.controller;
 
-import com.cccs7.co.bean.entity.CoUser;
+import com.cccs7.co.bean.entity.User;
 import com.cccs7.co.service.LoginService;
+import com.cccs7.co.service.UserService;
 import com.cccs7.web.bean.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,10 +20,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class LoginController {
 
     @Autowired
-    private LoginService loginService;
+    private UserService userService;
 
     @PostMapping("/login")
-    public Result login (@RequestBody CoUser user) {
-        return loginService.login(user);
+    public Result login (@RequestBody User user) {
+        return userService.login(user);
     }
 }

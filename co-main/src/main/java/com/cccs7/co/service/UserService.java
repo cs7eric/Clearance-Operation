@@ -4,14 +4,13 @@ import com.cccs7.co.bean.entity.User;
 import com.cccs7.web.bean.Result;
 
 /**
- * <p> LoginService - 登录服务接口 </p>
+ * <p> User服务接口 </p>
  *
  * @Author cccs7/cs7eric - csq020611@gmail.com
- * @Description LoginService - 登录服务接口
- * @Date 2023/9/13 23:40
+ * @Description User服务接口
+ * @Date 2023/9/15 23:15
  */
-public interface LoginService {
-
+public interface UserService {
     /**
      * 登录
      *

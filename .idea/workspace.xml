@@ -5,11 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-common-log/swagger:2023/09/10日志集成">
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-security/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/Menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/filter/JwtAuthenticationFiler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/handler/AccessDeniedHandlerImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/handler/AuthenticationEntryPointImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/mapper/MenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/util/JwtUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/resources/mapper/MenuMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/AuthTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/25afb989-9552-495d-881f-bf4f1abe5786.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/25afb989-9552-495d-881f-bf4f1abe5786.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/filter/JwtAuthenticationTokenFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/filter/JwtFilterProviderImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/LoginServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/co-common-log/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-log/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/co-common-mybatisplus/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-mybatisplus/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/co-common-web/src/main/java/com/cccs7/web/bean/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-web/src/main/java/com/cccs7/web/bean/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-dependencies/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/CoUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/LoginUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/LoginUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/log4j2-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/frame.log-INFO-2023-09-10_1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/frame.log-INFO-2023-09-13_1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/temp.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/temp.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +104,8 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "spring.boot",
-    "spring.configuration.checksum": "4ae62d92db4ed9045828b634ba6ec096",
+    "settings.editor.selected.configurable": "com.star.easydoc.view.settings.javadoc.template.ClassSettingsConfigurable",
+    "spring.configuration.checksum": "495bdc7895c44bcd72a2387ae256510a",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -93,6 +123,8 @@
       <recent name="D:\CSQ\clearup-operation\co-main\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cccs7.co.bean.entity" />
+      <recent name="com.cccs7.co.util" />
       <recent name="com.cccs7.co.service.impl" />
       <recent name="com.cccs7.co.exception" />
       <recent name="com.cccs7.swagger.bean" />
@@ -112,6 +144,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AuthTest.testAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="co-main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cccs7.co.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cccs7.co" />
+      <option name="MAIN_CLASS_NAME" value="com.cccs7.co.AuthTest" />
+      <option name="METHOD_NAME" value="testAuth" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="co-main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cccs7.co.MainApplication" />
@@ -121,6 +169,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AuthTest.testAuth" />
         <item itemvalue="Application.MainApplication" />
       </list>
     </recent_temporary>
@@ -140,7 +189,8 @@
       <workItem from="1694273399904" duration="8997000" />
       <workItem from="1694399506356" duration="6464000" />
       <workItem from="1694616363683" duration="2816000" />
-      <workItem from="1694738546918" duration="1921000" />
+      <workItem from="1694738546918" duration="6248000" />
+      <workItem from="1694787296822" duration="5627000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
