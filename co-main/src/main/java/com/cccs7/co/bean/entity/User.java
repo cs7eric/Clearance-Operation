@@ -1,5 +1,6 @@
 package com.cccs7.co.bean.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.cccs7.mybatisplus.entity.BaseEntity;
@@ -14,9 +15,8 @@ import lombok.EqualsAndHashCode;
  */
 
 @Data
-@TableName(value = "co_user")
-@EqualsAndHashCode(callSuper = true)
-public class User extends BaseEntity {
+@TableName(value = "sys_user")
+public class User  {
 
     @TableId
     private Long id;

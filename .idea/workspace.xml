@@ -4,42 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-common-log/swagger:2023/09/10日志集成">
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-security/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/filter/JwtAuthenticationFiler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/handler/AccessDeniedHandlerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/handler/AuthenticationEntryPointImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/mapper/MenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserDetailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/util/JwtUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/resources/mapper/MenuMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/AuthTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/25afb989-9552-495d-881f-bf4f1abe5786.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/25afb989-9552-495d-881f-bf4f1abe5786.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/easyCodeTableSetting.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-common-security:完善鉴权">
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_8_22_58_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_8_22_58__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/co-common-log/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-log/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/co-common-mybatisplus/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-mybatisplus/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/co-common-web/src/main/java/com/cccs7/web/bean/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-web/src/main/java/com/cccs7/web/bean/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-dependencies/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/CoUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/LoginUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/LoginUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/co-common-mybatisplus/src/main/java/com/cccs7/mybatisplus/handler/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-mybatisplus/src/main/java/com/cccs7/mybatisplus/handler/MyMetaObjectHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/LoginService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/log4j2-spring.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/frame.log-INFO-2023-09-10_1.log.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/frame.log-INFO-2023-09-13_1.log.gz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/temp.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/temp.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +33,7 @@
         <option value="application" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Mybatis Mapper" />
       </list>
     </option>
   </component>
@@ -104,7 +85,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.star.easydoc.view.settings.javadoc.template.ClassSettingsConfigurable",
+    "settings.editor.selected.configurable": "yiiguxing.plugin.translate",
     "spring.configuration.checksum": "495bdc7895c44bcd72a2387ae256510a",
     "vue.rearranger.settings.migration": "true"
   },
@@ -190,7 +171,7 @@
       <workItem from="1694399506356" duration="6464000" />
       <workItem from="1694616363683" duration="2816000" />
       <workItem from="1694738546918" duration="6248000" />
-      <workItem from="1694787296822" duration="5627000" />
+      <workItem from="1694787296822" duration="10902000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
@@ -213,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694357946336</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feat/co-common-security:完善鉴权">
+      <created>1694793820137</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1694793820137</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,7 +234,8 @@
     <MESSAGE value="feat:封装web模块" />
     <MESSAGE value="feat:封装mybatis-plus模块" />
     <MESSAGE value="feat/co-common-log/swagger:2023/09/10日志集成" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat/co-common-log/swagger:2023/09/10日志集成" />
+    <MESSAGE value="feat/co-common-security:完善鉴权" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat/co-common-security:完善鉴权" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

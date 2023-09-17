@@ -1,5 +1,112 @@
-00:01:32.605  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 8048 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
-00:01:32.606  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
-00:01:34.816  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
-00:01:40.220  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
-00:01:42.174  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 10.076 seconds (JVM running for 11.187)
+22:07:36.329  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:07:36.333  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:07:48.245  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 23544 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:07:48.245  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:07:50.373  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:07:55.791  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:07:57.925  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 10.161 seconds (JVM running for 11.576)
+22:08:56.742  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:08:56.750  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:09:03.670  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 7752 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:09:03.671  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:09:05.577  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:09:10.751  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:09:12.700  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.481 seconds (JVM running for 10.593)
+22:10:38.833  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:10:38.865  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:10:44.827  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 19096 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:10:44.828  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:10:46.714  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:10:52.089  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:10:53.976  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.599 seconds (JVM running for 10.889)
+22:12:38.471  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:12:38.482  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:12:44.274  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 8028 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:12:44.275  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:12:46.135  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:12:51.301  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:12:53.217  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.417 seconds (JVM running for 10.475)
+22:13:27.181  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:13:27.202  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:13:32.690  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 22148 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:13:32.691  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:13:34.539  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:13:39.824  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:13:41.716  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.499 seconds (JVM running for 10.603)
+22:13:59.219  [http-nio-8089-exec-1] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.register,req:[{"password":"C020611."}]
+22:13:59.221  [http-nio-8089-exec-1] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.UserService.register,req:[{"password":"C020611."}]
+22:22:08.285  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:22:08.292  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:22:14.969  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 24232 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:22:14.970  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:22:16.950  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:22:22.285  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:22:24.306  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.814 seconds (JVM running for 11.107)
+22:22:51.663  [http-nio-8089-exec-4] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.register,req:[{"password":"C020611."}]
+22:22:51.672  [http-nio-8089-exec-4] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.register,req:[{"password":"C020611."}]
+22:29:25.561  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:29:25.569  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:29:33.292  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 20388 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:29:33.293  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:29:35.306  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:29:40.582  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:29:42.589  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.754 seconds (JVM running for 11.231)
+22:30:40.281  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.register,req:[{"password":"C020611."}]
+22:30:40.283  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.register,req:[{"password":"C020611."}]
+22:31:08.856  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:31:08.870  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:31:15.005  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 20420 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:31:15.006  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:31:17.006  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:31:22.192  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:31:24.212  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.677 seconds (JVM running for 11.023)
+22:32:05.999  [http-nio-8089-exec-5] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.register,req:[{"password":"C020611."}]
+22:32:06.001  [http-nio-8089-exec-5] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.register,req:[{"password":"C020611."}]
+22:37:58.974  [http-nio-8089-exec-7] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.register,req:[{"userName":"cccs7","password":"C020611."}]
+22:37:58.974  [http-nio-8089-exec-7] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.register,req:[{"userName":"cccs7","password":"C020611."}]
+22:42:05.917  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:42:05.929  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:42:13.650  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 17752 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:42:13.651  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:42:15.695  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:42:21.040  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:42:23.062  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.888 seconds (JVM running for 11.246)
+22:42:32.023  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.register,req:[{"userName":"cccs7","password":"C020611."}]
+22:42:32.028  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.register,req:[{"userName":"cccs7","password":"C020611."}]
+22:46:27.539  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:46:27.554  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:46:33.682  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 24200 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:46:33.682  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:46:35.705  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:46:41.151  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:46:43.183  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 10.003 seconds (JVM running for 11.232)
+22:46:54.268  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.register,req:[{"userName":"cccs7","password":"C020611."}]
+22:46:54.298  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.register,req:[{"userName":"cccs7","password":"C020611."}]
+22:48:21.092  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:48:21.102  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:48:38.351  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 21088 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:48:38.351  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:48:40.381  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:48:45.632  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:48:47.760  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.892 seconds (JVM running for 11.157)
+22:49:11.415  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.register,req:[{"userName":"cccs7","password":"C020611."}]
+22:49:11.421  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.register,req:[{"userName":"cccs7","password":"C020611."}]
+22:49:53.598  [http-nio-8089-exec-3] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.register,req:[{"userName":"cccs7","password":"C020611."}]
+22:49:53.598  [http-nio-8089-exec-3] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.register,req:[{"userName":"cccs7","password":"C020611."}]
+22:49:53.748  [http-nio-8089-exec-3] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.register,response:null,costTime:150
+22:49:53.751  [http-nio-8089-exec-3] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.register,response:{"success":true,"code":200,"message":"成功","data":"注册成功"},costTime:153
+22:51:40.248  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:51:40.287  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:51:46.236  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 19512 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:51:46.237  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:51:48.273  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:51:53.511  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:51:55.535  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.766 seconds (JVM running for 10.941)
+22:52:35.828  [http-nio-8089-exec-8] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.login,req:[{"userName":"cccs7","password":"$2a$10$X1v1YflWlG74G3QVsLk8S.yx4pYS6/7NGAOK9QrMesR9NH36lI6tu"}]
+22:52:35.830  [http-nio-8089-exec-8] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.login,req:[{"userName":"cccs7","password":"$2a$10$X1v1YflWlG74G3QVsLk8S.yx4pYS6/7NGAOK9QrMesR9NH36lI6tu"}]
+22:54:57.350  [http-nio-8089-exec-5] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.login,req:[{"userName":"cccs7","password":"C020611."}]
+22:54:57.350  [http-nio-8089-exec-5] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.login,req:[{"userName":"cccs7","password":"C020611."}]
+22:55:10.641  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.login,req:[{"userName":"cccs7","password":"C020611."}]
+22:55:10.642  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.login,req:[{"userName":"cccs7","password":"C020611."}]
+22:56:11.276  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+22:56:11.283  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed

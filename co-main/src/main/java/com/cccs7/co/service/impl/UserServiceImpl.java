@@ -2,6 +2,7 @@ package com.cccs7.co.service.impl;
 
 import com.cccs7.co.bean.entity.LoginUser;
 import com.cccs7.co.bean.entity.User;
+import com.cccs7.co.mapper.UserMapper;
 import com.cccs7.co.service.UserService;
 import com.cccs7.co.util.JwtUtils;
 import com.cccs7.redis.util.RedisCache;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -30,6 +32,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private RedisCache redisCache;
+
+    @Autowired
+    private UserMapper userMapper;
 
     @Override
     public Result login(User user) {
@@ -53,5 +58,24 @@ public class UserServiceImpl implements UserService {
         // 把完整的信息 存到 redis, userid 作为 key
         redisCache.setCacheObject("login:" + userid, loginUser);
         return Result.ok(map);
+    }
+
+    /**
+     * 注册
+     *
+     * @param user 用户
+     */
+    @Override
+    public void register(User user) {
+        if (Objects.isNull(user)) {
+            throw new RuntimeException("用户信息错误，请重新提交");
+        }
+
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        String password = user.getPassword();
+        String encodedPassword = passwordEncoder.encode(password);
+        user.setId(null);
+        user.setPassword(encodedPassword);
+        userMapper.insert(user);
     }
 }

@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  */
 @ComponentScan("com.cccs7")
 @EnableWebMvc
-@MapperScan("com.cccs7.co")
+@MapperScan("com.cccs7.co.mapper")
 @SpringBootApplication
 public class MainApplication {
     public static void main(String[] args) {
