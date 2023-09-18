@@ -110,3 +110,12 @@
 22:55:10.642  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.login,req:[{"userName":"cccs7","password":"C020611."}]
 22:56:11.276  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
 22:56:11.283  [SpringApplicationShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+22:56:14.865  [main] INFO  com.cccs7.co.MainApplication - Starting MainApplication using Java 1.8.0_333 on C77eric-PC with PID 14948 (D:\CSQ\clearup-operation\co-main\target\classes started by CSQ-PC in D:\CSQ\clearup-operation)
+22:56:14.866  [main] INFO  com.cccs7.co.MainApplication - The following 1 profile is active: "local"
+22:56:16.854  [main] INFO  com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure - Init DruidDataSource
+22:56:22.154  [main] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+22:56:24.173  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 9.795 seconds (JVM running for 11.063)
+22:56:33.129  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.login,req:[{"userName":"cccs7","password":"C020611."}]
+22:56:33.131  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.login,req:[{"userName":"cccs7","password":"C020611."}]
+22:56:34.811  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.service.impl.UserServiceImpl.login,response:{"success":true,"code":200,"message":"成功","data":{"token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwZmU4ZGZlM2NhYWM0NWM1ODZhMzdkNWUyNjA2MWRlMyIsInN1YiI6IjE3MDM0MjEwMTkyMDM3OTY5OTMiLCJpc3MiOiJjY2NzNyIsImlhdCI6MTY5NDk2MjU5MywiZXhwIjoxNjk0OTY2MTkzfQ.68_X1Vvl3U71K1776a6ajNyvdJS1DZ6BY6Bx27dMpSQ"}},costTime:1679
+22:56:34.811  [http-nio-8089-exec-2] INFO  com.cccs7.log.LogAspect - com.cccs7.co.controller.UserController.login,response:{"success":true,"code":200,"message":"成功","data":{"token":"eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIwZmU4ZGZlM2NhYWM0NWM1ODZhMzdkNWUyNjA2MWRlMyIsInN1YiI6IjE3MDM0MjEwMTkyMDM3OTY5OTMiLCJpc3MiOiJjY2NzNyIsImlhdCI6MTY5NDk2MjU5MywiZXhwIjoxNjk0OTY2MTkzfQ.68_X1Vvl3U71K1776a6ajNyvdJS1DZ6BY6Bx27dMpSQ"}},costTime:1682
