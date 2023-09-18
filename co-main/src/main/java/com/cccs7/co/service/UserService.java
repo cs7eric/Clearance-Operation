@@ -27,4 +27,11 @@ public interface UserService {
      * @param user 用户
      */
     void register(User user);
+
+    /**
+     * 更新用户信息
+     *
+     * @param user 用户
+     */
+    void update(User user);
 }

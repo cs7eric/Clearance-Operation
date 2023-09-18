@@ -20,6 +20,8 @@
         <module>co-common-log</module>
         <module>co-common-redis</module>
         <module>co-common-security</module>
+        <module>co-common-tool</module>
+        <module>co-common-pojo</module>
     </modules>
 
 

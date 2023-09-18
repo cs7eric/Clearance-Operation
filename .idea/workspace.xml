@@ -4,22 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-common-security:完善鉴权">
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_8_22_58_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_9_8_22_58__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/co-common-mybatisplus/src/main/java/com/cccs7/mybatisplus/handler/MyMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-mybatisplus/src/main/java/com/cccs7/mybatisplus/handler/MyMetaObjectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/MainApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/LoginController.java" afterDir="false" />
+    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-main: user模块注册、登录">
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-pojo/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-tool/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-pojo/src/main/java/com/cccs7/co/bean/entity/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-pojo/src/main/java/com/cccs7/co/bean/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/temp.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/temp.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +27,8 @@
         <option value="package.json" />
         <option value="application" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="Mybatis Mapper" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -77,7 +72,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/CSQ/clearup-operation/co-main/src/main/java/com/cccs7/co",
+    "last_opened_file_path": "D:/CSQ/clearup-operation/co-common/co-common-pojo/src/main/java/com/cccs7/co/bean/entity",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,11 +92,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CSQ\clearup-operation\co-main\src\main\java\com\cccs7\co\bean\entity" />
+      <recent name="D:\CSQ\clearup-operation\co-common\co-common-pojo\src\main\java\com\cccs7\co\bean\entity" />
       <recent name="D:\CSQ\clearup-operation\co-main\src\main\java\com\cccs7\co" />
       <recent name="D:\CSQ\clearup-operation\co-common\co-common-web\src\main\java\com\cccs7\web" />
       <recent name="D:\CSQ\clearup-operation\co-common\co-common-security\src\main\java" />
-      <recent name="D:\CSQ\clearup-operation\co-common\co-common-redis" />
-      <recent name="D:\CSQ\clearup-operation\co-main\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.cccs7.co.bean.entity" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.cccs7.co.bean.entity" />
@@ -171,7 +169,7 @@
       <workItem from="1694399506356" duration="6464000" />
       <workItem from="1694616363683" duration="2816000" />
       <workItem from="1694738546918" duration="6248000" />
-      <workItem from="1694787296822" duration="10902000" />
+      <workItem from="1694787296822" duration="17307000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
@@ -201,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694793820137</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat/co-main: user模块注册、登录">
+      <created>1694962914991</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1694962914991</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,7 +240,8 @@
     <MESSAGE value="feat:封装mybatis-plus模块" />
     <MESSAGE value="feat/co-common-log/swagger:2023/09/10日志集成" />
     <MESSAGE value="feat/co-common-security:完善鉴权" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat/co-common-security:完善鉴权" />
+    <MESSAGE value="feat/co-main: user模块注册、登录" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat/co-main: user模块注册、登录" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

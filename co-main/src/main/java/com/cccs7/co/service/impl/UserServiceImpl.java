@@ -36,8 +36,14 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
+    /**
+     * 登录
+     *
+     * @param user 用户
+     * @return {@link Result}<{@link HashMap}<{@link String}, {@link String}>>
+     */
     @Override
-    public Result login(User user) {
+    public Result<HashMap<String, String>> login(User user) {
 
         // 进行用户认证
         UsernamePasswordAuthenticationToken authenticationToken
@@ -77,5 +83,16 @@ public class UserServiceImpl implements UserService {
         user.setId(null);
         user.setPassword(encodedPassword);
         userMapper.insert(user);
+    }
+
+
+    /**
+     * 更新
+     *
+     * @param user 用户
+     */
+    @Override
+    public void update(User user) {
+
     }
 }
