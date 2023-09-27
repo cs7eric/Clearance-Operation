@@ -2,7 +2,9 @@ package com.cccs7.co.bean.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.cccs7.mybatisplus.entity.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * (CoUser)表实体类
@@ -10,10 +12,10 @@ import lombok.Data;
  * @author makejava
  * @since 2023-09-11 16:14:11
  */
-
 @Data
 @TableName(value = "sys_user")
-public class User  {
+@EqualsAndHashCode(callSuper = true)
+public class User extends BaseEntity {
 
     @TableId
     private Long id;
@@ -35,5 +37,6 @@ public class User  {
     private String userType;
 
 }
+
 
 

@@ -27,6 +27,9 @@ spring:
           slow-sql-mills: 2000
         wall:
           enabled: true
+  data:
+    mongodb:
+      uri: mongodb://101.34.208.43:27017/co
   redis:
     host: 101.34.208.43
     port: 6379

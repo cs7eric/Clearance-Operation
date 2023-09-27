@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-main: user模块注册、登录">
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-pojo/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-tool/pom.xml" afterDir="false" />
+    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-common: 新增tool、pojo 模块">
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-mongodb/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-dependencies/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-pojo/src/main/java/com/cccs7/co/bean/entity/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-pojo/src/main/java/com/cccs7/co/bean/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/temp.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/temp.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,36 +61,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/CSQ/clearup-operation/co-common/co-common-pojo/src/main/java/com/cccs7/co/bean/entity",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "yiiguxing.plugin.translate",
-    "spring.configuration.checksum": "495bdc7895c44bcd72a2387ae256510a",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CSQ/cccs7-nju-repo&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;yiiguxing.plugin.translate&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;eb84479aa97acea3139af47bf26f3108&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\CSQ\clearup-operation\co-main\src\main\java\com\cccs7\co\bean\entity" />
@@ -108,6 +109,13 @@
       <recent name="com.cccs7.co.exception" />
       <recent name="com.cccs7.swagger.bean" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="Application" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.MainApplication">
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -148,8 +156,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AuthTest.testAuth" />
         <item itemvalue="Application.MainApplication" />
+        <item itemvalue="JUnit.AuthTest.testAuth" />
       </list>
     </recent_temporary>
   </component>
@@ -169,7 +177,13 @@
       <workItem from="1694399506356" duration="6464000" />
       <workItem from="1694616363683" duration="2816000" />
       <workItem from="1694738546918" duration="6248000" />
-      <workItem from="1694787296822" duration="17307000" />
+      <workItem from="1694787296822" duration="19720000" />
+      <workItem from="1695359543466" duration="55000" />
+      <workItem from="1695366425022" duration="1673000" />
+      <workItem from="1695485112515" duration="1226000" />
+      <workItem from="1695566491236" duration="605000" />
+      <workItem from="1695630232594" duration="194000" />
+      <workItem from="1695742786075" duration="651000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
@@ -206,7 +220,21 @@
       <option name="project" value="LOCAL" />
       <updated>1694962914991</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat/co-common: 新增tool、pojo 模块">
+      <created>1695021893988</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695021893988</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat/co-common: 新增tool、pojo 模块">
+      <created>1695021917430</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1695021917430</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +269,19 @@
     <MESSAGE value="feat/co-common-log/swagger:2023/09/10日志集成" />
     <MESSAGE value="feat/co-common-security:完善鉴权" />
     <MESSAGE value="feat/co-main: user模块注册、登录" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat/co-main: user模块注册、登录" />
+    <MESSAGE value="feat/co-common: 新增tool、pojo 模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat/co-common: 新增tool、pojo 模块" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/filter/JwtAuthenticationFiler.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

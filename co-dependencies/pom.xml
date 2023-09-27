@@ -53,6 +53,7 @@
         <guava.version>32.0.1-jre</guava.version>
         <springfox.starter.version>3.0.0</springfox.starter.version>
         <spring.boot.test.version>2.7.12</spring.boot.test.version>
+        <spring.boot.mongodb.version>2.7.12</spring.boot.mongodb.version>
     </properties>
 
     <dependencies>
@@ -246,7 +247,12 @@
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring.boot.test.version}</version>
             </dependency>
-
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-mongodb</artifactId>
+                <version>${spring.boot.mongodb.version}</version>
+            </dependency>
 
 
         </dependencies>

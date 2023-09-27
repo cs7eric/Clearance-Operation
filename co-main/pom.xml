@@ -82,6 +82,11 @@
 <!--            <artifactId>co-common-pojo</artifactId>-->
 <!--            <version>${co.common.version}</version>-->
 <!--        </dependency>-->
+        <dependency>
+            <groupId>com.cccs7</groupId>
+            <artifactId>co-common-mongodb</artifactId>
+            <version>${co.common.version}</version>
+        </dependency>
 
 
     </dependencies>
