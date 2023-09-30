@@ -56,6 +56,8 @@
         <spring.boot.mongodb.version>2.7.12</spring.boot.mongodb.version>
         <spring.boot-starter.mail>2.7.12</spring.boot-starter.mail>
         <junit.version>4.13.2</junit.version>
+        <aliyun.java.sdk.core.version>4.1.0</aliyun.java.sdk.core.version>
+        <aliyun.java.sdk.dm.version>3.1.0</aliyun.java.sdk.dm.version>
     </properties>
 
     <dependencies>
@@ -244,11 +246,6 @@
                 <artifactId>springfox-boot-starter</artifactId>
                 <version>${springfox.starter.version}</version>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <version>${spring.boot.test.version}</version>
-            </dependency>
             <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -264,6 +261,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <version>${spring.boot.test.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${aliyun.java.sdk.core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-dm</artifactId>
+                <version>${aliyun.java.sdk.dm.version}</version>
             </dependency>
 
         </dependencies>

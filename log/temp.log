@@ -7,3 +7,45 @@
 11:34:43.346  [cluster-ClusterId{value='651797535afd374251cc6c95', description='null'}-101.34.208.43:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:2447}] to 101.34.208.43:27017
 11:34:43.346  [cluster-ClusterId{value='651797535afd374251cc6c95', description='null'}-101.34.208.43:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=101.34.208.43:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=81263600}
 11:34:44.718  [main] INFO  com.cccs7.co.MainApplication - Started MainApplication in 16.473 seconds (JVM running for 18.31)
+12:54:46.929  [cluster-ClusterId{value='651797535afd374251cc6c95', description='null'}-101.34.208.43:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 101.34.208.43:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:696) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:574) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:410) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:369) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:221) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_333]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method) ~[?:1.8.0_333]
+	at java.net.SocketInputStream.socketRead(SocketInputStream.java:116) ~[?:1.8.0_333]
+	at java.net.SocketInputStream.read(SocketInputStream.java:171) ~[?:1.8.0_333]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_333]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:110) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:135) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:713) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:571) ~[mongodb-driver-core-4.6.1.jar:?]
+	... 5 more
+12:54:56.948  [cluster-ClusterId{value='651797535afd374251cc6c95', description='null'}-101.34.208.43:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 101.34.208.43:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:180) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:193) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:157) ~[mongodb-driver-core-4.6.1.jar:?]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_333]
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[?:1.8.0_333]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[?:1.8.0_333]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_333]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_333]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_333]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_333]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_333]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_333]
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:107) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79) ~[mongodb-driver-core-4.6.1.jar:?]
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65) ~[mongodb-driver-core-4.6.1.jar:?]
+	... 4 more
+12:59:03.995  [cluster-rtt-ClusterId{value='651797535afd374251cc6c95', description='null'}-101.34.208.43:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:41, serverValue:2463}] to 101.34.208.43:27017
+12:59:04.022  [cluster-ClusterId{value='651797535afd374251cc6c95', description='null'}-101.34.208.43:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:42, serverValue:2464}] to 101.34.208.43:27017
+12:59:04.022  [cluster-ClusterId{value='651797535afd374251cc6c95', description='null'}-101.34.208.43:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=101.34.208.43:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=17, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=29079500}

@@ -1,9 +1,9 @@
 package com.cccs7.co.test;
 
+import com.cccs7.co.service.MailService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 /**
  * <p> 邮件服务测试类 </p>
@@ -16,9 +16,12 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 public class MailTest {
 
 
+    @Autowired
+    private MailService mailService;
+
     @Test
     public void sendMessage() {
-        System.out.println("this is a mail test");
 
+        mailService.sendMailMessage();
     }
 }

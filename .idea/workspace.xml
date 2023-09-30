@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-mail:集成 邮件服务">
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-test/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-test:集成测试">
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-mail/src/main/java/com/cccs7/mail/config/MailConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/MailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/MailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/resources/static/mail_register_template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/co-common-mail/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-mail/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/co-common-mail/src/main/java/com/cccs7/mail/MailConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/co-common-mail/src/main/java/com/cccs7/mail/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/co-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-dependencies/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/MailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/MailTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/temp.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/temp.log" afterDir="false" />
@@ -25,8 +30,9 @@
       <list>
         <option value="package.json" />
         <option value="application" />
-        <option value="Interface" />
         <option value="Mybatis Mapper" />
+        <option value="Interface" />
+        <option value="HTML File" />
         <option value="Class" />
       </list>
     </option>
@@ -61,6 +67,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -80,7 +87,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "dbbbafb4f31e57fae2cf1a3173c8119c",
+    "spring.configuration.checksum": "f794eeed57dbb3aa57a7413d9db4e3cf",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -202,7 +209,8 @@
       <workItem from="1695826978812" duration="2001000" />
       <workItem from="1695869911098" duration="132000" />
       <workItem from="1695888375075" duration="3481000" />
-      <workItem from="1695957160444" duration="4254000" />
+      <workItem from="1695957160444" duration="8973000" />
+      <workItem from="1696058636254" duration="5285000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
@@ -267,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696044305775</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat/co-test:集成测试">
+      <created>1696045616623</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696045616623</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,7 +320,8 @@
     <MESSAGE value="feat/co-common: 新增tool、pojo 模块" />
     <MESSAGE value="feat/co-mongodb:初步集成mongodb" />
     <MESSAGE value="feat/co-mail:集成 邮件服务" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat/co-mail:集成 邮件服务" />
+    <MESSAGE value="feat/co-test:集成测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat/co-test:集成测试" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

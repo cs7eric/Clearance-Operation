@@ -41,3 +41,7 @@ build/
 .gz
 .log
 /log
+
+
+### 私钥文件
+SMSKey.txt

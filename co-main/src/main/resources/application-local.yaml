@@ -41,10 +41,6 @@ spring:
         max-idle: 8
         max-wait: -1
         min-idle: 0
-  mail:
-    username: 2859920470@qq.com
-    password: nqztqfwmzwgndhaj
-    host: smtp.qq.com
 
 swagger:
   base-package: "com.cccs7"
@@ -68,3 +64,9 @@ mybatis-plus:
   global-config:
     db-config:
       id-type: assign_id
+
+co:
+  email:
+    mail_account_name: cccs7@mail.cccs7.icu
+    region_id: cn-hangzhou
+    from_alias: co-cccs7
