@@ -1,5 +1,6 @@
 package com.cccs7.co.service;
 
+import com.sun.istack.NotNull;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,6 +14,8 @@ public interface MailService {
 
     /**
      * 发送邮件消息
+     *
+     * @param address 地址
      */
-    void sendMailMessage();
+    void sendMailMessage(@NotNull String address);
 }

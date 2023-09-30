@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/co-test:集成测试">
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-mail/src/main/java/com/cccs7/mail/config/MailConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/MailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/MailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/resources/static/mail_register_template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="update: 优化文件目录">
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-tool/src/main/java/com/cccs7/co/tool/CodeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/CodeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/CodeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/code/CodeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/co-common-mail/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-mail/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/co-common-mail/src/main/java/com/cccs7/mail/MailConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/co-common-mail/src/main/java/com/cccs7/mail/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-dependencies/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/MailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/MailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/MailServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/MailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/MailTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/info.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/temp.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/temp.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +26,8 @@
         <option value="package.json" />
         <option value="application" />
         <option value="Mybatis Mapper" />
-        <option value="Interface" />
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -122,7 +117,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MailTest.sendMessage">
+  <component name="RunManager" selected="JUnit.CodeTest.cacheCodeTest">
     <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.cccs7.co.MainApplication" />
       <module name="co-main" />
@@ -147,6 +142,38 @@
       <option name="PACKAGE_NAME" value="com.cccs7.co" />
       <option name="MAIN_CLASS_NAME" value="com.cccs7.co.AuthTest" />
       <option name="METHOD_NAME" value="testAuth" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeTest.cacheCodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="co-main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cccs7.co.test.code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cccs7.co.test.code" />
+      <option name="MAIN_CLASS_NAME" value="com.cccs7.co.test.code.CodeTest" />
+      <option name="METHOD_NAME" value="cacheCodeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CodeTest.generateCodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="co-main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cccs7.co.test.code.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cccs7.co.test.code" />
+      <option name="MAIN_CLASS_NAME" value="com.cccs7.co.test.code.CodeTest" />
+      <option name="METHOD_NAME" value="generateCodeTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -177,6 +204,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CodeTest.cacheCodeTest" />
+        <item itemvalue="JUnit.CodeTest.generateCodeTest" />
         <item itemvalue="JUnit.MailTest.sendMessage" />
         <item itemvalue="Application.MainApplication" />
         <item itemvalue="JUnit.AuthTest.testAuth" />
@@ -210,7 +239,7 @@
       <workItem from="1695869911098" duration="132000" />
       <workItem from="1695888375075" duration="3481000" />
       <workItem from="1695957160444" duration="8973000" />
-      <workItem from="1696058636254" duration="5285000" />
+      <workItem from="1696058636254" duration="9059000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
@@ -282,7 +311,21 @@
       <option name="project" value="LOCAL" />
       <updated>1696045616623</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat/co-mail: 集成阿里云邮件推送服务">
+      <created>1696067109196</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696067109196</updated>
+    </task>
+    <task id="LOCAL-00012" summary="update: 优化文件目录">
+      <created>1696067366702</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696067366702</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +364,9 @@
     <MESSAGE value="feat/co-mongodb:初步集成mongodb" />
     <MESSAGE value="feat/co-mail:集成 邮件服务" />
     <MESSAGE value="feat/co-test:集成测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat/co-test:集成测试" />
+    <MESSAGE value="feat/co-mail: 集成阿里云邮件推送服务" />
+    <MESSAGE value="update: 优化文件目录" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: 优化文件目录" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

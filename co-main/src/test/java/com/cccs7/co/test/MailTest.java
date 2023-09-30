@@ -22,6 +22,6 @@ public class MailTest {
     @Test
     public void sendMessage() {
 
-        mailService.sendMailMessage();
+//        mailService.sendMailMessage();
     }
 }

@@ -8,7 +8,9 @@ import com.aliyuncs.exceptions.ClientException;
 import com.aliyuncs.http.ProtocolType;
 import com.aliyuncs.profile.DefaultProfile;
 import com.aliyuncs.profile.IClientProfile;
+import com.cccs7.co.service.CodeService;
 import com.cccs7.co.service.MailService;
+import com.cccs7.co.tool.CodeUtil;
 import com.cccs7.mail.config.MailConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
@@ -36,9 +38,16 @@ public class MailServiceImpl implements MailService {
     @Autowired
     private JavaMailSenderImpl mailSender;
 
+    @Autowired
+    private CodeService codeService;
+
+    /**
+     * 发送邮件消息
+     *
+     * @param address 地址
+     */
     @Override
-    public void sendMailMessage() {
-        String address = "csq020611@gmail.com";
+    public void sendMailMessage(String address) {
 
         // 如果是除杭州region外的其它region（如新加坡、澳洲Region），需要将下面的"cn-hangzhou"替换为"ap-southeast-1"、或"ap-southeast-2"。
         //下面填写密钥
@@ -62,26 +71,40 @@ public class MailServiceImpl implements MailService {
             request.setSubject(MailConfig.EMAIL_TITLE);
 
             // 邮件模板
-            ClassPathResource mailTemplate = new ClassPathResource(MailConfig.EMAIL_TEMPLATE);
-            System.out.println(mailTemplate);
-            Scanner scanner = new Scanner(mailTemplate.getInputStream());
-            String htmlBody = "";
-            while (scanner.hasNextLine()) {
-                htmlBody += scanner.nextLine() + System.getProperty("line.separator");
-            }
+            String htmlBody = setTemplate();
 
-            String code = "U9K7H6";
+            // 生成邮箱验证码
+            String code = CodeUtil.generateCode();
+
+            // 缓存验证码到 redis
+            codeService.cacheCode(code, address);
+
             htmlBody = htmlBody.replace("[address]", address).replace("[code]", code);
             request.setHtmlBody(htmlBody);
             SingleSendMailResponse httpResponse = client.getAcsResponse(request);
         } catch (ClientException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
         }
     }
 
-    public void setTemplate() {
-
+    /**
+     * 设置邮箱验证码模板
+     *
+     * @return {@link String}
+     */
+    public String setTemplate() {
+        ClassPathResource mailTemplate = new ClassPathResource(MailConfig.EMAIL_TEMPLATE);
+        System.out.println(mailTemplate);
+        Scanner scanner = null;
+        try {
+            scanner = new Scanner(mailTemplate.getInputStream());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        String htmlBody = "";
+        while (scanner.hasNextLine()) {
+            htmlBody += scanner.nextLine() + System.getProperty("line.separator");
+        }
+        return htmlBody;
     }
 }

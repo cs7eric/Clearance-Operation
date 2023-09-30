@@ -76,6 +76,11 @@
             <artifactId>co-common-mail</artifactId>
             <version>${co.common.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.cccs7</groupId>
+            <artifactId>co-common-tool</artifactId>
+            <version>${co.common.version}</version>
+        </dependency>
 
 
     </dependencies>
