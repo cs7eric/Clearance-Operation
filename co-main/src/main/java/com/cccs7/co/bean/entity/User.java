@@ -20,7 +20,7 @@ public class User extends BaseEntity {
     @TableId
     private Long id;
 
-    private String userName;
+    private String username;
 
     private String nickName;
 

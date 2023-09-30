@@ -41,6 +41,10 @@ spring:
         max-idle: 8
         max-wait: -1
         min-idle: 0
+  mail:
+    username: 2859920470@qq.com
+    password: nqztqfwmzwgndhaj
+    host: smtp.qq.com
 
 swagger:
   base-package: "com.cccs7"

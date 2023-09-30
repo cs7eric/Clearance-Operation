@@ -54,6 +54,8 @@
         <springfox.starter.version>3.0.0</springfox.starter.version>
         <spring.boot.test.version>2.7.12</spring.boot.test.version>
         <spring.boot.mongodb.version>2.7.12</spring.boot.mongodb.version>
+        <spring.boot-starter.mail>2.7.12</spring.boot-starter.mail>
+        <junit.version>4.13.2</junit.version>
     </properties>
 
     <dependencies>
@@ -253,6 +255,13 @@
                 <artifactId>spring-boot-starter-data-mongodb</artifactId>
                 <version>${spring.boot.mongodb.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-mail</artifactId>
+                <version>${spring.boot-starter.mail}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/junit/junit -->
 
 
         </dependencies>

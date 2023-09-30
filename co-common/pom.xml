@@ -23,6 +23,7 @@
         <module>co-common-tool</module>
         <module>co-common-pojo</module>
         <module>co-common-mongodb</module>
+        <module>co-common-mail</module>
     </modules>
 
 
