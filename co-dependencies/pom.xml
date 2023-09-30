@@ -260,9 +260,11 @@
                 <artifactId>spring-boot-starter-mail</artifactId>
                 <version>${spring.boot-starter.mail}</version>
             </dependency>
-
-            <!-- https://mvnrepository.com/artifact/junit/junit -->
-
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring.boot.test.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

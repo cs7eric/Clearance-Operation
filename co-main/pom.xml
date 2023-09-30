@@ -60,37 +60,21 @@
             <artifactId>co-common-security</artifactId>
             <version>${co.common.version}</version>
         </dependency>
-        <!--
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-             排除 logback-classic
-            <exclusions>
-                <exclusion>
-                    <groupId>ch.qos.logback</groupId>
-                    <artifactId>logback-classic</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.apache.logging.log4j</groupId>
-                    <artifactId>log4j-slf4j-impl</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-    -->
-<!--        <dependency>-->
-<!--            <groupId>com.cccs7</groupId>-->
-<!--            <artifactId>co-common-pojo</artifactId>-->
-<!--            <version>${co.common.version}</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>com.cccs7</groupId>
             <artifactId>co-common-mongodb</artifactId>
             <version>${co.common.version}</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
+            <groupId>com.cccs7</groupId>
+            <artifactId>co-common-test</artifactId>
+            <version>${co.common.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.cccs7</groupId>
+            <artifactId>co-common-mail</artifactId>
+            <version>${co.common.version}</version>
         </dependency>
 
 
