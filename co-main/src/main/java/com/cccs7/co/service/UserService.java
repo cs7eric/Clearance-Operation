@@ -1,6 +1,7 @@
 package com.cccs7.co.service;
 
 import com.cccs7.co.bean.entity.User;
+import com.cccs7.co.bean.req.UserReq;
 import com.cccs7.web.bean.Result;
 import org.springframework.stereotype.Service;
 
@@ -16,17 +17,17 @@ public interface UserService {
     /**
      * 登录
      *
-     * @param user 用户
+     * @param userReq 用户
      * @return {@link Result}
      */
-    Result login(User user);
+    Result login(UserReq userReq);
 
     /**
      * 注册
      *
-     * @param user 用户
+     * @param userReq 用户
      */
-    void register(User user);
+    Result register(UserReq userReq);
 
     /**
      * 更新用户信息
@@ -34,4 +35,19 @@ public interface UserService {
      * @param user 用户
      */
     void update(User user);
+
+    /**
+     * 注册或登录
+     *
+     * @param userReq 用户
+     */
+    Result verify(UserReq userReq);
+
+    /**
+     * 判断用户是否存在
+     *
+     * @param userReq 用户
+     * @return {@link Boolean}
+     */
+    Boolean exist(UserReq userReq);
 }

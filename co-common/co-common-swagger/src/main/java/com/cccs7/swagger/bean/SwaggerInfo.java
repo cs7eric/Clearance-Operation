@@ -4,6 +4,12 @@ package com.cccs7.swagger.bean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+/**
+ * swagger配置信息
+ *
+ * @Author  cccs7
+ * @Date  2023/10/01
+ */
 @Component
 @ConfigurationProperties(prefix = "swagger")
 public class SwaggerInfo {

@@ -1,6 +1,7 @@
 package com.cccs7.co.bean.entity;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
@@ -20,6 +21,7 @@ import java.util.stream.Collectors;
  */
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class LoginUser implements UserDetails {
 
     private User user;

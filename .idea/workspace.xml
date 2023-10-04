@@ -4,16 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="update: 优化文件目录">
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-tool/src/main/java/com/cccs7/co/tool/CodeUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/CodeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/CodeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/code/CodeTest.java" afterDir="false" />
+    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat: 完善邮箱验证码服务">
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/req/UserReq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/CommonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/convert/UserConverter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-common/co-common-swagger/src/main/java/com/cccs7/swagger/bean/SwaggerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-swagger/src/main/java/com/cccs7/swagger/bean/SwaggerInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/MailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/MailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/MailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/LoginUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/LoginUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/CodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/CodeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/MailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/MailTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/code/CodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/code/CodeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/temp.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/temp.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/warn.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/warn.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +101,9 @@
     ]
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\CSQ\clearup-operation\co-main\src\main\java\com\cccs7\co\bean\entity" />
@@ -114,40 +127,12 @@
     <option name="configurationTypes">
       <set>
         <option value="Application" />
+        <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CodeTest.cacheCodeTest">
-    <configuration name="MainApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.cccs7.co.MainApplication" />
-      <module name="co-main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cccs7.co.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AuthTest.testAuth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="co-main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cccs7.co.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cccs7.co" />
-      <option name="MAIN_CLASS_NAME" value="com.cccs7.co.AuthTest" />
-      <option name="METHOD_NAME" value="testAuth" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CodeTest.cacheCodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.MainApplication">
+    <configuration name="CodeTest.getCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="co-main" />
       <extension name="coverage">
         <pattern>
@@ -157,13 +142,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cccs7.co.test.code" />
       <option name="MAIN_CLASS_NAME" value="com.cccs7.co.test.code.CodeTest" />
-      <option name="METHOD_NAME" value="cacheCodeTest" />
+      <option name="METHOD_NAME" value="getCache" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CodeTest.generateCodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CodeTest.setCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="co-main" />
       <extension name="coverage">
         <pattern>
@@ -173,13 +158,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cccs7.co.test.code" />
       <option name="MAIN_CLASS_NAME" value="com.cccs7.co.test.code.CodeTest" />
-      <option name="METHOD_NAME" value="generateCodeTest" />
+      <option name="METHOD_NAME" value="setCache" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MailTest.sendMessage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MailTest.sendCodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="co-main" />
       <extension name="coverage">
         <pattern>
@@ -189,7 +174,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.cccs7.co.test" />
       <option name="MAIN_CLASS_NAME" value="com.cccs7.co.test.MailTest" />
-      <option name="METHOD_NAME" value="sendMessage" />
+      <option name="METHOD_NAME" value="sendCodeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.convertTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="co-main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cccs7.co.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cccs7.co.test" />
+      <option name="MAIN_CLASS_NAME" value="com.cccs7.co.test.UserTest" />
+      <option name="METHOD_NAME" value="convertTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserTest.registerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="co-main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cccs7.co.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cccs7.co.test" />
+      <option name="MAIN_CLASS_NAME" value="com.cccs7.co.test.UserTest" />
+      <option name="METHOD_NAME" value="registerTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -204,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CodeTest.cacheCodeTest" />
-        <item itemvalue="JUnit.CodeTest.generateCodeTest" />
-        <item itemvalue="JUnit.MailTest.sendMessage" />
-        <item itemvalue="Application.MainApplication" />
-        <item itemvalue="JUnit.AuthTest.testAuth" />
+        <item itemvalue="JUnit.CodeTest.setCache" />
+        <item itemvalue="JUnit.CodeTest.getCache" />
+        <item itemvalue="JUnit.MailTest.sendCodeTest" />
+        <item itemvalue="JUnit.UserTest.convertTest" />
+        <item itemvalue="JUnit.UserTest.registerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +256,7 @@
       <workItem from="1695869911098" duration="132000" />
       <workItem from="1695888375075" duration="3481000" />
       <workItem from="1695957160444" duration="8973000" />
-      <workItem from="1696058636254" duration="9059000" />
+      <workItem from="1696058636254" duration="42978000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
@@ -325,7 +342,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696067366702</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: 完善邮箱验证码服务">
+      <created>1696071050577</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696071050577</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +390,29 @@
     <MESSAGE value="feat/co-test:集成测试" />
     <MESSAGE value="feat/co-mail: 集成阿里云邮件推送服务" />
     <MESSAGE value="update: 优化文件目录" />
-    <option name="LAST_COMMIT_MESSAGE" value="update: 优化文件目录" />
+    <MESSAGE value="feat: 完善邮箱验证码服务" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 完善邮箱验证码服务" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/UserTest.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/CodeServiceImpl.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/CommonController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

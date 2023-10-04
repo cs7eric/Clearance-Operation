@@ -2,6 +2,7 @@ package com.cccs7.co.test.code;
 
 import com.cccs7.co.service.CodeService;
 import com.cccs7.co.tool.CodeUtil;
+import com.cccs7.redis.util.RedisCache;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +21,9 @@ public class CodeTest {
     @Autowired
     private CodeService codeService;
 
+    @Autowired
+    private RedisCache redisCache;
+
     @Test
     public void generateCodeTest () {
         System.out.println(CodeUtil.generateCode());
@@ -28,6 +32,20 @@ public class CodeTest {
     @Test
     public void cacheCodeTest() {
         codeService.cacheCode("7U9oK2", "csq020611@icloud.com");
+    }
+
+    @Test
+    public void getCache() {
+        codeService.cacheCode("i8K0II","csq020611@gmail.com");
+    }
+
+    @Test
+    public void setCache() {
+
+        String email = "cccs7@icloud.com";
+        String key = "auth:" + email;
+        String code = "Cccs71";
+        redisCache.setCacheObject(key, code);
     }
 }
 
