@@ -29,7 +29,7 @@ spring:
           enabled: true
   data:
     mongodb:
-      uri: mongodb://101.34.208.43:27017/co
+      uri: mongodb://101.34.208.43:27017/co-article
   redis:
     host: 101.34.208.43
     port: 6379
@@ -42,7 +42,11 @@ spring:
         max-idle: 8
         max-wait: -1
         min-idle: 0
-
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署，false即不开启热部署
+      additional-paths: src/main/java #指定热部署的目录
+      exclude: test/**  #指定目录不更新
 swagger:
   base-package: "com.cccs7"
   title: clearance-operation

@@ -272,6 +272,11 @@
                 <artifactId>aliyun-java-sdk-dm</artifactId>
                 <version>${aliyun.java.sdk.dm.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-devtools</artifactId>
+                <version>${spring.boot.starter.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

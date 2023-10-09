@@ -4,31 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat: 完善邮箱验证码服务">
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/req/UserReq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/CommonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/convert/UserConverter.java" afterDir="false" />
+    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat: 登录、注册、跨域">
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/Article.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/ArticleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/ArticleServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/co-common-swagger/src/main/java/com/cccs7/swagger/bean/SwaggerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-swagger/src/main/java/com/cccs7/swagger/bean/SwaggerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-dependencies/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/LoginUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/bean/entity/LoginUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/CodeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/CodeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/MailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/MailTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/code/CodeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/code/CodeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/temp.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/temp.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/warn.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/warn.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -91,7 +86,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "advanced.settings",
     "spring.configuration.checksum": "f794eeed57dbb3aa57a7413d9db4e3cf",
     "vue.rearranger.settings.migration": "true"
   },
@@ -256,7 +251,12 @@
       <workItem from="1695869911098" duration="132000" />
       <workItem from="1695888375075" duration="3481000" />
       <workItem from="1695957160444" duration="8973000" />
-      <workItem from="1696058636254" duration="42978000" />
+      <workItem from="1696058636254" duration="47149000" />
+      <workItem from="1696502934934" duration="3247000" />
+      <workItem from="1696745345948" duration="571000" />
+      <workItem from="1696815967010" duration="4168000" />
+      <workItem from="1696827317329" duration="2727000" />
+      <workItem from="1696830062061" duration="1948000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
@@ -349,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696071050577</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: 登录、注册、跨域">
+      <created>1696398630877</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696398630877</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +398,8 @@
     <MESSAGE value="feat/co-mail: 集成阿里云邮件推送服务" />
     <MESSAGE value="update: 优化文件目录" />
     <MESSAGE value="feat: 完善邮箱验证码服务" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 完善邮箱验证码服务" />
+    <MESSAGE value="feat: 登录、注册、跨域" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 登录、注册、跨域" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -410,6 +418,16 @@
           <url>file://$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/CommonController.java</url>
           <line>30</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/ArticleController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/ArticleServiceImpl.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
