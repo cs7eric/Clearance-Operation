@@ -29,7 +29,8 @@ spring:
           enabled: true
   data:
     mongodb:
-      uri: mongodb://101.34.208.43:27017/co-article
+      uri: mongodb://cccs7:C020611.@101.34.208.43:27017/co-main
+
   redis:
     host: 101.34.208.43
     port: 6379

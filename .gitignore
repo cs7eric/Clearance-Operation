@@ -41,6 +41,7 @@ build/
 .gz
 .log
 /log
+log/
 
 
 ### 私钥文件
