@@ -34,7 +34,7 @@ public class ArticleController {
         }
         Article article = articleService.getArticleById(id);
         if (Objects.isNull(article)) {
-            return Result.ok("该文章不存在");
+            return Result.ok("该article不存在");
         }
         log.info("article:{}",article);
         return Result.ok(article);
