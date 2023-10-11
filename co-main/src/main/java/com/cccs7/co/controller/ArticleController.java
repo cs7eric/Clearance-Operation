@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Objects;
 
 /**
  * <p> ArticleController </p>
@@ -27,11 +28,14 @@ public class ArticleController {
     private ArticleService articleService;
 
     @GetMapping
-    public Result<Article> getArticleById(@RequestParam String id){
+    public Result getArticleById(@RequestParam String id){
         if (StringUtils.isBlank(id)) {
             throw new RuntimeException("not null of id");
         }
         Article article = articleService.getArticleById(id);
+        if (Objects.isNull(article)) {
+            return Result.ok("该文章不存在");
+        }
         log.info("article:{}",article);
         return Result.ok(article);
     }

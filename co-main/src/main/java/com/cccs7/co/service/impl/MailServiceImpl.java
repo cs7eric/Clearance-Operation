@@ -33,8 +33,6 @@ public class MailServiceImpl implements MailService {
     /**
      * 邮件帐户名称
      */
-
-
     @Autowired
     private JavaMailSenderImpl mailSender;
 
