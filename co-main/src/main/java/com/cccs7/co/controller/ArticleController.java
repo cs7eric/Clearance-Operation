@@ -34,7 +34,7 @@ public class ArticleController {
         }
         Article article = articleService.getArticleById(id);
         if (Objects.isNull(article)) {
-            return Result.ok("该a更改分发不存在");
+            return Result.ok("");
         }
         log.info("article:{}",article);
         return Result.ok(article);
