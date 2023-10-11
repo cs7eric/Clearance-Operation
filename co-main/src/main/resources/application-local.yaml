@@ -83,5 +83,5 @@ co:
     oss:
       bucket_name: co-main
       endpoint: oss-cn-beijing.aliyuncs.com
-      access_key_id: LTAI5tMVc8AyPmuaqFTPoq3Y
-      access_key_secret: Fxz6xBrxrnre5RMM99Ku1tXOEY2rY6
+      access_key_id:
+      access_key_secret:
