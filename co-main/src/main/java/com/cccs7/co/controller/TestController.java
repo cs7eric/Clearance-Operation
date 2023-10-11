@@ -1,11 +1,14 @@
 package com.cccs7.co.controller;
 
-import com.cccs7.web.bean.Result;
-import com.cccs7.web.exception.ExceptionInfo;
-import com.cccs7.web.exception.LoginFailedException;
+import com.cccs7.co.bean.entity.User;
+import com.cccs7.web.exception.*;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Objects;
 
 /**
  * <p> 测试接口 </p>
@@ -24,7 +27,17 @@ public class TestController {
     }
 
     @GetMapping("/exception")
-    public String testException () {
+    public String testException (@RequestBody User user ) {
+
+        if (Objects.isNull(user)) {
+            throw new UserNotExitException();
+        }
+
+        if (StringUtils.isNotBlank(user.getId().toString())) {
+//            throw new BaseException(ExceptionInfo.USER_ID_NOT_EXIT);
+            throw new UserBusinessException(ExceptionInfo.USER_ID_NOT_EXIST);
+        }
+
 
         if (1 != 0) {
             throw new LoginFailedException();
