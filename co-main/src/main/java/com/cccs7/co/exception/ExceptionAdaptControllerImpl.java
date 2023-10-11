@@ -3,6 +3,8 @@ package com.cccs7.co.exception;
 import com.cccs7.web.bean.Result;
 import com.cccs7.web.bean.ResultCode;
 import com.cccs7.web.common.ExceptionAdaptController;
+import com.cccs7.web.exception.ExceptionInfo;
+import com.cccs7.web.exception.LoginFailedException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -37,5 +39,11 @@ public class ExceptionAdaptControllerImpl implements ExceptionAdaptController {
     @ExceptionHandler(AccessDeniedException.class)
     public Result handlerAccessDeniedException(AccessDeniedException accessDeniedException) {
         throw accessDeniedException;
+    }
+
+    @ExceptionHandler(LoginFailedException.class)
+    public Result<String> handlerLoginFailedException (LoginFailedException loginFailedException) {
+        loginFailedException.printStackTrace();
+        return Result.fail(ExceptionInfo.LOGIN_FAILED);
     }
 }
