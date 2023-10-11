@@ -34,7 +34,7 @@ public class ArticleController {
         }
         Article article = articleService.getArticleById(id);
         if (Objects.isNull(article)) {
-            return Result.ok("");
+            return Result.ok("xxxx");
         }
         log.info("article:{}",article);
         return Result.ok(article);
