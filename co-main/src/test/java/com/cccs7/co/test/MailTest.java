@@ -27,6 +27,6 @@ public class MailTest {
 
     @Test
     public void sendCodeTest() {
-        mailService.sendMailMessage("csq020611@gmail.com");
+        mailService.sendMailMessage("byxl8112@gmail.com");
     }
 }

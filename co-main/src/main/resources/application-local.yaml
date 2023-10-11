@@ -79,3 +79,9 @@ co:
     mail_account_name: cccs7@mail.cccs7.icu
     region_id: cn-hangzhou
     from_alias: co-cccs7
+  aliyun:
+    oss:
+      bucket_name: co-main
+      endpoint: oss-cn-beijing.aliyuncs.com
+      access_key_id:
+      access_key_secret:

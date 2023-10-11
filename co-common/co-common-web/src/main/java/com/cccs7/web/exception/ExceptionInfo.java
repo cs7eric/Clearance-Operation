@@ -1,8 +1,16 @@
 package com.cccs7.web.exception;
 
+/**
+ * 异常信息
+ *
+ * @author cccs7
+ * @date 2023/10/11
+ */
 public class ExceptionInfo {
 
     public static final String USER_NOT_EXIST = "当前用户不存在";
+
+    public static final String USER_ID_NOT_EXIST = "用户 ID 不存在";
 
     public static final String USERNAME_DUPLICATED = "用户名重复";
 
