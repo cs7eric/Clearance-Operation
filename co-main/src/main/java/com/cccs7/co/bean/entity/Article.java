@@ -25,6 +25,8 @@ public class Article {
     @Field("content")
     private String content;
 
+    private String title;
+
     private Date publishTime;
 
     private String author;
@@ -38,4 +40,8 @@ public class Article {
     private String category;
 
     private List<String> tags;
+
+    private String status;
+
+    private String cover;
 }

@@ -29,7 +29,10 @@ spring:
           enabled: true
   data:
     mongodb:
-      uri: mongodb://cccs7:C020611.@101.34.208.43:27017/co-main
+      uri: mongodb://cccs7:C020611.@101.34.208.43:27017/co-main?authSource=admin
+      username: cccs7
+      password: C020611.
+      host: 101.34.208.43
 
   redis:
     host: 101.34.208.43

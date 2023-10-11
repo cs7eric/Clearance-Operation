@@ -4,10 +4,9 @@ import com.cccs7.co.bean.entity.Article;
 import com.cccs7.co.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,6 +19,11 @@ import java.util.List;
 @Service
 public class ArticleServiceImpl implements ArticleService {
 
+
+    public static final String ARTICLE_STATUS_PUB = "published";
+    public static final String ARTICLE_STATUS_UN_PUB = "un_published";
+
+
     @Autowired
     private MongoTemplate mongoTemplate;
 
@@ -27,6 +31,12 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public void createArticle(Article article) {
 
+        article.setPublishTime(new Date());
+        article.setStatus(ARTICLE_STATUS_PUB);
+        article.setLikes(0);
+        article.setReplyNum(0);
+        article.setCategory("");
+        mongoTemplate.save(article);
     }
 
     @Override

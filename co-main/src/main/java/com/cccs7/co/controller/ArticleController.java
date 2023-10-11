@@ -5,10 +5,7 @@ import com.cccs7.co.service.ArticleService;
 import com.cccs7.web.bean.Result;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -41,6 +38,12 @@ public class ArticleController {
     public Result<List<Article>> getAllArticle(){
         List<Article> allArticles = articleService.getAllArticles();
         return Result.ok(allArticles);
+    }
+
+    @PostMapping("/create")
+    public Result<String> createArticle(@RequestBody Article article) {
+        articleService.createArticle(article);
+        return Result.ok("添加成功");
     }
 
 }
