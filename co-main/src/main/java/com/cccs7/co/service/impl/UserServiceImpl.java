@@ -1,6 +1,7 @@
 package com.cccs7.co.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.cccs7.co.bean.entity.LoginUser;
 import com.cccs7.co.bean.entity.User;
 import com.cccs7.co.bean.req.UserReq;
@@ -131,6 +132,9 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void update(User user) {
+        LambdaUpdateWrapper<User> queryWrapper = new LambdaUpdateWrapper<>();
+        queryWrapper.eq(User::getUsername, user.getUsername());
+        userMapper.update(user, queryWrapper);
     }
 
     /**
