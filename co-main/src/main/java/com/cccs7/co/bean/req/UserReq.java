@@ -12,7 +12,6 @@ import lombok.EqualsAndHashCode;
  * @Date 2023/9/30 23:58
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
 public class UserReq extends BaseEntity {
 
     private Long id;

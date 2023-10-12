@@ -32,7 +32,7 @@ public class UserController {
      */
     @ApiOperation("用户注册、登录功能")
     @PostMapping("/verify")
-    public Result register(@RequestBody UserReq userReq){
+    public Result verify(@RequestBody UserReq userReq){
         return userService.verify(userReq);
     }
 

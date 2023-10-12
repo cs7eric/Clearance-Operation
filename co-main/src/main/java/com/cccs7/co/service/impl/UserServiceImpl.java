@@ -54,7 +54,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public Result<HashMap<String, Object>> login(UserReq userReq) {
 
-        User user = UserConverter.INSTANCE.convertReqToUser(userReq);
+        User user = new User();
+        user = UserConverter.INSTANCE.convertReqToUser(userReq, user);
 
         //判断验证码是否正确
         String code = userReq.getCode();
@@ -100,7 +101,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public Result register(UserReq userReq) {
 
-        User user = UserConverter.INSTANCE.convertReqToUser(userReq);
+        User user = new User();
+        user = UserConverter.INSTANCE.convertReqToUser(userReq, user);
         if (Objects.isNull(user)) {
             throw new RuntimeException("用户信息错误，请重新提交");
         }
@@ -139,7 +141,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean exist(UserReq userReq) {
 
-        User user = UserConverter.INSTANCE.convertReqToUser(userReq);
+        User user = new User();
+        user = UserConverter.INSTANCE.convertReqToUser(userReq, user);
         String userEmail = user.getEmail();
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(User::getEmail, userEmail);
