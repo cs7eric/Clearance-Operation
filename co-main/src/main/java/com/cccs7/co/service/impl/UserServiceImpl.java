@@ -86,7 +86,7 @@ public class UserServiceImpl implements UserService {
         String jwt = JwtUtils.createJWT(userid);
         HashMap<String, Object> map = new HashMap<>();
         map.put("token", jwt);
-        map.put("user", loginUser);
+        map.put("userInfo", loginUser);
 
         // 把完整的信息 存到 redis, userid 作为 key
         redisCache.setCacheObject("login:" + userid, loginUser);
@@ -118,7 +118,7 @@ public class UserServiceImpl implements UserService {
         Boolean exist = exist(userReq);
         if (!exist) {
             //用户未注册 -> 注册
-            return register(userReq);
+            register(userReq);
         }
         return login(userReq);
     }
