@@ -4,23 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="fix: 修复mongodb 接口身份验证问题">
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-tool/src/main/java/com/cccs7/co/oss/AliOSSProperties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-tool/src/main/java/com/cccs7/co/oss/AliOSSUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-tool/src/main/java/com/cccs7/co/tool/UuidUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-web/src/main/java/com/cccs7/web/exception/UserBusinessException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-common/co-common-web/src/main/java/com/cccs7/web/exception/UserNotExitException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/FileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/service/impl/FileServiceImpl.java" afterDir="false" />
+    <list default="true" id="878f4da9-399c-4702-afe2-86043321bbe6" name="Changes" comment="feat/tool、article: 封装 阿里云oss 对象存储服务，实现文件上传功能">
+      <change afterPath="$PROJECT_DIR$/co-common/co-common-tool/src/main/java/com/cccs7/co/encrypt/EncryptUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-common/co-common-tool/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-tool/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-common/co-common-web/src/main/java/com/cccs7/web/exception/ExceptionInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-common/co-common-web/src/main/java/com/cccs7/web/exception/ExceptionInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-dependencies/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/MainApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/CommonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/CommonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/exception/ExceptionAdaptControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/exception/ExceptionAdaptControllerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/main/resources/application-local.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/MailTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/co-main/src/test/java/com/cccs7/co/test/MailTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/error.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/info.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/temp.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/temp.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/warn.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/warn.log" afterDir="false" />
@@ -99,7 +93,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/CSQ/cccs7-nju-repo",
+    "last_opened_file_path": "D:/CSQ/clearup-operation/co-main/src/main/resources/config",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -108,7 +102,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors",
+    "settings.editor.selected.configurable": "vcs.Git",
     "spring.configuration.checksum": "628407abe8167a142f8f8631f186fb0e",
     "vue.rearranger.settings.migration": "true"
   },
@@ -123,11 +117,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\CSQ\clearup-operation\co-main\src\main\resources\config" />
       <recent name="D:\CSQ\clearup-operation\co-main\src\main\java\com\cccs7\co\bean\entity" />
       <recent name="D:\CSQ\clearup-operation\co-common\co-common-pojo\src\main\java\com\cccs7\co\bean\entity" />
       <recent name="D:\CSQ\clearup-operation\co-main\src\main\java\com\cccs7\co" />
       <recent name="D:\CSQ\clearup-operation\co-common\co-common-web\src\main\java\com\cccs7\web" />
-      <recent name="D:\CSQ\clearup-operation\co-common\co-common-security\src\main\java" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.cccs7.co.bean.entity" />
@@ -181,6 +175,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="EncryptTest.testEncrypt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="co-main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cccs7.co.test.encrypt.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.cccs7.co.test.encrypt" />
+      <option name="MAIN_CLASS_NAME" value="com.cccs7.co.test.encrypt.EncryptTest" />
+      <option name="METHOD_NAME" value="testEncrypt" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MailTest.sendCodeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="co-main" />
       <extension name="coverage">
@@ -213,24 +223,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.registerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="co-main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.cccs7.co.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.cccs7.co.test" />
-      <option name="MAIN_CLASS_NAME" value="com.cccs7.co.test.UserTest" />
-      <option name="METHOD_NAME" value="registerTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MainApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="co-main" />
+      <option name="PROGRAM_PARAMETERS" value="--jasypt.encryptor.password=cccs7" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cccs7.co.MainApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -238,11 +233,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EncryptTest.testEncrypt" />
         <item itemvalue="JUnit.MailTest.sendCodeTest" />
         <item itemvalue="JUnit.CodeTest.setCache" />
         <item itemvalue="JUnit.CodeTest.getCache" />
         <item itemvalue="JUnit.UserTest.convertTest" />
-        <item itemvalue="JUnit.UserTest.registerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -284,7 +279,8 @@
       <workItem from="1696902976603" duration="1409000" />
       <workItem from="1696915334322" duration="7195000" />
       <workItem from="1696995381463" duration="15876000" />
-      <workItem from="1697032129315" duration="3137000" />
+      <workItem from="1697032129315" duration="6720000" />
+      <workItem from="1697075270858" duration="3276000" />
     </task>
     <task id="LOCAL-00001" summary="feat:封装web模块">
       <created>1694273630938</created>
@@ -398,7 +394,21 @@
       <option name="project" value="LOCAL" />
       <updated>1697001291814</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="feat/tool、article: 封装 阿里云oss 对象存储服务，实现文件上传功能">
+      <created>1697041391205</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1697041391205</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat/tool、article: 封装 阿里云oss 对象存储服务，实现文件上传功能">
+      <created>1697042862773</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1697042862773</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +453,8 @@
     <MESSAGE value="feat: 登录、注册、跨域" />
     <MESSAGE value="hotfix: 更改mongodb配置文件，解决mongodb被攻击删库" />
     <MESSAGE value="fix: 修复mongodb 接口身份验证问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 修复mongodb 接口身份验证问题" />
+    <MESSAGE value="feat/tool、article: 封装 阿里云oss 对象存储服务，实现文件上传功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat/tool、article: 封装 阿里云oss 对象存储服务，实现文件上传功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -460,7 +471,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/co-main/src/main/java/com/cccs7/co/controller/CommonController.java</url>
-          <line>35</line>
+          <line>38</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint type="java-line">

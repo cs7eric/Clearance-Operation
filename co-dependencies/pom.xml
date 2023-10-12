@@ -59,6 +59,7 @@
         <aliyun.java.sdk.core.version>4.1.0</aliyun.java.sdk.core.version>
         <aliyun.java.sdk.dm.version>3.1.0</aliyun.java.sdk.dm.version>
         <aliyun.sdk.oss.version>3.15.1</aliyun.sdk.oss.version>
+        <jasypt.spring.boot.starter.version>3.0.5</jasypt.spring.boot.starter.version>
     </properties>
 
     <dependencies>
@@ -284,7 +285,11 @@
                 <artifactId>aliyun-sdk-oss</artifactId>
                 <version>${aliyun.sdk.oss.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>com.github.ulisesbocchio</groupId>
+                <artifactId>jasypt-spring-boot-starter</artifactId>
+                <version>${jasypt.spring.boot.starter.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>

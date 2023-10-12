@@ -1,6 +1,6 @@
 package com.cccs7.co.controller;
 
-import com.cccs7.co.bean.req.UserReq;
+import com.cccs7.co.encrypt.EncryptUtil;
 import com.cccs7.co.service.FileService;
 import com.cccs7.co.service.MailService;
 import com.cccs7.web.bean.Result;
@@ -25,6 +25,9 @@ public class CommonController {
     @Autowired
     private FileService fileService;
 
+    @Autowired
+    private EncryptUtil encryptUtil;
+
     /**
      * 发送邮箱服务验证码
      *
@@ -42,5 +45,11 @@ public class CommonController {
 
         String fileUrl = fileService.uploadFile(file);
         return Result.ok(fileUrl);
+    }
+
+    @GetMapping("/encrypt")
+    public Result<String> encrypt (@RequestParam("content") String content) {
+        String encrypted = encryptUtil.encrypt(content);
+        return Result.ok(encrypted);
     }
 }

@@ -8,6 +8,7 @@ target/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/workspace.xml
 *.iws
 *.iml
 *.ipr
@@ -42,6 +43,8 @@ build/
 .log
 /log
 log/
+info.log
+warn.log
 
 
 ### 私钥文件
