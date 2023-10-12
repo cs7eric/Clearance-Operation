@@ -107,6 +107,7 @@ public class UserServiceImpl implements UserService {
             throw new RuntimeException("用户信息错误，请重新提交");
         }
         user.setUsername(user.getEmail());
+        user.setAvatar("/src/assets/default_avatar.jpg");
         userMapper.insert(user);
         return Result.ok("注册成功");
     }
