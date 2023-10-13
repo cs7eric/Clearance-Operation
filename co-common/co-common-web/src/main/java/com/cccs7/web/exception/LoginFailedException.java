@@ -11,9 +11,11 @@ import lombok.NoArgsConstructor;
 public class LoginFailedException extends BaseException {
 
     public LoginFailedException(String msg) {
-        super(ExceptionInfo.LOGIN_FAILED);
+        super(msg);
     }
 
     public LoginFailedException() {
     }
+
+
 }

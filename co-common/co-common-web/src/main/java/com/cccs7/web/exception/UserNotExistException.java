@@ -7,9 +7,11 @@ package com.cccs7.web.exception;
  * @Description 用户异常类 - 用户不存在
  * @Date 2023/10/11 18:03
  */
-public class UserNotExitException extends BaseException {
+public class UserNotExistException extends BaseException {
 
-    public UserNotExitException() {
+    public UserNotExistException() {
         super(ExceptionInfo.USER_NOT_EXIST);
     }
+
 }
+
