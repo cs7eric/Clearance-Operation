@@ -12,6 +12,7 @@ import com.cccs7.co.service.UserService;
 import com.cccs7.co.util.JwtUtils;
 import com.cccs7.redis.util.RedisCache;
 import com.cccs7.web.bean.Result;
+import com.cccs7.web.exception.CodeException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -56,13 +57,16 @@ public class UserServiceImpl implements UserService {
     public Result<HashMap<String, Object>> login(UserReq userReq) {
 
         User user = new User();
-        user = UserConverter.INSTANCE.convertReqToUser(userReq, user);
+        user = UserConverter.INSTANCE.convertReqToUser(userReq);
 
         //判断验证码是否正确
         String code = userReq.getCode();
         String email = userReq.getEmail();
         String codeKey = "auth:" + email;
         String redisCode = redisCache.getCacheObject(codeKey);
+        if (StringUtils.isBlank(redisCode)) {
+            throw new CodeException();
+        }
         if (!redisCode.equalsIgnoreCase(code)) {
             throw new RuntimeException("验证码错误");
         }
@@ -83,7 +87,7 @@ public class UserServiceImpl implements UserService {
         loginUser.setPermissions(permsList);
 
         // 如果认证通过，使用 userid 生成一个 jwt, jwt 存入 Result 中 返回
-        String userid = loginUser.getUser().getId().toString();
+        String userid = one.getId().toString();
         String jwt = JwtUtils.createJWT(userid);
         HashMap<String, Object> map = new HashMap<>();
         map.put("token", jwt);
@@ -103,7 +107,7 @@ public class UserServiceImpl implements UserService {
     public Result register(UserReq userReq) {
 
         User user = new User();
-        user = UserConverter.INSTANCE.convertReqToUser(userReq, user);
+        user = UserConverter.INSTANCE.convertReqToUser(userReq);
         if (Objects.isNull(user)) {
             throw new RuntimeException("用户信息错误，请重新提交");
         }
@@ -118,6 +122,7 @@ public class UserServiceImpl implements UserService {
 
         //判断当前用户是否已经注册
         Boolean exist = exist(userReq);
+        HashMap<String, Object> infoMap = new HashMap<>();
         if (!exist) {
             //用户未注册 -> 注册
             register(userReq);
@@ -147,7 +152,7 @@ public class UserServiceImpl implements UserService {
     public Boolean exist(UserReq userReq) {
 
         User user = new User();
-        user = UserConverter.INSTANCE.convertReqToUser(userReq, user);
+        user = UserConverter.INSTANCE.convertReqToUser(userReq);
         String userEmail = user.getEmail();
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(User::getEmail, userEmail);

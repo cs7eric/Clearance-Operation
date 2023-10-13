@@ -52,6 +52,7 @@ spring:
       additional-paths: src/main/java #指定热部署的目录
       exclude: test/**  #指定目录不更新
 swagger:
+  enable: true
   base-package: "com.cccs7"
   title: clearance-operation
   contact-name: cccs7

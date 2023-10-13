@@ -4,6 +4,7 @@ import com.cccs7.co.bean.entity.User;
 import com.cccs7.co.bean.req.UserReq;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
+import org.mapstruct.SubclassMapping;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -13,7 +14,7 @@ import org.mapstruct.factory.Mappers;
  * @Description User转换器
  * @Date 2023/10/1 12:41
  */
-@Mapper
+@Mapper(componentModel = "spring")
 public interface UserConverter {
 
     UserConverter INSTANCE =  Mappers.getMapper(UserConverter.class);
@@ -24,5 +25,6 @@ public interface UserConverter {
      * @param userReq 用户要求
      * @return {@link User}
      */
-    User convertReqToUser(UserReq userReq, @MappingTarget User user);
+    @SubclassMapping(source = UserReq.class, target = User.class)
+    User convertReqToUser(UserReq userReq);
 }

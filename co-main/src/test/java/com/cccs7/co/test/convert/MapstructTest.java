@@ -25,7 +25,7 @@ public class MapstructTest {
         userReq.setEmail("qqq");
         userReq.setCode("2323");
         User user = new User();
-        user = UserConverter.INSTANCE.convertReqToUser(userReq, user);
+        user = UserConverter.INSTANCE.convertReqToUser(userReq);
         System.out.println(user);
 
     }

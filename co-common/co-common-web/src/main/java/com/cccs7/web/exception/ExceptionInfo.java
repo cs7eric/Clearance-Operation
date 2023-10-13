@@ -46,4 +46,6 @@ public class ExceptionInfo {
 
     public static final String MAX_UPLOAD_SIZE_EXCEEDED_ERROR = "超过文件上传最大限制";
 
+    public static final String CODE_ERROR = "验证码错误";
+
 }

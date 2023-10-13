@@ -13,6 +13,7 @@ import lombok.EqualsAndHashCode;
  * @since 2023-09-11 16:14:11
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 @TableName(value = "sys_user")
 public class User extends BaseEntity {
 

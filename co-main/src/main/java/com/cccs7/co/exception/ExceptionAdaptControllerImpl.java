@@ -250,4 +250,9 @@ public class ExceptionAdaptControllerImpl implements ExceptionAdaptController {
         return Result.fail(ExceptionInfo.ARTICLE_PUBLISH_FAILED);
     }
 
+    @ExceptionHandler(CodeException.class)
+    public Result<String> handleCodeException(CodeException codeException) {
+        return Result.fail(ExceptionInfo.CODE_ERROR);
+    }
+
 }
