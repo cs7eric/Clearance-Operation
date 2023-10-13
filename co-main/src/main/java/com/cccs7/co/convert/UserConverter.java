@@ -19,11 +19,20 @@ public interface UserConverter {
     UserConverter INSTANCE =  Mappers.getMapper(UserConverter.class);
 
     /**
-     * 将userReq 转换为 user
+     * 将userDTO 转换为 user
      *
      * @param userDTO 用户要求
      * @return {@link User}
      */
     @SubclassMapping(source = UserDTO.class, target = User.class)
     User dto2po(UserDTO userDTO);
+
+    /**
+     * 将 User 转换为 UserDTO
+     *
+     * @param user 用户
+     * @return {@link UserDTO}
+     */
+    @SubclassMapping(source=User.class, target = UserDTO.class)
+    UserDTO po2dto(User user);
 }
