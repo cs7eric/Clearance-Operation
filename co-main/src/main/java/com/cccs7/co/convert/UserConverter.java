@@ -1,9 +1,8 @@
 package com.cccs7.co.convert;
 
-import com.cccs7.co.bean.entity.User;
-import com.cccs7.co.bean.req.UserReq;
+import com.cccs7.co.bean.dto.UserDTO;
+import com.cccs7.co.bean.po.User;
 import org.mapstruct.Mapper;
-import org.mapstruct.MappingTarget;
 import org.mapstruct.SubclassMapping;
 import org.mapstruct.factory.Mappers;
 
@@ -22,9 +21,9 @@ public interface UserConverter {
     /**
      * 将userReq 转换为 user
      *
-     * @param userReq 用户要求
+     * @param userDTO 用户要求
      * @return {@link User}
      */
-    @SubclassMapping(source = UserReq.class, target = User.class)
-    User convertReqToUser(UserReq userReq);
+    @SubclassMapping(source = UserDTO.class, target = User.class)
+    User dto2po(UserDTO userDTO);
 }

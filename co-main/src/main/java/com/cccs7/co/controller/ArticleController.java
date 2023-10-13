@@ -1,6 +1,6 @@
 package com.cccs7.co.controller;
 
-import com.cccs7.co.bean.entity.Article;
+import com.cccs7.co.bean.po.Article;
 import com.cccs7.co.service.ArticleService;
 import com.cccs7.web.bean.Result;
 import lombok.extern.slf4j.Slf4j;

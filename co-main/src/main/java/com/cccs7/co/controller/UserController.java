@@ -1,7 +1,7 @@
 package com.cccs7.co.controller;
 
-import com.cccs7.co.bean.entity.User;
-import com.cccs7.co.bean.req.UserReq;
+import com.cccs7.co.bean.dto.UserDTO;
+import com.cccs7.co.bean.po.User;
 import com.cccs7.co.service.UserService;
 import com.cccs7.web.bean.Result;
 import io.swagger.annotations.Api;
@@ -27,25 +27,25 @@ public class UserController {
     /**
      * 注册  - 普通用户注册
      *
-     * @param userReq 用户
+     * @param userDTO 用户
      * @return {@link Result}<{@link String}>
      */
     @ApiOperation("用户注册、登录功能")
     @PostMapping("/verify")
-    public Result verify(@RequestBody UserReq userReq){
-        return userService.verify(userReq);
+    public Result verify(@RequestBody UserDTO userDTO){
+        return userService.verify(userDTO);
     }
 
     /**
      * 登录
      *
-     * @param userReq 用户
+     * @param userDTO 用户
      * @return {@link Result}
      */
     @ApiOperation("用户登录")
     @PostMapping("/logino")
-    public Result login (@RequestBody UserReq userReq) {
-        return userService.login(userReq);
+    public Result login (@RequestBody UserDTO userDTO) {
+        return userService.login(userDTO);
     }
 
     @PutMapping("/update")

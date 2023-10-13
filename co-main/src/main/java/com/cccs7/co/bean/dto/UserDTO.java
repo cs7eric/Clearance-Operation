@@ -1,8 +1,7 @@
-package com.cccs7.co.bean.req;
+package com.cccs7.co.bean.dto;
 
 import com.cccs7.mybatisplus.entity.BaseEntity;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * <p> UserReq </p>
@@ -12,7 +11,7 @@ import lombok.EqualsAndHashCode;
  * @Date 2023/9/30 23:58
  */
 @Data
-public class UserReq extends BaseEntity {
+public class UserDTO extends BaseEntity {
 
     private Long id;
 

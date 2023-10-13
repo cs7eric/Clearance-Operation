@@ -1,11 +1,8 @@
 package com.cccs7.co.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cccs7.co.bean.entity.User;
+import com.cccs7.co.bean.po.User;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
 
 /**
  * <p> UserMapper 接口 </p>

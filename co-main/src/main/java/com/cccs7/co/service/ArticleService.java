@@ -1,7 +1,6 @@
 package com.cccs7.co.service;
 
-import com.cccs7.co.bean.entity.Article;
-import org.springframework.stereotype.Service;
+import com.cccs7.co.bean.po.Article;
 
 import java.util.List;
 

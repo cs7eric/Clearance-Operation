@@ -1,6 +1,6 @@
 package com.cccs7.co.service.impl;
 
-import com.cccs7.co.bean.entity.Article;
+import com.cccs7.co.bean.po.Article;
 import com.cccs7.co.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;

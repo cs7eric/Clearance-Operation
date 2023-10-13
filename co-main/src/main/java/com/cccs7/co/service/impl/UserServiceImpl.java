@@ -2,9 +2,9 @@ package com.cccs7.co.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.cccs7.co.bean.entity.LoginUser;
-import com.cccs7.co.bean.entity.User;
-import com.cccs7.co.bean.req.UserReq;
+import com.cccs7.co.bean.dto.UserDTO;
+import com.cccs7.co.bean.po.LoginUser;
+import com.cccs7.co.bean.po.User;
 import com.cccs7.co.convert.UserConverter;
 import com.cccs7.co.mapper.MenuMapper;
 import com.cccs7.co.mapper.UserMapper;
@@ -50,18 +50,18 @@ public class UserServiceImpl implements UserService {
     /**
      * 登录
      *
-     * @param userReq 用户
+     * @param userDTO 用户
      * @return {@link Result}<{@link HashMap}<{@link String}, {@link String}>>
      */
     @Override
-    public Result<HashMap<String, Object>> login(UserReq userReq) {
+    public Result<HashMap<String, Object>> login(UserDTO userDTO) {
 
         User user = new User();
-        user = UserConverter.INSTANCE.convertReqToUser(userReq);
+        user = UserConverter.INSTANCE.dto2po(userDTO);
 
         //判断验证码是否正确
-        String code = userReq.getCode();
-        String email = userReq.getEmail();
+        String code = userDTO.getCode();
+        String email = userDTO.getEmail();
         String codeKey = "auth:" + email;
         String redisCode = redisCache.getCacheObject(codeKey);
         if (StringUtils.isBlank(redisCode)) {
@@ -101,13 +101,13 @@ public class UserServiceImpl implements UserService {
     /**
      * 注册
      *
-     * @param userReq 用户
+     * @param userDTO 用户
      */
     @Override
-    public Result register(UserReq userReq) {
+    public Result register(UserDTO userDTO) {
 
         User user = new User();
-        user = UserConverter.INSTANCE.convertReqToUser(userReq);
+        user = UserConverter.INSTANCE.dto2po(userDTO);
         if (Objects.isNull(user)) {
             throw new RuntimeException("用户信息错误，请重新提交");
         }
@@ -118,16 +118,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Result<HashMap<String, Object>> verify(UserReq userReq) {
+    public Result<HashMap<String, Object>> verify(UserDTO userDTO) {
 
         //判断当前用户是否已经注册
-        Boolean exist = exist(userReq);
+        Boolean exist = exist(userDTO);
         HashMap<String, Object> infoMap = new HashMap<>();
         if (!exist) {
             //用户未注册 -> 注册
-            register(userReq);
+            register(userDTO);
         }
-        return login(userReq);
+        return login(userDTO);
     }
 
     /**
@@ -145,14 +145,14 @@ public class UserServiceImpl implements UserService {
     /**
      * 判断用户是否已经注册
      *
-     * @param userReq 用户
+     * @param userDTO 用户
      * @return {@link Boolean}
      */
     @Override
-    public Boolean exist(UserReq userReq) {
+    public Boolean exist(UserDTO userDTO) {
 
         User user = new User();
-        user = UserConverter.INSTANCE.convertReqToUser(userReq);
+        user = UserConverter.INSTANCE.dto2po(userDTO);
         String userEmail = user.getEmail();
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(User::getEmail, userEmail);

@@ -1,6 +1,6 @@
 package com.cccs7.co.controller;
 
-import com.cccs7.co.bean.entity.User;
+import com.cccs7.co.bean.po.User;
 import com.cccs7.web.exception.*;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;

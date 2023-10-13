@@ -1,4 +1,4 @@
-package com.cccs7.co.bean.entity;
+package com.cccs7.co.bean.po;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
