@@ -9,6 +9,7 @@ import com.cccs7.web.exception.UserBusinessException;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
 
 /**
  * <p> 异常处理器 </p>
@@ -51,5 +52,10 @@ public class ExceptionAdaptControllerImpl implements ExceptionAdaptController {
     @ExceptionHandler(UserBusinessException.class)
     public Result<String> handlerUserBusinessException(UserBusinessException userBusinessException) {
         return Result.fail(userBusinessException.getMessage());
+    }
+
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    public Result<String> handler (MaxUploadSizeExceededException maxUploadSizeExceededException) {
+        return Result.fail(ExceptionInfo.MAX_UPLOAD_SIZE_EXCEEDED_ERROR);
     }
 }

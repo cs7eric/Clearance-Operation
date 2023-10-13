@@ -37,9 +37,11 @@ public interface UserService {
     void update(User user);
 
     /**
+     * 验证
      * 注册或登录
      *
      * @param userReq 用户
+     * @return {@link Result}
      */
     Result verify(UserReq userReq);
 

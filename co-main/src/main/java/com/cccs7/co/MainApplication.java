@@ -4,6 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
@@ -13,10 +14,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * @Description clearance-operation 启动类
  * @Date 2023/9/10 13:36
  */
-@ComponentScan("com.cccs7")
 @EnableWebMvc
-@MapperScan("com.cccs7.co.mapper")
 @SpringBootApplication
+@ComponentScan("com.cccs7")
+@MapperScan("com.cccs7.co.mapper")
 public class MainApplication {
     public static void main(String[] args) {
 

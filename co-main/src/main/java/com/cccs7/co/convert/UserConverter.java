@@ -3,6 +3,7 @@ package com.cccs7.co.convert;
 import com.cccs7.co.bean.entity.User;
 import com.cccs7.co.bean.req.UserReq;
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 import org.mapstruct.factory.Mappers;
 
 /**
@@ -23,5 +24,5 @@ public interface UserConverter {
      * @param userReq 用户要求
      * @return {@link User}
      */
-    User convertReqToUser(UserReq userReq);
+    User convertReqToUser(UserReq userReq, @MappingTarget User user);
 }

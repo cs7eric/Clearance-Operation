@@ -1,6 +1,7 @@
 package com.cccs7.co.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.cccs7.co.bean.entity.LoginUser;
 import com.cccs7.co.bean.entity.User;
 import com.cccs7.co.bean.req.UserReq;
@@ -54,7 +55,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public Result<HashMap<String, Object>> login(UserReq userReq) {
 
-        User user = UserConverter.INSTANCE.convertReqToUser(userReq);
+        User user = new User();
+        user = UserConverter.INSTANCE.convertReqToUser(userReq, user);
 
         //判断验证码是否正确
         String code = userReq.getCode();
@@ -85,7 +87,7 @@ public class UserServiceImpl implements UserService {
         String jwt = JwtUtils.createJWT(userid);
         HashMap<String, Object> map = new HashMap<>();
         map.put("token", jwt);
-        map.put("user", loginUser);
+        map.put("userInfo", loginUser);
 
         // 把完整的信息 存到 redis, userid 作为 key
         redisCache.setCacheObject("login:" + userid, loginUser);
@@ -100,11 +102,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public Result register(UserReq userReq) {
 
-        User user = UserConverter.INSTANCE.convertReqToUser(userReq);
+        User user = new User();
+        user = UserConverter.INSTANCE.convertReqToUser(userReq, user);
         if (Objects.isNull(user)) {
             throw new RuntimeException("用户信息错误，请重新提交");
         }
         user.setUsername(user.getEmail());
+        user.setAvatar("/src/assets/default_avatar.jpg");
         userMapper.insert(user);
         return Result.ok("注册成功");
     }
@@ -116,7 +120,7 @@ public class UserServiceImpl implements UserService {
         Boolean exist = exist(userReq);
         if (!exist) {
             //用户未注册 -> 注册
-            return register(userReq);
+            register(userReq);
         }
         return login(userReq);
     }
@@ -128,6 +132,9 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void update(User user) {
+        LambdaUpdateWrapper<User> queryWrapper = new LambdaUpdateWrapper<>();
+        queryWrapper.eq(User::getUsername, user.getUsername());
+        userMapper.update(user, queryWrapper);
     }
 
     /**
@@ -139,7 +146,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public Boolean exist(UserReq userReq) {
 
-        User user = UserConverter.INSTANCE.convertReqToUser(userReq);
+        User user = new User();
+        user = UserConverter.INSTANCE.convertReqToUser(userReq, user);
         String userEmail = user.getEmail();
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(User::getEmail, userEmail);
