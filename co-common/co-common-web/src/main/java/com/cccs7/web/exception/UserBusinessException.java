@@ -13,3 +13,4 @@ public class UserBusinessException extends BaseException {
         super(msg);
     }
 }
+

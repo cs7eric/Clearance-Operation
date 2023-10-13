@@ -42,6 +42,10 @@ public class TestController {
         if (1 != 0) {
             throw new LoginFailedException();
         }
+
+
+        System.out.println();
+
         return "ok";
     }
 }
