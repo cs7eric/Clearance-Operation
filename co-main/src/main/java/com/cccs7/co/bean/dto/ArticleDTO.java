@@ -1,5 +1,6 @@
 package com.cccs7.co.bean.dto;
 
+import com.cccs7.mybatisplus.entity.BaseEntity;
 import lombok.Data;
 
 import java.util.Date;
@@ -13,7 +14,7 @@ import java.util.List;
  * @Date 2023/10/13 23:13
  */
 @Data
-public class ArticleDTO {
+public class ArticleDTO extends BaseEntity {
 
     private String id;
     private String content;

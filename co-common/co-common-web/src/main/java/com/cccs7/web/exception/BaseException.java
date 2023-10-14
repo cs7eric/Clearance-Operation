@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author 16628
  * @date 2023/10/11
  */
-@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor  //无参构造
+@AllArgsConstructor  //满参构造
 public class BaseException extends RuntimeException {
 
     /**

@@ -31,12 +31,12 @@ public class CodeTest {
 
     @Test
     public void cacheCodeTest() {
-        codeService.cacheCode("7U9oK2", "csq020611@icloud.com");
+        codeService.cacheCode("111111", "byxl8112@icloud.com");
     }
 
     @Test
     public void getCache() {
-        codeService.cacheCode("i8K0II","csq020611@gmail.com");
+        codeService.cacheCode("i8K0II","byxl8112@gmail.com");
     }
 
     @Test
