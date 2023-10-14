@@ -30,6 +30,7 @@ public class TestController {
     public String testException (@RequestBody User user ) {
 
         if (Objects.isNull(user)) {
+//            throw new UserNotExitException();
         }
 
         if (StringUtils.isNotBlank(user.getId().toString())) {

@@ -24,7 +24,6 @@ public interface ArticleConverter {
      * @param articleDTO 文章Dto
      * @return {@link Article}
      */
-    @SubclassMapping(source = ArticleDTO.class, target = Article.class)
     Article dto2po(ArticleDTO articleDTO);
 
     /**
@@ -33,6 +32,5 @@ public interface ArticleConverter {
      * @param article 文章
      * @return {@link ArticleDTO}
      */
-    @SubclassMapping(source = Article.class, target = ArticleDTO.class)
     ArticleDTO po2dto(Article article);
 }

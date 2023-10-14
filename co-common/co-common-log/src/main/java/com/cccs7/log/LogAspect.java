@@ -31,7 +31,12 @@ public class LogAspect {
     @Around("pointCut()")
     public Object around(ProceedingJoinPoint pjp) throws Throwable {
         Object[] reqArgs = pjp.getArgs();
-        String req = new Gson().toJson(reqArgs);
+        String req;
+        try {
+            req = new Gson().toJson(reqArgs);
+        } catch (Exception e) {
+            req = "Unable to serialize request args due to: " + e.getMessage();
+        }
         MethodSignature methodSignature = (MethodSignature) pjp.getSignature();
         String methodName = methodSignature.getDeclaringType().getName() + "." + methodSignature.getName();
         log.info("{},req:{}", methodName, req);

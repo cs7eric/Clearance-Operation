@@ -11,7 +11,7 @@ import lombok.Data;
  * @Date 2023/9/30 23:58
  */
 @Data
-public class UserDTO extends BaseEntity {
+public class UserDTO {
 
     private Long id;
 
