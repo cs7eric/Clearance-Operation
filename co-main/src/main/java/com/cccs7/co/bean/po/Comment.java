@@ -42,4 +42,5 @@ public class Comment {
 
     private String parentId;
 
+    private String authorAvatar;
 }

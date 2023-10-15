@@ -13,7 +13,7 @@ import org.mapstruct.factory.Mappers;
  * @Description Article实体映射
  * @Date 2023/10/13 23:20
  */
-@Mapper(componentModel = "spring")
+@Mapper
 public interface ArticleConverter {
 
     ArticleConverter INSTANCE = Mappers.getMapper(ArticleConverter.class);

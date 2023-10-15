@@ -32,4 +32,6 @@ public class CommentDTO {
 
     private String state;
 
+    private String authorAvatar;
+
 }

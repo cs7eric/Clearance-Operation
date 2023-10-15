@@ -1,6 +1,7 @@
-package com.cccs7.co.bean.po;
+package com.cccs7.co.bean.bo;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.cccs7.co.bean.po.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

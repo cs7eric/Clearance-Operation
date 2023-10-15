@@ -13,7 +13,7 @@ import org.mapstruct.factory.Mappers;
  * @Description User转换器
  * @Date 2023/10/1 12:41
  */
-@Mapper(componentModel = "spring")
+@Mapper
 public interface UserConverter {
 
     UserConverter INSTANCE =  Mappers.getMapper(UserConverter.class);
@@ -24,7 +24,6 @@ public interface UserConverter {
      * @param userDTO 用户要求
      * @return {@link User}
      */
-    @SubclassMapping(source = UserDTO.class, target = User.class)
     User dto2po(UserDTO userDTO);
 
     /**
@@ -33,6 +32,5 @@ public interface UserConverter {
      * @param user 用户
      * @return {@link UserDTO}
      */
-    @SubclassMapping(source=User.class, target = UserDTO.class)
     UserDTO po2dto(User user);
 }

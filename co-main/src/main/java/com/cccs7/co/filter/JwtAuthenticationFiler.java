@@ -1,6 +1,6 @@
 package com.cccs7.co.filter;
 
-import com.cccs7.co.bean.po.LoginUser;
+import com.cccs7.co.bean.bo.LoginUser;
 import com.cccs7.co.util.JwtUtils;
 import com.cccs7.redis.util.RedisCache;
 import io.jsonwebtoken.Claims;

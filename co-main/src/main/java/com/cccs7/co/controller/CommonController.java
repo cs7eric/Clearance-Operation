@@ -41,7 +41,7 @@ public class CommonController {
     }
 
     @PostMapping("/upload")
-    public Result<String> upload(@RequestParam("file")MultipartFile file) {
+    public Result<String> upload(@RequestParam("file") MultipartFile file) {
 
         String fileUrl = fileService.uploadFile(file);
         return Result.ok(fileUrl);
