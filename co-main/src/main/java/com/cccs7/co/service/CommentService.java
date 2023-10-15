@@ -29,4 +29,18 @@ public interface CommentService {
      * @param commentDTO 评论Dto
      */
     void createComment(CommentDTO commentDTO);
+
+    /**
+     * 更新评论
+     *
+     * @param commentDTO 评论Dto
+     */
+    void updateComment(CommentDTO commentDTO);
+
+    /**
+     * 删除评论
+     *
+     * @param commentDTO 评论Dto
+     */
+    void deleteComment(CommentDTO commentDTO);
 }

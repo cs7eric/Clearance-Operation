@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -43,6 +44,11 @@ public class CommentServiceImpl implements CommentService {
         return mongoTemplate.find(query, Comment.class);
     }
 
+    /**
+     * 创建评论
+     *
+     * @param commentDTO 评论Dto
+     */
     @Override
     public void createComment(CommentDTO commentDTO) {
 
@@ -52,5 +58,32 @@ public class CommentServiceImpl implements CommentService {
         comment.setReplyNum(0);
         Comment saved = mongoTemplate.save(comment);
         System.out.println(saved);
+    }
+
+    /**
+     * 更新评论
+     *
+     * @param commentDTO 评论Dto
+     */
+    @Override
+    public void updateComment(CommentDTO commentDTO) {
+        Comment comment = CommentConverter.INSTANCE.dto2po(commentDTO);
+        mongoTemplate.save(comment);
+    }
+
+
+    /**
+     * 删除评论
+     *
+     * @param commentDTO 评论Dto
+     */
+    @Override
+    public void deleteComment(CommentDTO commentDTO) {
+        Comment comment = CommentConverter.INSTANCE.dto2po(commentDTO);
+        String commentId = comment.getId();
+        Query query = new Query(Criteria.where("id").is(commentId));
+        Update update = new Update();
+        update.set("deleteFlag", 1);
+        mongoTemplate.updateFirst(query, update, Comment.class);
     }
 }
