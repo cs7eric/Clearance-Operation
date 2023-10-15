@@ -48,4 +48,6 @@ public class ExceptionInfo {
 
     public static final String CODE_ERROR = "验证码错误";
 
+    public static final String COMMENT_NOT_EXIST = "当前评论不存在";
+
 }
