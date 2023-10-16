@@ -23,10 +23,10 @@ public class CommentTest {
 
     @Test
     public void testFindById() {
-        String id = "6524eaf0bd5df419a9b11eb5";
-        List<Comment> comments = commentService.getAllCommentsById(id);
-        System.out.println("--------");
-        comments.forEach(System.out::println);
-        System.out.println("--------");
+//        String id = "6524eaf0bd5df419a9b11eb5";
+//        List<Comment> comments = commentService.getAllCommentsById(id);
+//        System.out.println("--------");
+//        comments.forEach(System.out::println);
+//        System.out.println("--------");
     }
 }

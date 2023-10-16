@@ -16,12 +16,12 @@ import java.util.List;
 public interface CommentService {
 
     /**
-     * 获取所有评论
+     * 获得第一级评论
      *
-     * @param id id
-     * @return {@link Result}
+     * @param articleId 文章id
+     * @return {@link List}<{@link Comment}>
      */
-    List<Comment> getAllCommentsById(String id);
+    List<Comment> getFirstLevelComments(String articleId);
 
     /**
      * 创建评论
@@ -43,4 +43,14 @@ public interface CommentService {
      * @param commentDTO 评论Dto
      */
     void deleteComment(CommentDTO commentDTO);
+
+    /**
+     * 根据parentId获取特定一级评论下的子评论
+     *
+     * @param articleId 文章id
+     * @param parentId  父id
+     * @return {@link List}<{@link Comment}>
+     */
+    List<Comment> getRepliesToParentComment(String articleId, String parentId);
+
 }

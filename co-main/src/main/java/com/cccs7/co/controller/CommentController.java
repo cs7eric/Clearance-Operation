@@ -4,7 +4,6 @@ import com.cccs7.co.bean.dto.CommentDTO;
 import com.cccs7.co.bean.po.Comment;
 import com.cccs7.co.service.CommentService;
 import com.cccs7.web.bean.Result;
-import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,22 +17,22 @@ import java.util.List;
  * @Date 2023/10/14 23:51
  */
 @RestController
-@RequestMapping("/comment")
+@RequestMapping("/comments")
 public class CommentController {
 
     @Autowired
     private CommentService commentService;
 
     /**
-     * 获取该ID下所有评论
+     * 获得第一级评论
      *
-     * @param id id
-     * @return {@link Result}
+     * @param articleId 文章id
+     * @return {@link Result}<{@link List}<{@link Comment}>>
      */
-    @GetMapping("/all")
-    public Result<List<Comment>> getAllCommentsById(@RequestParam("id") String id) {
-
-        List<Comment> commentList = commentService.getAllCommentsById(id);
+    @GetMapping("/{articleId}")
+    public Result<List<Comment>> getFirstLevelComments(@PathVariable String articleId) {
+        // 在这里使用articleId来获取一级评论
+        List<Comment> commentList = commentService.getFirstLevelComments(articleId);
         return Result.ok(commentList);
     }
 
@@ -74,5 +73,23 @@ public class CommentController {
 
         commentService.deleteComment(commentDTO);
         return Result.ok();
+    }
+
+
+    /**
+     * 在这里根据parentId获取特定一级评论下的子评论
+     *
+     * @param articleId 文章id
+     * @param parentId  父id
+     * @return {@link Result}<{@link List}<{@link Comment}>>
+     */
+    @GetMapping("/{articleId}/{parentId}/replies")
+    public Result<List<Comment>> getRepliesToParentComment(
+            @PathVariable String articleId,
+            @PathVariable String parentId
+    ) {
+        // 在这里根据articleId和parentId获取子评论
+        List<Comment> replies = commentService.getRepliesToParentComment(articleId, parentId);
+        return Result.ok(replies);
     }
 }

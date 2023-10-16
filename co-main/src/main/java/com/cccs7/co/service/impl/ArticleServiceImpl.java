@@ -4,6 +4,9 @@ import com.cccs7.co.bean.po.Article;
 import com.cccs7.co.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -58,7 +61,7 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Override
     public void updateArticleById(Article article) {
-
+        mongoTemplate.save(article);
     }
 
     @Override
