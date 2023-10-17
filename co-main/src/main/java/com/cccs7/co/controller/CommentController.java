@@ -80,16 +80,16 @@ public class CommentController {
      * 在这里根据parentId获取特定一级评论下的子评论
      *
      * @param articleId 文章id
-     * @param parentId  父id
+     * @param commentId  父id
      * @return {@link Result}<{@link List}<{@link Comment}>>
      */
-    @GetMapping("/{articleId}/{parentId}/replies")
+    @GetMapping("/{articleId}/{commentId}/replies")
     public Result<List<Comment>> getRepliesToParentComment(
             @PathVariable String articleId,
-            @PathVariable String parentId
+            @PathVariable String commentId
     ) {
         // 在这里根据articleId和parentId获取子评论
-        List<Comment> replies = commentService.getRepliesToParentComment(articleId, parentId);
+        List<Comment> replies = commentService.getRepliesToParentComment(articleId, commentId);
         return Result.ok(replies);
     }
 }

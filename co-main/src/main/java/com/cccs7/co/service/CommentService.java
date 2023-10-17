@@ -48,9 +48,9 @@ public interface CommentService {
      * 根据parentId获取特定一级评论下的子评论
      *
      * @param articleId 文章id
-     * @param parentId  父id
+     * @param commentId 评论id
      * @return {@link List}<{@link Comment}>
      */
-    List<Comment> getRepliesToParentComment(String articleId, String parentId);
+    List<Comment> getRepliesToParentComment(String articleId, String commentId);
 
 }

@@ -30,7 +30,7 @@ public class Comment {
 
     private String userId;
 
-    private String nickname;
+    private String nickName;
 
     private Date createTime;
 

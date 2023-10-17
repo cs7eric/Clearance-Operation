@@ -22,7 +22,7 @@ public class CommentDTO {
 
     private String userId;
 
-    private String nickname;
+    private String nickName;
 
     private Date createTime;
 

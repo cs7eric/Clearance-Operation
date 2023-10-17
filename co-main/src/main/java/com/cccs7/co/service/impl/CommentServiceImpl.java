@@ -6,6 +6,7 @@ import com.cccs7.co.bean.po.Comment;
 import com.cccs7.co.convert.CommentConverter;
 import com.cccs7.co.service.ArticleService;
 import com.cccs7.co.service.CommentService;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -13,7 +14,6 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -50,7 +50,9 @@ public class CommentServiceImpl implements CommentService {
 
         List<Comment> commentsList;
 
-        Query query = new Query(Criteria.where("articleId").is(articleId));
+        Query query = new Query(Criteria
+                .where("articleId").is(articleId)
+                .and("parentId").is(null));
         commentsList = mongoTemplate.find(query, Comment.class);
         return commentsList;
     }
@@ -73,6 +75,15 @@ public class CommentServiceImpl implements CommentService {
         String articleId = commentDTO.getArticleId();
         Article article = articleService.getArticleById(articleId);
         article.setReplyNum(article.getReplyNum() + 1);
+
+        //更新多级评论信息
+        String parentId = comment.getParentId();
+        if (StringUtils.isNotBlank(parentId)) {
+            Query query = new Query(Criteria.where("id").is(parentId));
+            Update update = new Update();
+            update.set("replyNum", getComment(parentId).getReplyNum()+1);
+            mongoTemplate.findAndModify(query, update, Comment.class);
+        }
         articleService.updateArticleById(article);
     }
 
@@ -108,17 +119,16 @@ public class CommentServiceImpl implements CommentService {
      * 根据parentId获取特定一级评论下的子评论
      *
      * @param articleId 文章id
-     * @param parentId  父id
+     * @param commentId 评论id
      * @return {@link List}<{@link Comment}>
      */
     @Override
-    public List<Comment> getRepliesToParentComment(String articleId, String parentId) {
+    public List<Comment> getRepliesToParentComment(String articleId, String commentId) {
 
         //构造查询条件
-        Criteria criteria = new Criteria();
         Query query = new Query(Criteria
                 .where("articleId").is(articleId)
-                .and("commentId").is(parentId));
+                .and("parentId").is(commentId));
         return mongoTemplate.find(query, Comment.class);
     }
 
@@ -133,5 +143,17 @@ public class CommentServiceImpl implements CommentService {
         comment.setLikeNum(0);
         comment.setReplyNum(0);
         comment.setState(COMMENT_STATE_ACTIVE);
+    }
+
+
+    /**
+     * 根据ID 查询指定评论
+     *
+     * @param commentId 评论id
+     * @return {@link Comment}
+     */
+    public Comment getComment(String commentId) {
+
+        return mongoTemplate.findById(commentId, Comment.class);
     }
 }
