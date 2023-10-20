@@ -1,5 +1,6 @@
 package com.cccs7.co.service;
 
+import com.cccs7.co.bean.dto.ArticleDTO;
 import com.cccs7.co.bean.po.Article;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public interface ArticleService {
      *
      * @param article 文章
      */
-    void createArticle (Article article);
+    void createArticle (ArticleDTO articleDTO);
 
     /**
      * 按id获取文章

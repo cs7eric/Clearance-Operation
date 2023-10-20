@@ -1,5 +1,6 @@
 package com.cccs7.co.controller;
 
+import com.cccs7.co.bean.dto.ArticleDTO;
 import com.cccs7.co.bean.po.Article;
 import com.cccs7.co.service.ArticleService;
 import com.cccs7.web.bean.Result;
@@ -47,8 +48,8 @@ public class ArticleController {
     }
 
     @PostMapping("/create")
-    public Result<String> createArticle(@RequestBody Article article) {
-        articleService.createArticle(article);
+    public Result<String> createArticle(@RequestBody ArticleDTO articleDTO) {
+        articleService.createArticle(articleDTO);
         return Result.ok("添加成功");
     }
 

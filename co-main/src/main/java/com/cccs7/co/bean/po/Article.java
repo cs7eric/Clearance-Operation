@@ -44,4 +44,6 @@ public class Article {
     private String status;
 
     private String cover;
+
+    private String articleType;
 }

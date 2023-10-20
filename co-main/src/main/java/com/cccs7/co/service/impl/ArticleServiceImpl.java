@@ -1,7 +1,12 @@
 package com.cccs7.co.service.impl;
 
+import com.cccs7.co.bean.dto.ArticleDTO;
 import com.cccs7.co.bean.po.Article;
+import com.cccs7.co.bean.po.ArticleInfo;
+import com.cccs7.co.convert.ArticleConverter;
+import com.cccs7.co.factory.PublishingStrategyFactory;
 import com.cccs7.co.service.ArticleService;
+import com.cccs7.co.service.strategies.PublishingStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -23,23 +28,22 @@ import java.util.List;
 public class ArticleServiceImpl implements ArticleService {
 
 
-    public static final String ARTICLE_STATUS_PUB = "published";
-    public static final String ARTICLE_STATUS_UN_PUB = "un_published";
-
-
     @Autowired
     private MongoTemplate mongoTemplate;
 
 
     @Override
-    public void createArticle(Article article) {
+    public void createArticle(ArticleDTO articleDTO) {
 
-        article.setPublishTime(new Date());
-        article.setStatus(ARTICLE_STATUS_PUB);
-        article.setLikes(0);
-        article.setReplyNum(0);
-        article.setCategory("");
-        mongoTemplate.save(article);
+        Article article = ArticleConverter.INSTANCE.dto2po(articleDTO);
+        // 创建发布策略工厂
+        PublishingStrategyFactory strategyFactory = new PublishingStrategyFactory();
+        // 获取文章类型
+        String articleType = article.getArticleType();
+        // 根据文章类型创建发布策略
+        PublishingStrategy strategy = strategyFactory.createStrategy(articleType);
+        // 发布文章
+        strategy.publish(article, mongoTemplate);
     }
 
     @Override
