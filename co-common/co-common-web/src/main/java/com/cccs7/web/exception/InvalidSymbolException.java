@@ -7,12 +7,12 @@ package com.cccs7.web.exception;
  * @Description: 非法字符异常
  * @Date: 2023/10/13 13:19
  */
-public class InvaildSymbolException extends BaseException{
+public class InvalidSymbolException extends BaseException{
 
-    public InvaildSymbolException(String msg) {
+    public InvalidSymbolException(String msg) {
         super(msg);
     }
 
-    public InvaildSymbolException() {
+    public InvalidSymbolException() {
     }
 }

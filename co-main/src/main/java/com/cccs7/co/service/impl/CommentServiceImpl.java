@@ -79,11 +79,14 @@ public class CommentServiceImpl implements CommentService {
         //更新多级评论信息
         String parentId = comment.getParentId();
         if (StringUtils.isNotBlank(parentId)) {
+            // 根据父id查询
             Query query = new Query(Criteria.where("id").is(parentId));
+            // 更新回复数
             Update update = new Update();
             update.set("replyNum", getComment(parentId).getReplyNum()+1);
             mongoTemplate.findAndModify(query, update, Comment.class);
         }
+        // 更新文章
         articleService.updateArticleById(article);
     }
 
@@ -109,9 +112,13 @@ public class CommentServiceImpl implements CommentService {
     public void deleteComment(CommentDTO commentDTO) {
         Comment comment = CommentConverter.INSTANCE.dto2po(commentDTO);
         String commentId = comment.getId();
+        // 创建查询条件
         Query query = new Query(Criteria.where("id").is(commentId));
+        // 创建更新对象
         Update update = new Update();
+        // 更新状态为已删除
         update.set("state", COMMENT_STATE_INACTIVE);
+        // 更新文档
         mongoTemplate.updateFirst(query, update, Comment.class);
     }
 

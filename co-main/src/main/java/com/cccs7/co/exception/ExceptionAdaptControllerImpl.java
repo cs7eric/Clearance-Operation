@@ -4,7 +4,6 @@ import com.cccs7.web.bean.Result;
 import com.cccs7.web.bean.ResultCode;
 import com.cccs7.web.common.ExceptionAdaptController;
 import com.cccs7.web.exception.*;
-import io.lettuce.core.pubsub.RedisPubSubListener;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -188,16 +187,6 @@ public class ExceptionAdaptControllerImpl implements ExceptionAdaptController {
         return Result.fail(ExceptionInfo.FILE_UPLOAD_FAILED);
     }
 
-    /**
-     * 非法字符
-     *
-     * @param invaildSymbolException 非法字符
-     * @return
-     */
-    @ExceptionHandler(InvaildSymbolException.class)
-    public Result<String> handlerInvaildSymbolException(InvaildSymbolException invaildSymbolException) {
-        return Result.fail(ExceptionInfo.INVAILD_SYMBOL);
-    }
 
     /**
      * 评论失败

@@ -111,8 +111,10 @@ public class UserServiceImpl implements UserService {
         if (Objects.isNull(user)) {
             throw new RuntimeException("用户信息错误，请重新提交");
         }
+
         user.setUsername(user.getEmail());
         user.setAvatar("/src/assets/default_avatar.jpg");
+
         userMapper.insert(user);
         return Result.ok("注册成功");
     }
@@ -137,6 +139,7 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public void update(User user) {
+        // 根据用户名查询用户
         LambdaUpdateWrapper<User> queryWrapper = new LambdaUpdateWrapper<>();
         queryWrapper.eq(User::getUsername, user.getUsername());
         userMapper.update(user, queryWrapper);
@@ -152,11 +155,18 @@ public class UserServiceImpl implements UserService {
     public Boolean exist(UserDTO userDTO) {
 
         User user = new User();
+        // 将UserDTO转换成UserPO
         user = UserConverter.INSTANCE.dto2po(userDTO);
+        // 获取用户邮箱
         String userEmail = user.getEmail();
+
+        // 使用LambdaQueryWrapper查询用户
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        // 设置查询条件
         queryWrapper.eq(User::getEmail, userEmail);
+        // 查询用户
         User dbUser = userMapper.selectOne(queryWrapper);
+        // 判断查询结果是否为空
         return !Objects.isNull(dbUser);
     }
 
