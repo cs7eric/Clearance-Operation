@@ -45,5 +45,7 @@ public class Article {
 
     private String cover;
 
+    private String issueId;
+
     private String articleType;
 }

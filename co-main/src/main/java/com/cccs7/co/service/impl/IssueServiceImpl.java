@@ -2,9 +2,17 @@ package com.cccs7.co.service.impl;
 
 import com.cccs7.co.bean.dto.IssueDTO;
 import com.cccs7.co.bean.po.Issue;
+import com.cccs7.co.convert.IssueConverter;
 import com.cccs7.co.service.IssueService;
+import com.cccs7.web.bean.Result;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import java.awt.geom.QuadCurve2D;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -27,9 +35,13 @@ public class IssueServiceImpl implements IssueService {
      */
     public static final String ISSUE_STATUS_PROCEEDING = "proceeding";
 
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
     @Override
     public Issue getIssue(String id) {
-        return null;
+        Issue issue = mongoTemplate.findById(id, Issue.class);
+        return issue;
     }
 
     @Override
@@ -39,7 +51,8 @@ public class IssueServiceImpl implements IssueService {
 
     @Override
     public void updateIssue(IssueDTO issueDTO) {
-
+        Issue issue = IssueConverter.INSTANCE.dto2po(issueDTO);
+        mongoTemplate.save(issue);
     }
 
     @Override
@@ -50,5 +63,24 @@ public class IssueServiceImpl implements IssueService {
     @Override
     public void createIssue(IssueDTO issueDTO) {
 
+    }
+
+    @Override
+    public void postIssue(IssueDTO issueDTO) {
+
+        Issue issue = IssueConverter.INSTANCE.dto2po(issueDTO);
+        issue.setStatus(ISSUE_STATUS_PROCEEDING);
+        issue.setCreateTime(new Date());
+        issue.setFocusNum(0);
+        issue.setReplyNum(0);
+        mongoTemplate.save(issue);
+    }
+
+
+    @Override
+    public List<Issue> getAllIssues() {
+
+        List<Issue> issueList = mongoTemplate.findAll(Issue.class);
+        return issueList;
     }
 }

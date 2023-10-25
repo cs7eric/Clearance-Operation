@@ -77,4 +77,10 @@ public class ArticleServiceImpl implements ArticleService {
     public List<Article> getArticlesByCategory(String category) {
         return null;
     }
+
+    @Override
+    public List<Article> getIssueAnswers(String issueId) {
+        Query query = new Query(Criteria.where("issueId").is(issueId));
+        return mongoTemplate.find(query, Article.class);
+    }
 }

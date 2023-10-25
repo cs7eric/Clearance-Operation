@@ -15,9 +15,9 @@ import java.util.List;
 public interface ArticleService {
 
     /**
-     * 插入
+     * 创建文章
      *
-     * @param article 文章
+     * @param articleDTO 文章Dto
      */
     void createArticle (ArticleDTO articleDTO);
 
@@ -68,4 +68,12 @@ public interface ArticleService {
      * @return {@link List}<{@link Article}>
      */
     List<Article> getArticlesByCategory(String category);
+
+    /**
+     * 获取问题回答文章列表
+     *
+     * @param id id
+     * @return {@link List}<{@link Article}>
+     */
+    List<Article> getIssueAnswers(String id);
 }

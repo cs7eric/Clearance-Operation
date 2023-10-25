@@ -28,6 +28,6 @@ public class ArticleDTO extends BaseEntity {
     private List<String> tags;
     private String status;
     private String cover;
+    private String issueId;
     private String articleType;
-
 }

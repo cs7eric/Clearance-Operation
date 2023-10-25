@@ -2,6 +2,7 @@ package com.cccs7.co.service;
 
 import com.cccs7.co.bean.dto.IssueDTO;
 import com.cccs7.co.bean.po.Issue;
+import com.cccs7.web.bean.Result;
 
 import java.util.List;
 
@@ -52,4 +53,18 @@ public interface IssueService {
     void createIssue(IssueDTO issueDTO);
 
 
+    /**
+     * 发布问题
+     *
+     * @param issueDTO 问题Dto
+     * @return {@link Result}<{@link String}>
+     */
+    void postIssue(IssueDTO issueDTO);
+
+    /**
+     * 获取所有问题
+     *
+     * @return {@link List}<{@link Issue}>
+     */
+    List<Issue> getAllIssues();
 }

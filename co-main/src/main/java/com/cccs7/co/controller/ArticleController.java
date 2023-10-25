@@ -29,7 +29,7 @@ public class ArticleController {
     private ArticleService articleService;
 
     @GetMapping
-    public Result getArticleById(@RequestParam String id){
+    public Result getArticleById(@RequestParam String id) {
         if (StringUtils.isBlank(id)) {
             throw new RuntimeException("not null of id");
         }
@@ -37,12 +37,12 @@ public class ArticleController {
         if (Objects.isNull(article)) {
             return Result.ok("xxxx");
         }
-        log.info("article:{}",article);
+        log.info("article:{}", article);
         return Result.ok(article);
     }
 
     @GetMapping("/all")
-    public Result<List<Article>> getAllArticle(){
+    public Result<List<Article>> getAllArticle() {
         List<Article> allArticles = articleService.getAllArticles();
         return Result.ok(allArticles);
     }
@@ -53,4 +53,15 @@ public class ArticleController {
         return Result.ok("添加成功");
     }
 
+    /**
+     * 获取问题回答列表
+     *
+     * @param issueId 问题id
+     * @return {@link Result}<{@link List}<{@link Article}>>
+     */
+    @GetMapping("/answers/{issueId}")
+    public Result<List<Article>> getIssueAnswers(@PathVariable String issueId) {
+        List<Article> answers = articleService.getIssueAnswers(issueId);
+        return Result.ok(answers);
+    }
 }
