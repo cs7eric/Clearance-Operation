@@ -30,4 +30,14 @@ public class ArticleDTO extends BaseEntity {
     private String cover;
     private String issueId;
     private String articleType;
+
+    /**
+     * 用户与文章交互字段  -  是否点赞
+     */
+    private Boolean isLiked;
+
+    /**
+     * 用户与文章交互字段  -  是否收藏
+     */
+    private Boolean isCollected;
 }

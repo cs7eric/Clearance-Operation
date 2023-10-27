@@ -15,7 +15,8 @@ public interface PublishingStrategy {
     /**
      * 发布服务
      *
-     * @param article 文章
+     * @param article       文章
+     * @param mongoTemplate
      */
     void publish(Article article,  MongoTemplate mongoTemplate);
 }

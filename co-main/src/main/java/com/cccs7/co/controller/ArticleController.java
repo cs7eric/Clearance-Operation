@@ -1,8 +1,11 @@
 package com.cccs7.co.controller;
 
 import com.cccs7.co.bean.dto.ArticleDTO;
+import com.cccs7.co.bean.dto.UserActionDTO;
 import com.cccs7.co.bean.po.Article;
 import com.cccs7.co.service.ArticleService;
+import com.cccs7.co.service.UserActionService;
+import com.cccs7.co.service.impl.UserActionServiceImpl;
 import com.cccs7.web.bean.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -27,6 +30,9 @@ public class ArticleController {
 
     @Autowired
     private ArticleService articleService;
+
+    @Autowired
+    private UserActionService userActionService;
 
     @GetMapping
     public Result getArticleById(@RequestParam String id) {
@@ -63,5 +69,18 @@ public class ArticleController {
     public Result<List<Article>> getIssueAnswers(@PathVariable String issueId) {
         List<Article> answers = articleService.getIssueAnswers(issueId);
         return Result.ok(answers);
+    }
+
+    /**
+     * 执行用户行为 - 点赞、收藏
+     *
+     * @param userActionDTO 用户行动Dto
+     * @return {@link Result}<{@link String}>
+     */
+    @PostMapping("/action")
+    public Result<String> doAction(@RequestBody UserActionDTO userActionDTO){
+
+        userActionService.doAction(userActionDTO);
+        return Result.ok("操作成功");
     }
 }

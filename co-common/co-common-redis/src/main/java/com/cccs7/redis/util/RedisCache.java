@@ -222,4 +222,26 @@ public class RedisCache {
     public Collection<String> keys(final String pattern) {
         return redisTemplate.keys(pattern);
     }
+
+    /**
+     * 获取带有前缀键的集合
+     *
+     * @param prefix 前缀
+     * @return {@link Set}<{@link String}>
+     */
+    public Set<String> getKeysWithPrefix(final String prefix) {
+        return redisTemplate.keys(prefix + "*");
+    }
+
+    /**
+     * 删除以指定前缀开头的所有键和对应的值
+     *
+     * @param prefix 前缀*
+     */
+    public void deleteKeysWithPrefix(String prefix) {
+        Set<String> matchingKeys = redisTemplate.keys(prefix + "*");
+        for (String key : Objects.requireNonNull(matchingKeys)) {
+            redisTemplate.delete(key);
+        }
+    }
 }
