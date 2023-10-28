@@ -17,4 +17,9 @@ public class RedisKey {
      * 用户收藏前缀
      */
     public static final String USER_COLLECTS_PREFIX = "user_collects:";
+
+    /**
+     * 用户业务前缀
+     */
+    public static final String USER_PREFIX = "user";
 }

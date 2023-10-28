@@ -3,7 +3,6 @@ package com.cccs7.mybatisplus.config;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import com.cccs7.mybatisplus.interceptor.SqlBeautyInterceptor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,12 +29,12 @@ public class MybatisPlusConfiguration {
     }
 
     /**
-     * 批量插入sql注入器
+     * sql注入器
      * @return InsertBatchSqlInjector
      */
     @Bean
-    public InsertBatchSqlInjector insertBatchSqlInjector() {
-        return new InsertBatchSqlInjector();
+    public MySqlInjector sqlInjector() {
+        return new MySqlInjector();
     }
 
 }

@@ -8,4 +8,9 @@ package com.cccs7.co.service;
  * @Date 2023/10/26 23:35
  */
 public interface DataSyncService {
+
+    /**
+     * dsync数据
+     */
+    void dsyncData();
 }

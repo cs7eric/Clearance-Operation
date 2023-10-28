@@ -1,22 +1,17 @@
 package com.cccs7.co.service.impl;
 
-import com.baomidou.mybatisplus.core.injector.DefaultSqlInjector;
 import com.cccs7.co.bean.po.UserArticleAction;
 import com.cccs7.co.config.RedisKey;
+import com.cccs7.co.id.UuidUtils;
 import com.cccs7.co.mapper.ArticleActionMapper;
 import com.cccs7.co.mapper.UserMapper;
 import com.cccs7.co.service.DataSyncService;
 import com.cccs7.redis.util.RedisCache;
-import org.mybatis.spring.batch.MyBatisBatchItemWriter;
-import org.mybatis.spring.batch.builder.MyBatisBatchItemWriterBuilder;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -26,6 +21,7 @@ import java.util.stream.Collectors;
  * @Description 数据同步服务接口实现类
  * @Date 2023/10/26 23:36
  */
+@Slf4j
 @Service
 public class DataSyncServiceImpl implements DataSyncService {
 
@@ -38,7 +34,7 @@ public class DataSyncServiceImpl implements DataSyncService {
     @Autowired
     private ArticleActionMapper articleActionMapper;
 
-    @Scheduled(fixedRate = 100 * 60 * 60 * 2)
+    //    @Scheduled(fixedRate = 100 * 60 * 60 * 2)
     public void syncDataToMysql() {
         String likesPrefix = RedisKey.USER_LIKES_PREFIX;
         Set<String> set = redisCache.getKeysWithPrefix(likesPrefix);
@@ -79,8 +75,85 @@ public class DataSyncServiceImpl implements DataSyncService {
 
                 });
         int i = articleActionMapper.insertBatchSomeColumn(articleActions);
+    }
+
+    @Override
+    public void dsyncData() {
+        String prefix = RedisKey.USER_PREFIX;
+        Set<String> keySet = redisCache.getKeysWithPrefix(prefix);
+        HashMap<String, Set<String>> actionMap = new HashMap<>();
+
+        keySet.forEach(item -> {
+            Set<String> articleSet = redisCache.getCacheSet(item);
+            actionMap.put(item, articleSet);
+        });
+
+        HashMap<Long, Set<String>> likeMap = new HashMap<>();
+        HashMap<Long, Set<String>> collectMap = new HashMap<>();
+
+        actionMap.forEach(
+                (key, value) -> {
+                    System.out.println(key + "->" + value);
+                    String[] actionKey = key.split(":");
+                    String actionType = actionKey[0] + ":";
+                    Long userId = Long.parseLong(actionKey[1]);
+                    if (actionType.equalsIgnoreCase(RedisKey.USER_LIKES_PREFIX)) {
+                        likeMap.put(userId, value);
+                    } else {
+                        collectMap.put(userId, value);
+                    }
+                }
+        );
+
+        List<UserArticleAction> likeList = classifyData(RedisKey.USER_LIKES_PREFIX, likeMap);
+        List<UserArticleAction> collectList = classifyData(RedisKey.USER_COLLECTS_PREFIX, collectMap);
+
+//
+//        dsync(RedisKey.USER_LIKES_PREFIX, likeList);
+//        dsync(RedisKey.USER_COLLECTS_PREFIX, collectList);
+
+        articleActionMapper.batchInsertOrUpdate(likeList);
+        articleActionMapper.batchInsertOrUpdate(collectList);
+    }
+
+    /**
+     * 同步数据
+     *
+     * @param actionType 类型
+     * @param dataList   数据列表
+     */
+    public void  dsync(String actionType, List<UserArticleAction> dataList) {
+    }
+
+    /**
+     * 分类数据
+     *
+     * @param dataMap    数据
+     * @param actionType 动作类型
+     * @return {@link List}<{@link UserArticleAction}>
+     */
+    public List<UserArticleAction> classifyData(String actionType, Map<Long, Set<String>> dataMap) {
+
+        List<UserArticleAction> actionList = new ArrayList<>();
+        dataMap.forEach(
+                (key, value) -> {
+                    log.info("key:{} -> value:{}", key, value);
+                    value.forEach(item -> {
+                        UserArticleAction articleAction = new UserArticleAction();
+                        articleAction.setId(UuidUtils.getUuid());
+                        articleAction.setUserId(key);
+                        articleAction.setArticleId(item);
+                        if (actionType.equalsIgnoreCase(RedisKey.USER_LIKES_PREFIX)) {
+                            articleAction.setIsLiked(true);
+                        } else {
+                            articleAction.setIsCollected(true);
+                        }
+                        actionList.add(articleAction);
+                    });
+                }
+        );
 
 
-
+        return actionList;
     }
 }

@@ -4,6 +4,8 @@ import com.cccs7.co.bean.po.UserArticleAction;
 import com.cccs7.mybatisplus.mapper.MyBaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 /**
  * <p> 用户文章行为Mapper </p>
  *
@@ -13,4 +15,11 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface ArticleActionMapper extends MyBaseMapper<UserArticleAction> {
+
+    /**
+     * 批量插入或更新
+     *
+     * @param dataList 数据列表
+     */
+    void batchInsertOrUpdate(List<UserArticleAction> dataList);
 }

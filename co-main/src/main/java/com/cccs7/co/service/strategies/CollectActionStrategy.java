@@ -5,6 +5,8 @@ import com.cccs7.co.config.RedisKey;
 import com.cccs7.redis.util.RedisCache;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.HashSet;
+
 /**
  * <p> 收藏行为策略 </p>
  *
@@ -20,7 +22,9 @@ public class CollectActionStrategy implements UserActionStrategy {
         Long userId = userActionDTO.getUserId();
         String articleId = userActionDTO.getArticleId();
         log.info("收藏行为策略执行");
-        redisCache.setCacheObject(RedisKey.USER_COLLECTS_PREFIX + userId, articleId);
 
+        HashSet<String> articleSet = new HashSet<>();
+        articleSet.add(articleId);
+        redisCache.setCacheSet(RedisKey.USER_COLLECTS_PREFIX + userId, articleSet);
     }
 }

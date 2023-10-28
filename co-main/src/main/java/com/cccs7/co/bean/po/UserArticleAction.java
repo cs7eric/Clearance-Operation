@@ -3,6 +3,7 @@ package com.cccs7.co.bean.po;
 import com.cccs7.mybatisplus.entity.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.springframework.data.annotation.Id;
 
 /**
  * 用户文章操作
@@ -17,7 +18,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class UserArticleAction extends BaseEntity {
 
-    private Long id;
+    @Id
+    private String  id;
 
     private Long userId;
 

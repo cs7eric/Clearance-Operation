@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cccs7.co.mapper.ArticleActionMapper">
+
+    <insert id="batchInsertOrUpdate" parameterType="java.util.List">
+        INSERT INTO user_article_action (id, article_id, user_id, is_liked, is_collected)
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.id}, #{item.articleId}, #{item.userId}, #{item.isLiked}, #{item.isCollected})
+        </foreach>
+        ON DUPLICATE KEY UPDATE
+        is_liked = IF(VALUES(is_liked) IS NOT NULL, VALUES(is_liked), is_liked),
+        is_collected = IF(VALUES(is_collected) IS NOT NULL, VALUES(is_collected), is_collected)
+    </insert>
+</mapper>

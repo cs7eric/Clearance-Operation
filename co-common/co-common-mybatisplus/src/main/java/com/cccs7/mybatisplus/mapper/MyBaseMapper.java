@@ -23,4 +23,13 @@ public interface MyBaseMapper<T> extends BaseMapper<T> {
      * @return int
      */
     int insertBatchSomeColumn(@Param("list")List<T> batchList);
+
+    /**
+     * 批处理更新
+     *
+     * @param batchList 批处理列表
+     * @return int
+     */
+    int updateBatch(@Param("list")List<T> batchList);
+
 }

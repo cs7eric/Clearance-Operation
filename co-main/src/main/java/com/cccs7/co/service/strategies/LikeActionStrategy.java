@@ -5,6 +5,8 @@ import com.cccs7.co.config.RedisKey;
 import com.cccs7.redis.util.RedisCache;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.HashSet;
+
 /**
  * <p> 点赞行为 </p>
  *
@@ -20,6 +22,8 @@ public class LikeActionStrategy implements UserActionStrategy{
         Long userId = userActionDTO.getUserId();
         String articleId = userActionDTO.getArticleId();
         log.info("点赞行为策略执行");
-        redisCache.setCacheObject(RedisKey.USER_LIKES_PREFIX + userId, articleId);
+        HashSet<String> articleSet = new HashSet<>();
+        articleSet.add(articleId);
+        redisCache.setCacheSet(RedisKey.USER_LIKES_PREFIX + userId, articleSet);
     }
 }
