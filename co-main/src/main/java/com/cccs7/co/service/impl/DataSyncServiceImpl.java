@@ -10,6 +10,7 @@ import com.cccs7.redis.util.RedisCache;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -108,12 +109,16 @@ public class DataSyncServiceImpl implements DataSyncService {
         List<UserArticleAction> likeList = classifyData(RedisKey.USER_LIKES_PREFIX, likeMap);
         List<UserArticleAction> collectList = classifyData(RedisKey.USER_COLLECTS_PREFIX, collectMap);
 
-//
-//        dsync(RedisKey.USER_LIKES_PREFIX, likeList);
-//        dsync(RedisKey.USER_COLLECTS_PREFIX, collectList);
 
-        articleActionMapper.batchInsertOrUpdate(likeList);
-        articleActionMapper.batchInsertOrUpdate(collectList);
+        if (CollectionUtils.isEmpty(likeList)) {
+            articleActionMapper.batchInsertOrUpdate(likeList);
+        }
+        if (CollectionUtils.isEmpty(collectList)) {
+            articleActionMapper.batchInsertOrUpdate(collectList);
+        }
+
+        redisCache.deleteKeysWithPrefix(RedisKey.USER_PREFIX);
+
     }
 
     /**
