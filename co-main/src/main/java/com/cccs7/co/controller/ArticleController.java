@@ -47,12 +47,23 @@ public class ArticleController {
         return Result.ok(article);
     }
 
+    /**
+     * 获取所有文章
+     *
+     * @return {@link Result}<{@link List}<{@link Article}>>
+     */
     @GetMapping("/all")
-    public Result<List<Article>> getAllArticle() {
-        List<Article> allArticles = articleService.getAllArticles();
+    public Result getAllArticle(@RequestBody ArticleDTO articleDTO) {
+        List allArticles = articleService.getAllArticles(articleDTO);
         return Result.ok(allArticles);
     }
 
+    /**
+     * 创建文章
+     *
+     * @param articleDTO 文章Dto
+     * @return {@link Result}<{@link String}>
+     */
     @PostMapping("/create")
     public Result<String> createArticle(@RequestBody ArticleDTO articleDTO) {
         articleService.createArticle(articleDTO);

@@ -4,11 +4,11 @@ import com.cccs7.co.bean.po.UserArticleAction;
 import com.cccs7.co.config.RedisKey;
 import com.cccs7.co.id.UuidUtils;
 import com.cccs7.co.mapper.ArticleActionMapper;
-import com.cccs7.co.mapper.UserMapper;
 import com.cccs7.co.service.DataSyncService;
 import com.cccs7.redis.util.RedisCache;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -30,12 +30,8 @@ public class DataSyncServiceImpl implements DataSyncService {
     private RedisCache redisCache;
 
     @Autowired
-    private UserMapper userMapper;
-
-    @Autowired
     private ArticleActionMapper articleActionMapper;
 
-    //    @Scheduled(fixedRate = 100 * 60 * 60 * 2)
     public void syncDataToMysql() {
         String likesPrefix = RedisKey.USER_LIKES_PREFIX;
         Set<String> set = redisCache.getKeysWithPrefix(likesPrefix);
@@ -79,6 +75,7 @@ public class DataSyncServiceImpl implements DataSyncService {
     }
 
     @Override
+    @Scheduled(cron = "0 0 */2 * * *")
     public void dsyncData() {
         String prefix = RedisKey.USER_PREFIX;
         Set<String> keySet = redisCache.getKeysWithPrefix(prefix);
@@ -110,25 +107,16 @@ public class DataSyncServiceImpl implements DataSyncService {
         List<UserArticleAction> collectList = classifyData(RedisKey.USER_COLLECTS_PREFIX, collectMap);
 
 
-        if (CollectionUtils.isEmpty(likeList)) {
+        if (!CollectionUtils.isEmpty(likeList)) {
             articleActionMapper.batchInsertOrUpdate(likeList);
         }
-        if (CollectionUtils.isEmpty(collectList)) {
+        if (!CollectionUtils.isEmpty(collectList)) {
             articleActionMapper.batchInsertOrUpdate(collectList);
         }
 
         redisCache.deleteKeysWithPrefix(RedisKey.USER_PREFIX);
-
     }
 
-    /**
-     * 同步数据
-     *
-     * @param actionType 类型
-     * @param dataList   数据列表
-     */
-    public void  dsync(String actionType, List<UserArticleAction> dataList) {
-    }
 
     /**
      * 分类数据
@@ -148,6 +136,9 @@ public class DataSyncServiceImpl implements DataSyncService {
                         articleAction.setId(UuidUtils.getUuid());
                         articleAction.setUserId(key);
                         articleAction.setArticleId(item);
+                        articleAction.setCreateTime(new Date());
+                        articleAction.setDelFlag(0);
+                        articleAction.setCreateBy(key.toString());
                         if (actionType.equalsIgnoreCase(RedisKey.USER_LIKES_PREFIX)) {
                             articleAction.setIsLiked(true);
                         } else {

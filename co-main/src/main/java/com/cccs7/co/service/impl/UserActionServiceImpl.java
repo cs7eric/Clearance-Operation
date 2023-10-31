@@ -13,7 +13,6 @@ import com.cccs7.co.service.strategies.UserActionStrategy;
 import com.cccs7.redis.util.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.baomidou.mybatisplus.extension.toolkit.SqlRunner;
 
 import java.util.List;
 import java.util.Objects;
@@ -71,7 +70,18 @@ public class UserActionServiceImpl
     public void batchInsertOrUpdate(List<UserArticleAction> dataList) {
         StringBuilder sql = new StringBuilder("INSERT INTO your_table_name (userId, articleId, your_column_name) VALUES (?, ?, ?) " +
                 "ON DUPLICATE KEY UPDATE your_column_name = VALUES(your_column_name)");
+    }
 
+    /**
+     * 根据用户id获取用户操作文章列表
+     *
+     * @param userId 用户id
+     * @return {@link List}<{@link UserArticleAction}>
+     */
+    public List<UserArticleAction> getArticleListByUserId(Long userId) {
 
+        LambdaQueryWrapper<UserArticleAction> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(UserArticleAction::getUserId, userId);
+        return  articleActionMapper.selectList(queryWrapper);
     }
 }

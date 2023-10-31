@@ -33,9 +33,10 @@ public interface ArticleService {
     /**
      * 获取所有文章
      *
+     * @param articleDTO 文章Dto
      * @return {@link List}<{@link Article}>
      */
-    List<Article> getAllArticles();
+    List getAllArticles(ArticleDTO articleDTO);
 
 
     /**

@@ -2,6 +2,7 @@ package com.cccs7.co.bean.dto;
 
 import com.cccs7.mybatisplus.entity.BaseEntity;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.util.Date;
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
  * @Date 2023/10/13 23:13
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class ArticleDTO extends BaseEntity {
 
     private String id;
@@ -40,4 +42,10 @@ public class ArticleDTO extends BaseEntity {
      * 用户与文章交互字段  -  是否收藏
      */
     private Boolean isCollected;
+
+
+    /**
+     * 当前登录用户id : 可为空
+     */
+    private Long userId;
 }

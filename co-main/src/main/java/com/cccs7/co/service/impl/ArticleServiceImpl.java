@@ -1,11 +1,14 @@
 package com.cccs7.co.service.impl;
 
+import com.cccs7.co.bean.bo.ArticleStatusBO;
 import com.cccs7.co.bean.dto.ArticleDTO;
 import com.cccs7.co.bean.po.Article;
 import com.cccs7.co.bean.po.ArticleInfo;
+import com.cccs7.co.bean.po.UserArticleAction;
 import com.cccs7.co.convert.ArticleConverter;
 import com.cccs7.co.factory.PublishingStrategyFactory;
 import com.cccs7.co.service.ArticleService;
+import com.cccs7.co.service.UserActionService;
 import com.cccs7.co.service.strategies.PublishingStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -16,6 +19,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * <p> 文章服务接口实现类 </p>
@@ -30,6 +34,10 @@ public class ArticleServiceImpl implements ArticleService {
 
     @Autowired
     private MongoTemplate mongoTemplate;
+
+    @Autowired
+    private UserActionService userActionService;
+
 
 
     @Override
@@ -53,9 +61,39 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public List<Article> getAllArticles() {
+    public List getAllArticles(ArticleDTO articleDTO) {
 
-        return mongoTemplate.findAll(Article.class);
+        Long userId = articleDTO.getUserId();
+        List<Article> articleList = mongoTemplate.findAll(Article.class);
+
+        //如果 当前为未登录状态
+        if (userId == null) {
+            return articleList;
+        }
+
+
+        List<UserArticleAction> actionArticleList = userActionService.getArticleListByUserId(userId);
+
+        List<ArticleStatusBO> articleStatusList = ArticleStatusBO.fromUserArticleActions(actionArticleList);
+
+        // 用户为登录状态 : 加工文章数据
+        return articleList.stream()
+                .map(article -> {
+                    String articleId = article.getId();
+                    ArticleDTO dto = ArticleConverter.INSTANCE.po2dto(article);
+                    articleStatusList.forEach(action -> {
+                        String tmpArticleId = action.getArticleId();
+                        if (tmpArticleId.equals(articleId)) {
+
+                            Boolean isLiked = action.getIsLiked();
+                            Boolean isCollected = action.getIsCollected();
+                            dto.setIsLiked(isLiked);
+                            dto.setIsCollected(isCollected);
+                        }
+                    });
+                    return dto;
+                }).collect(Collectors.toList());
+
     }
 
     @Override
@@ -83,4 +121,5 @@ public class ArticleServiceImpl implements ArticleService {
         Query query = new Query(Criteria.where("issueId").is(issueId));
         return mongoTemplate.find(query, Article.class);
     }
+
 }

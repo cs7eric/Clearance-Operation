@@ -47,4 +47,13 @@ public interface UserActionService extends IService<UserArticleAction> {
      * @param dataList 数据列表
      */
     void batchInsertOrUpdate(List<UserArticleAction> dataList);
+
+
+    /**
+     * 根据用户id获取文章列表
+     *
+     * @param userId 用户id
+     * @return {@link List}<{@link UserArticleAction}>
+     */
+    List<UserArticleAction> getArticleListByUserId(Long  userId);
 }
