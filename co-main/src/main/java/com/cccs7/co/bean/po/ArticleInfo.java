@@ -14,6 +14,8 @@ public class ArticleInfo {
      */
     public static final String ARTICLE_STATUS_PUBLISHED = "published";
 
+
+
     /**
      * 文章状态 - 未发表
      */

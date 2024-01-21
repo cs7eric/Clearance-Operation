@@ -5,7 +5,6 @@ import com.cccs7.co.bean.dto.UserActionDTO;
 import com.cccs7.co.bean.po.Article;
 import com.cccs7.co.service.ArticleService;
 import com.cccs7.co.service.UserActionService;
-import com.cccs7.co.service.impl.UserActionServiceImpl;
 import com.cccs7.web.bean.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -52,7 +51,7 @@ public class ArticleController {
      *
      * @return {@link Result}<{@link List}<{@link Article}>>
      */
-    @GetMapping("/all")
+    @PostMapping("/all")
     public Result getAllArticle(@RequestBody ArticleDTO articleDTO) {
         List allArticles = articleService.getAllArticles(articleDTO);
         return Result.ok(allArticles);
