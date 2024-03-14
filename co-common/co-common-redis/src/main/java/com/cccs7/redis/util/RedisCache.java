@@ -244,4 +244,13 @@ public class RedisCache {
             redisTemplate.delete(key);
         }
     }
+
+    /**
+     *  向指定Set 追加数据
+     * @param key    key
+     * @param values 追加数据
+     */
+    public void addElementToSet(String key, String ...values) {
+        redisTemplate.opsForSet().add(key, values);
+    }
 }
