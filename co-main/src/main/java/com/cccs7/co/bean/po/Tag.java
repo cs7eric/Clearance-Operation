@@ -1,5 +1,7 @@
 package com.cccs7.co.bean.po;
 
+import lombok.Data;
+
 /**
  * <p> 标签 </p>
  *
@@ -7,5 +9,13 @@ package com.cccs7.co.bean.po;
  * @Description 标签
  * @Date 2024/1/21 21:54
  */
-public class Label {
+
+@Data
+public class Tag {
+
+    private Long tagId;
+
+    private String tagName;
+
+    private String tagType;
 }
