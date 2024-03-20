@@ -1,7 +1,7 @@
 package com.cccs7.co.controller;
 
-import com.cccs7.co.bean.dto.UserDTO;
-import com.cccs7.co.bean.po.User;
+import com.cccs7.co.bean.dto.user.UserDTO;
+import com.cccs7.co.bean.po.user.User;
 import com.cccs7.co.service.UserService;
 import com.cccs7.web.bean.Result;
 import io.swagger.annotations.Api;

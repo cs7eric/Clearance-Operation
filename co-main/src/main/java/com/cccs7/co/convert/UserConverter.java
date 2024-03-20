@@ -1,11 +1,10 @@
 package com.cccs7.co.convert;
 
-import com.cccs7.co.bean.dto.UserDTO;
-import com.cccs7.co.bean.po.User;
+import com.cccs7.co.bean.dto.user.UserDTO;
+import com.cccs7.co.bean.po.user.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
-import org.mapstruct.SubclassMapping;
 import org.mapstruct.factory.Mappers;
 
 /**

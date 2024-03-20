@@ -1,8 +1,8 @@
 package com.cccs7.co.service.impl;
 
-import com.cccs7.co.bean.dto.CommentDTO;
-import com.cccs7.co.bean.po.Article;
-import com.cccs7.co.bean.po.Comment;
+import com.cccs7.co.bean.dto.article.CommentDTO;
+import com.cccs7.co.bean.po.article.Article;
+import com.cccs7.co.bean.po.article.Comment;
 import com.cccs7.co.convert.CommentConverter;
 import com.cccs7.co.service.ArticleService;
 import com.cccs7.co.service.CommentService;

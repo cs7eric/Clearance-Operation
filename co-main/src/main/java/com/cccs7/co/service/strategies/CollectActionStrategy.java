@@ -1,6 +1,6 @@
 package com.cccs7.co.service.strategies;
 
-import com.cccs7.co.bean.dto.UserActionDTO;
+import com.cccs7.co.bean.dto.user.UserActionDTO;
 import com.cccs7.co.config.RedisKey;
 import com.cccs7.redis.util.RedisCache;
 import lombok.extern.slf4j.Slf4j;

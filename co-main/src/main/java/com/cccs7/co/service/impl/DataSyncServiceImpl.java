@@ -1,6 +1,6 @@
 package com.cccs7.co.service.impl;
 
-import com.cccs7.co.bean.po.UserArticleAction;
+import com.cccs7.co.bean.po.user.UserArticleAction;
 import com.cccs7.co.config.RedisKey;
 import com.cccs7.co.id.UuidUtils;
 import com.cccs7.co.mapper.ArticleActionMapper;

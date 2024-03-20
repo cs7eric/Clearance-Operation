@@ -1,7 +1,7 @@
 package com.cccs7.co.test.article;
 
-import com.cccs7.co.bean.dto.ArticleDTO;
-import com.cccs7.co.bean.po.UserArticleAction;
+import com.cccs7.co.bean.dto.article.ArticleDTO;
+import com.cccs7.co.bean.po.user.UserArticleAction;
 import com.cccs7.co.service.ArticleService;
 import com.cccs7.co.service.UserActionService;
 import org.junit.jupiter.api.Test;

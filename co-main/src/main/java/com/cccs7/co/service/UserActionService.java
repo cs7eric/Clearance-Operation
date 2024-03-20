@@ -1,11 +1,8 @@
 package com.cccs7.co.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.cccs7.co.bean.dto.UserActionDTO;
-import com.cccs7.co.bean.po.UserArticleAction;
-import com.cccs7.co.enums.UserActionType;
-import com.cccs7.co.mapper.ArticleActionMapper;
+import com.cccs7.co.bean.dto.user.UserActionDTO;
+import com.cccs7.co.bean.po.user.UserArticleAction;
 
 import java.util.List;
 

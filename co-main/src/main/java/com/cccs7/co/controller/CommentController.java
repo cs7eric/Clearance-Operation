@@ -1,7 +1,7 @@
 package com.cccs7.co.controller;
 
-import com.cccs7.co.bean.dto.CommentDTO;
-import com.cccs7.co.bean.po.Comment;
+import com.cccs7.co.bean.dto.article.CommentDTO;
+import com.cccs7.co.bean.po.article.Comment;
 import com.cccs7.co.service.CommentService;
 import com.cccs7.web.bean.Result;
 import org.springframework.beans.factory.annotation.Autowired;

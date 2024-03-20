@@ -1,4 +1,4 @@
-package com.cccs7.co.bean.dto;
+package com.cccs7.co.bean.dto.article;
 
 import com.cccs7.mybatisplus.entity.BaseEntity;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.cccs7.co.bean.dto;
+package com.cccs7.co.bean.dto.user;
 
 import lombok.Data;
 

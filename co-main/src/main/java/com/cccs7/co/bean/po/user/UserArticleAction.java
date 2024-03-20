@@ -1,4 +1,4 @@
-package com.cccs7.co.bean.po;
+package com.cccs7.co.bean.po.user;
 
 import com.cccs7.mybatisplus.entity.BaseEntity;
 import lombok.Data;

@@ -1,6 +1,6 @@
 package com.cccs7.co.factory;
 
-import com.cccs7.co.bean.po.ArticleInfo;
+import com.cccs7.co.bean.po.article.ArticleInfo;
 import com.cccs7.co.service.strategies.ArticlePublishingStrategy;
 import com.cccs7.co.service.strategies.IssueAnswerStrategy;
 import com.cccs7.co.service.strategies.PublishingStrategy;

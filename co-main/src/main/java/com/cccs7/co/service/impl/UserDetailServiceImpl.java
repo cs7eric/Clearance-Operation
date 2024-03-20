@@ -2,7 +2,7 @@ package com.cccs7.co.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.cccs7.co.bean.bo.LoginUser;
-import com.cccs7.co.bean.po.User;
+import com.cccs7.co.bean.po.user.User;
 import com.cccs7.co.mapper.MenuMapper;
 import com.cccs7.co.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,7 @@
 package com.cccs7.co.convert;
 
-import com.cccs7.co.bean.dto.CommentDTO;
-import com.cccs7.co.bean.po.Comment;
+import com.cccs7.co.bean.dto.article.CommentDTO;
+import com.cccs7.co.bean.po.article.Comment;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

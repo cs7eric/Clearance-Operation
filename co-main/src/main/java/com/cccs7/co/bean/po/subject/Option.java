@@ -1,4 +1,4 @@
-package com.cccs7.co.bean.po;
+package com.cccs7.co.bean.po.subject;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;

@@ -1,8 +1,8 @@
 package com.cccs7.co.controller;
 
-import com.cccs7.co.bean.dto.ArticleDTO;
-import com.cccs7.co.bean.dto.UserActionDTO;
-import com.cccs7.co.bean.po.Article;
+import com.cccs7.co.bean.dto.article.ArticleDTO;
+import com.cccs7.co.bean.dto.user.UserActionDTO;
+import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.service.ArticleService;
 import com.cccs7.co.service.UserActionService;
 import com.cccs7.web.bean.Result;

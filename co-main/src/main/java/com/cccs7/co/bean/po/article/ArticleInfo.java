@@ -1,4 +1,4 @@
-package com.cccs7.co.bean.po;
+package com.cccs7.co.bean.po.article;
 
 /**
  * <p> 文章基本信息 </p>

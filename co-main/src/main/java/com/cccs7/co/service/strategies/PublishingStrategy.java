@@ -1,6 +1,6 @@
 package com.cccs7.co.service.strategies;
 
-import com.cccs7.co.bean.po.Article;
+import com.cccs7.co.bean.po.article.Article;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
 /**

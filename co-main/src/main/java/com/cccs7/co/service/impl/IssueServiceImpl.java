@@ -1,17 +1,13 @@
 package com.cccs7.co.service.impl;
 
-import com.cccs7.co.bean.dto.IssueDTO;
-import com.cccs7.co.bean.po.Issue;
+import com.cccs7.co.bean.dto.article.IssueDTO;
+import com.cccs7.co.bean.po.article.Issue;
 import com.cccs7.co.convert.IssueConverter;
 import com.cccs7.co.service.IssueService;
-import com.cccs7.web.bean.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import java.awt.geom.QuadCurve2D;
 import java.util.Date;
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.cccs7.co.bean.bo;
 
-import com.cccs7.co.bean.po.UserArticleAction;
+import com.cccs7.co.bean.po.user.UserArticleAction;
 import lombok.Data;
 
 import java.util.List;

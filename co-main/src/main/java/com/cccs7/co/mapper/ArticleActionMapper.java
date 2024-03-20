@@ -1,6 +1,6 @@
 package com.cccs7.co.mapper;
 
-import com.cccs7.co.bean.po.UserArticleAction;
+import com.cccs7.co.bean.po.user.UserArticleAction;
 import com.cccs7.mybatisplus.mapper.MyBaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 

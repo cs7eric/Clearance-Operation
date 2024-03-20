@@ -1,7 +1,7 @@
 package com.cccs7.co.convert;
 
-import com.cccs7.co.bean.dto.OptionDTO;
-import com.cccs7.co.bean.po.Option;
+import com.cccs7.co.bean.dto.subject.OptionDTO;
+import com.cccs7.co.bean.po.subject.Option;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

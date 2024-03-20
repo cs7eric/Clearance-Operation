@@ -1,10 +1,9 @@
 package com.cccs7.co.service.impl;
 
 import com.cccs7.co.bean.bo.ArticleStatusBO;
-import com.cccs7.co.bean.dto.ArticleDTO;
-import com.cccs7.co.bean.po.Article;
-import com.cccs7.co.bean.po.ArticleInfo;
-import com.cccs7.co.bean.po.UserArticleAction;
+import com.cccs7.co.bean.dto.article.ArticleDTO;
+import com.cccs7.co.bean.po.article.Article;
+import com.cccs7.co.bean.po.user.UserArticleAction;
 import com.cccs7.co.convert.ArticleConverter;
 import com.cccs7.co.factory.PublishingStrategyFactory;
 import com.cccs7.co.service.ArticleService;
@@ -14,10 +13,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 

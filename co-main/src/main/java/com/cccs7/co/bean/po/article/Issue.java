@@ -1,4 +1,4 @@
-package com.cccs7.co.bean.po;
+package com.cccs7.co.bean.po.article;
 
 import lombok.Data;
 import lombok.Getter;

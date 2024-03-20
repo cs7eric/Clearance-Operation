@@ -1,8 +1,7 @@
 package com.cccs7.co.service.strategies;
 
-import com.cccs7.co.bean.po.Article;
-import com.cccs7.co.bean.po.ArticleInfo;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.cccs7.co.bean.po.article.Article;
+import com.cccs7.co.bean.po.article.ArticleInfo;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 

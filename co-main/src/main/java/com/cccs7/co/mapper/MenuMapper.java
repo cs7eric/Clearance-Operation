@@ -1,7 +1,7 @@
 package com.cccs7.co.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cccs7.co.bean.po.Menu;
+import com.cccs7.co.bean.po.user.Menu;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

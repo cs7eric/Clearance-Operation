@@ -1,9 +1,8 @@
 package com.cccs7.co.convert;
 
-import com.cccs7.co.bean.dto.ArticleDTO;
-import com.cccs7.co.bean.po.Article;
+import com.cccs7.co.bean.dto.article.ArticleDTO;
+import com.cccs7.co.bean.po.article.Article;
 import org.mapstruct.Mapper;
-import org.mapstruct.SubclassMapping;
 import org.mapstruct.factory.Mappers;
 
 /**

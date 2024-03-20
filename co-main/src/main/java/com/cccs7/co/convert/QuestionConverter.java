@@ -1,7 +1,7 @@
 package com.cccs7.co.convert;
 
-import com.cccs7.co.bean.dto.QuestionDTO;
-import com.cccs7.co.bean.po.Question;
+import com.cccs7.co.bean.dto.subject.QuestionDTO;
+import com.cccs7.co.bean.po.subject.Question;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

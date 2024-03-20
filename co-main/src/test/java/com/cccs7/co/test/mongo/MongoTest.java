@@ -1,6 +1,6 @@
 package com.cccs7.co.test.mongo;
 
-import com.cccs7.co.bean.po.Article;
+import com.cccs7.co.bean.po.article.Article;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

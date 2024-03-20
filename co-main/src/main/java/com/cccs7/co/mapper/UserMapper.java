@@ -1,8 +1,7 @@
 package com.cccs7.co.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.cccs7.co.bean.po.User;
-import com.cccs7.mybatisplus.mapper.MyBaseMapper;
+import com.cccs7.co.bean.po.user.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

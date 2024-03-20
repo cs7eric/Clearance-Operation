@@ -1,7 +1,7 @@
 package com.cccs7.co.service;
 
-import com.cccs7.co.bean.dto.ArticleDTO;
-import com.cccs7.co.bean.po.Article;
+import com.cccs7.co.bean.dto.article.ArticleDTO;
+import com.cccs7.co.bean.po.article.Article;
 
 import java.util.List;
 

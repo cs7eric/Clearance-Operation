@@ -2,9 +2,9 @@ package com.cccs7.co.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
-import com.cccs7.co.bean.dto.UserDTO;
+import com.cccs7.co.bean.dto.user.UserDTO;
 import com.cccs7.co.bean.bo.LoginUser;
-import com.cccs7.co.bean.po.User;
+import com.cccs7.co.bean.po.user.User;
 import com.cccs7.co.convert.UserConverter;
 import com.cccs7.co.mapper.MenuMapper;
 import com.cccs7.co.mapper.UserMapper;

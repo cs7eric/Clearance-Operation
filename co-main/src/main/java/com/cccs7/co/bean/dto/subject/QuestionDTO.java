@@ -1,5 +1,6 @@
-package com.cccs7.co.bean.dto;
+package com.cccs7.co.bean.dto.subject;
 
+import com.cccs7.co.bean.dto.subject.OptionDTO;
 import lombok.Data;
 
 import java.util.List;

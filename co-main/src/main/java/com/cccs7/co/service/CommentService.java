@@ -1,8 +1,7 @@
 package com.cccs7.co.service;
 
-import com.cccs7.co.bean.dto.CommentDTO;
-import com.cccs7.co.bean.po.Comment;
-import com.cccs7.web.bean.Result;
+import com.cccs7.co.bean.dto.article.CommentDTO;
+import com.cccs7.co.bean.po.article.Comment;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.cccs7.co.bean.po;
+package com.cccs7.co.bean.po.user;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;

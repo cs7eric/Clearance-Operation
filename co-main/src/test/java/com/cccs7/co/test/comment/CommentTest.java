@@ -1,12 +1,9 @@
 package com.cccs7.co.test.comment;
 
-import com.cccs7.co.bean.po.Comment;
 import com.cccs7.co.service.CommentService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.util.List;
 
 /**
  * <p> 评论测试类 </p>

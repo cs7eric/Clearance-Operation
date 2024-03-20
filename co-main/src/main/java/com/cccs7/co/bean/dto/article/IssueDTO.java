@@ -1,4 +1,4 @@
-package com.cccs7.co.bean.dto;
+package com.cccs7.co.bean.dto.article;
 
 import lombok.Data;
 import lombok.Getter;
