@@ -29,9 +29,9 @@ public class PublishingStrategyFactory {
      * @return {@link PublishingStrategy}
      */
     public PublishingStrategy createStrategy(String articleType) {
-        if (ArticleInfo.PUBLISH_TYPE_ARTICLE.equals(articleType)) {
+        if (ArticleInfo.PUBLISH_TYPE_ARTICLE.equalsIgnoreCase(articleType)) {
             return new ArticlePublishingStrategy();
-        } else if (ArticleInfo.PUBLISH_TYPE_ANSWER.equals(articleType)) {
+        } else if (ArticleInfo.PUBLISH_TYPE_ANSWER.equalsIgnoreCase(articleType)) {
             return new IssueAnswerStrategy();
         } else {
             throw new IllegalArgumentException("Invalid article type");

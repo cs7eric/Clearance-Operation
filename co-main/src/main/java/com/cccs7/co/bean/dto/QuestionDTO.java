@@ -12,7 +12,7 @@ import java.util.List;
  * @Date 2024/3/18 10:55
  */
 @Data
-public class QuestDTO {
+public class QuestionDTO {
 
     private Long id; // 对于更新操作，需要题目ID
     private String title;

@@ -20,7 +20,7 @@
         <maven.compile.source>1.8</maven.compile.source>
         <maven.compile.target>1.8</maven.compile.target>
         <spring.boot.web.version>2.7.12</spring.boot.web.version>
-        <lombok.version>1.18.26</lombok.version>
+        <lombok.version>1.18.22</lombok.version>
         <swagger.ui.version>2.9.2</swagger.ui.version>
         <swagger.version>2.9.2</swagger.version>
         <spring.boot.autoconfigure.version>2.7.12</spring.boot.autoconfigure.version>
@@ -34,7 +34,7 @@
         <mysql.connector.version>8.0.33</mysql.connector.version>
         <spring.boot.mybatis.version>3.5.3</spring.boot.mybatis.version>
         <webmvc.version>5.3.27</webmvc.version>
-        <mapstruct.version>1.5.3.Final</mapstruct.version>
+        <mapstruct.version>1.5.0.RC1</mapstruct.version>
         <spring.boot.log4j2.version>2.7.12</spring.boot.log4j2.version>
         <disruptor.version>3.4.2</disruptor.version>
         <spring.web.version>5.3.27</spring.web.version>

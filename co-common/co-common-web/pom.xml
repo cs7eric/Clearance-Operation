@@ -10,6 +10,8 @@
     </parent>
 
     <artifactId>co-common-web</artifactId>
+    <description>web</description>
+
 
     <dependencies>
         <dependency>
