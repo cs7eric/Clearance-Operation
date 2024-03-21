@@ -1,9 +1,9 @@
 package com.cccs7.co.factory;
 
 import com.cccs7.co.enums.UserActionType;
-import com.cccs7.co.service.strategies.CollectActionStrategy;
-import com.cccs7.co.service.strategies.LikeActionStrategy;
-import com.cccs7.co.service.strategies.UserActionStrategy;
+import com.cccs7.co.strategy.impl.CollectActionStrategy;
+import com.cccs7.co.strategy.impl.LikeActionStrategy;
+import com.cccs7.co.strategy.UserActionStrategy;
 import com.cccs7.redis.util.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

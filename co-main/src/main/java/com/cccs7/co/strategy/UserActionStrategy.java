@@ -1,4 +1,4 @@
-package com.cccs7.co.service.strategies;
+package com.cccs7.co.strategy;
 
 import com.cccs7.co.bean.dto.user.UserActionDTO;
 import com.cccs7.redis.util.RedisCache;

@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     username: cccs7
-    password: Csq020611.
+    password: ENC(B7k9iXz4BIJDtCFNK/GjlYzGP1oEwkg/6jREEC44lCs9llxGhQAgbJ1YsJ06cYP6)
     driver-class-name: com.mysql.cj.jdbc.Driver
     #    url: jdbc:mysql://101.34.208.43:3306/cccs7_security?serverTimeZone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
     url: jdbc:mysql://101.34.208.43/clearance_operation?serverTimeZone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
@@ -27,3 +27,70 @@ spring:
           slow-sql-mills: 2000
         wall:
           enabled: true
+  data:
+    mongodb:
+      uri: mongodb://cccs7:C020611.@101.34.208.43:27017/co-main?authSource=admin
+      username: cccs7
+      password: ENC(kdTf6n1aAqc0d8SapA/EMuxBn9h9RvzWys5Vfg0p4lJ8VWUc/azCZIlNU8PD6ZJq)
+      host: 101.34.208.43
+
+  redis:
+    host: 101.34.208.43
+    port: 6379
+    database: 0
+    password: ENC(mVokL0gxTFbsun4YG94aDcez3UowQS1Y3UGSlaAlZmJUOCZeuZhlPKkc8ZwytNE8)
+    timeout: 60s
+    lettuce:
+      pool:
+        max-active: 20
+        max-idle: 8
+        max-wait: -1
+        min-idle: 0
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署，false即不开启热部署
+      additional-paths: src/main/java #指定热部署的目录
+      exclude: test/**  #指定目录不更新
+swagger:
+  enable: true
+  base-package: "com.cccs7"
+  title: clearance-operation
+  contact-name: cccs7
+  contact-url: https://github.com/cs7eric/cccs7-frame
+  email: csq020611@gmail.com
+  version: 1.0
+  description: 反诈平台
+
+log:
+  aspect:
+    enable: true
+logging:
+  config: classpath:log4j2-spring.xml
+
+security:
+  enabled: true
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: assign_id
+
+co:
+  email:
+    mail_account_name: cccs7@mail.cccs7.icu
+    region_id: cn-hangzhou
+    from_alias: co-cccs7
+  aliyun:
+    oss:
+      bucket_name: co-main
+      endpoint: oss-cn-beijing.aliyuncs.com
+      access_key_id: ENC(Fxf1+NqSNvM7mnn+rBFMBNZfikvdCoomts/Uqu8MJ/7yXikOMj5Zn2By1ygIuY7sOt5i23BuOpbckcU1iX7LmQ==)
+      access_key_secret: ENC(+jc10+o/QF/vgNcVVZMnijZoeaUIINxF7QdicL9MTqbUVF9HrxKt/HFc1m1J5BQb3hn//HGumX1m892wLyvkKg==)
+
+jasypt:
+  encryptor:
+    password: cccs7
+
+
+
+

@@ -1,7 +1,8 @@
-package com.cccs7.co.service.strategies;
+package com.cccs7.co.strategy.impl;
 
 import com.cccs7.co.bean.dto.user.UserActionDTO;
 import com.cccs7.co.config.RedisKey;
+import com.cccs7.co.strategy.UserActionStrategy;
 import com.cccs7.redis.util.RedisCache;
 import lombok.extern.slf4j.Slf4j;
 
@@ -16,7 +17,7 @@ import java.util.Set;
  * @Date 2023/10/25 23:28
  */
 @Slf4j
-public class LikeActionStrategy implements UserActionStrategy{
+public class LikeActionStrategy implements UserActionStrategy {
 
     @Override
     public void execute(UserActionDTO userActionDTO, RedisCache redisCache) {

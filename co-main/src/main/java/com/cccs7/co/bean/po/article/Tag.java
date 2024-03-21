@@ -1,5 +1,6 @@
 package com.cccs7.co.bean.po.article;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 /**
@@ -13,7 +14,8 @@ import lombok.Data;
 @Data
 public class Tag {
 
-    private Long tagId;
+    @TableId
+    private Long id;
 
     private String tagName;
 

@@ -1,7 +1,8 @@
-package com.cccs7.co.service.strategies;
+package com.cccs7.co.strategy.impl;
 
 import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.bean.po.article.ArticleInfo;
+import com.cccs7.co.strategy.PublishingStrategy;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;
 

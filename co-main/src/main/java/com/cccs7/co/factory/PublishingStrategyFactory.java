@@ -1,9 +1,9 @@
 package com.cccs7.co.factory;
 
 import com.cccs7.co.bean.po.article.ArticleInfo;
-import com.cccs7.co.service.strategies.ArticlePublishingStrategy;
-import com.cccs7.co.service.strategies.IssueAnswerStrategy;
-import com.cccs7.co.service.strategies.PublishingStrategy;
+import com.cccs7.co.strategy.impl.ArticlePublishingStrategy;
+import com.cccs7.co.strategy.impl.IssueAnswerStrategy;
+import com.cccs7.co.strategy.PublishingStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Component;

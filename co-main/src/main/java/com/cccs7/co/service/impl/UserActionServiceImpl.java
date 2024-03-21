@@ -9,7 +9,7 @@ import com.cccs7.co.enums.UserActionType;
 import com.cccs7.co.factory.UserActionFactory;
 import com.cccs7.co.mapper.ArticleActionMapper;
 import com.cccs7.co.service.UserActionService;
-import com.cccs7.co.service.strategies.UserActionStrategy;
+import com.cccs7.co.strategy.UserActionStrategy;
 import com.cccs7.redis.util.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

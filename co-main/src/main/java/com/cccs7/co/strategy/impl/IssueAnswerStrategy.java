@@ -1,9 +1,10 @@
-package com.cccs7.co.service.strategies;
+package com.cccs7.co.strategy.impl;
 
 import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.bean.po.article.ArticleInfo;
 import com.cccs7.co.bean.po.article.Issue;
 import com.cccs7.co.service.IssueService;
+import com.cccs7.co.strategy.PublishingStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.FindAndModifyOptions;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -22,7 +23,7 @@ import java.util.Date;
  * @Date 2023/10/20 13:51
  */
 @Component
-public class IssueAnswerStrategy implements PublishingStrategy{
+public class IssueAnswerStrategy implements PublishingStrategy {
 
     @Autowired
     private IssueService issueService;

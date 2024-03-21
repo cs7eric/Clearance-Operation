@@ -8,7 +8,7 @@ import com.cccs7.co.convert.ArticleConverter;
 import com.cccs7.co.factory.PublishingStrategyFactory;
 import com.cccs7.co.service.ArticleService;
 import com.cccs7.co.service.UserActionService;
-import com.cccs7.co.service.strategies.PublishingStrategy;
+import com.cccs7.co.strategy.PublishingStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;

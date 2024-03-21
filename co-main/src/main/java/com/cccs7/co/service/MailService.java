@@ -1,7 +1,6 @@
 package com.cccs7.co.service;
 
 import com.sun.istack.NotNull;
-import org.springframework.stereotype.Service;
 
 /**
  * <p> 邮件服务接口 </p>
