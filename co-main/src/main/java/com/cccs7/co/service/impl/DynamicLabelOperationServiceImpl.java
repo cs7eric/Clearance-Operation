@@ -37,21 +37,25 @@ public class DynamicLabelOperationServiceImpl implements DynamicLabelOperationSe
     private TagServiceImpl tagService;
 
 
-    private final Map<String, LabelOperationStrategy> strategyMap = new HashMap<>();
-
+    private static final Map<String, LabelOperationStrategy> STRATEGY_MAP = new HashMap<>();
 
     static {
-        ArrayList<LabelOperationStrategy> strategies = new ArrayList<>();
+        initializeStrategies();
+    }
+
+    private static void initializeStrategies() {
+        List<LabelOperationStrategy> strategies = new ArrayList<>();
         strategies.add(new CategoryListStrategy());
         strategies.add(new CategoryCreateStrategy());
         strategies.add(new TagCreateStrategy());
         strategies.add(new TagListStrategy());
+
+        // 填充策略映射
+        strategies.forEach(strategy -> STRATEGY_MAP.put(strategy.getIdentifier(), strategy));
     }
 
-    public DynamicLabelOperationServiceImpl(List<LabelOperationStrategy> strategies) {
-        strategies.forEach(strategy -> {
-            strategyMap.put(strategy.getIdentifier(), strategy);
-        });
+    // 构造函数
+    public DynamicLabelOperationServiceImpl() {
     }
 
 
@@ -64,13 +68,13 @@ public class DynamicLabelOperationServiceImpl implements DynamicLabelOperationSe
      */
     public <T> T performOperation(String labelType, String operationType) {
         String identifier = labelType + "_" + operationType;
-//        String service =  "com.cccs7.service." + labelType.substring(0, 1).toUpperCase() + labelType.substring(1).trim() + " ServiceImpl ";
+        String identifierUpperCase = identifier.toUpperCase();
         StringBuilder sb = new StringBuilder("com.cccs7.co.service.impl.");
         sb.append(labelType.substring(0, 1).toUpperCase());
         sb.append(labelType.substring(1));
         sb.append("ServiceImpl");
         String service = sb.toString();
-        LabelOperationStrategy strategy = strategyMap.get(identifier);
+        LabelOperationStrategy strategy = STRATEGY_MAP.get(identifierUpperCase);
 
         try {
             Class<?> serviceClass = Class.forName(service);
