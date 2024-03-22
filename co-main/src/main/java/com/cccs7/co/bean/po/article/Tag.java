@@ -1,6 +1,7 @@
 package com.cccs7.co.bean.po.article;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
@@ -12,6 +13,7 @@ import lombok.Data;
  */
 
 @Data
+@TableName("sys_tag")
 public class Tag {
 
     @TableId

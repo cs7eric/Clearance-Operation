@@ -6,6 +6,7 @@ import com.cccs7.co.bean.po.article.Tag;
 import com.cccs7.co.mapper.TagMapper;
 import com.cccs7.co.service.LabelOperationService;
 import com.cccs7.co.service.TagService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +22,9 @@ import java.util.List;
 public class TagServiceImpl
         extends ServiceImpl<TagMapper, Tag>
         implements TagService, IService<Tag>, LabelOperationService<Tag> {
+
+    @Autowired
+    private TagMapper tagMapper;
 
     @Override
     public void create() {
@@ -39,6 +43,6 @@ public class TagServiceImpl
 
     @Override
     public List<Tag> list() {
-        return null;
+        return tagMapper.selectList(null);
     }
 }

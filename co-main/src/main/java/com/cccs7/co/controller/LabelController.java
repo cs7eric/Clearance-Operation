@@ -7,6 +7,7 @@ import com.cccs7.co.service.CategoryService;
 import com.cccs7.co.service.LabelOperationService;
 import com.cccs7.co.service.TagService;
 import com.cccs7.co.service.impl.CategoryServiceImpl;
+import com.cccs7.co.service.impl.DynamicLabelOperationServiceImpl;
 import com.cccs7.co.service.impl.TagServiceImpl;
 import com.cccs7.web.bean.Result;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,15 +33,13 @@ public class LabelController {
     @Autowired
     private TagServiceImpl tagServiceImpl;
 
+    @Autowired
+    private DynamicLabelOperationServiceImpl dynamicLabelOperationService;
+
     @GetMapping("/list")
     public <T> Result<List<T>> getList(@RequestParam("type") String type) {
 
-        List<T> resList = new ArrayList<>();
-        if (type.equalsIgnoreCase(LabelType.CATEGORY.toString())) {
-            List<Category> list = categoryService.list();
-        } else {
-
-        }
-        return null;
+        List<T> resList =  dynamicLabelOperationService.performOperation(type, "List");
+        return Result.ok(resList);
     }
 }

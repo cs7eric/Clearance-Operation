@@ -1,9 +1,13 @@
 package com.cccs7.co.strategy.impl;
 
+import com.cccs7.co.bean.po.article.Tag;
 import com.cccs7.co.enums.LabelType;
 import com.cccs7.co.enums.OperationType;
 import com.cccs7.co.service.LabelOperationService;
+import com.cccs7.co.service.impl.TagServiceImpl;
 import com.cccs7.co.strategy.LabelOperationStrategy;
+
+import java.util.List;
 
 /**
  * <p> 标签列表策略 </p>
@@ -16,8 +20,11 @@ public class TagListStrategy implements LabelOperationStrategy {
 
     @Override
     public <T> T execute(LabelOperationService<T> operationService) {
-        System.out.println("execute success");
-        return null;
+
+        TagServiceImpl tagService = (TagServiceImpl) operationService;
+        List<Tag> tagList = tagService.list();
+        tagList.forEach(System.out::println);
+        return (T) tagList;
     }
 
     @Override

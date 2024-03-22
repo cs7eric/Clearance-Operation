@@ -20,7 +20,7 @@ public class ExecuteTest {
 
     @Test
     public void testExecute() {
-        String label = "Tag";
+        String label = "Category";
         String operation = "List";
 
         dynamicLabelOperationService.performOperation(label, operation);

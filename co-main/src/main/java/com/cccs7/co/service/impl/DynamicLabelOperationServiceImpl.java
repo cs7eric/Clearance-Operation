@@ -54,7 +54,10 @@ public class DynamicLabelOperationServiceImpl implements DynamicLabelOperationSe
         strategies.forEach(strategy -> STRATEGY_MAP.put(strategy.getIdentifier(), strategy));
     }
 
-    // 构造函数
+    /**
+     * 动态标签操作服务实现类
+     *
+     */
     public DynamicLabelOperationServiceImpl() {
     }
 
