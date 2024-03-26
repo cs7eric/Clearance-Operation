@@ -16,7 +16,7 @@ public interface LabelOperationService<E>{
     /**
      * 创建策略
      */
-    void create();
+    void create(List list);
 
     /**
      * 删除

@@ -30,7 +30,7 @@ public class CategoryServiceImpl
     private CategoryMapper categoryMapper;
 
     @Override
-    public void create() {
+    public void create(List list) {
 
 
     }

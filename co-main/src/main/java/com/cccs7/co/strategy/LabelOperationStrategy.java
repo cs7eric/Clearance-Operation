@@ -1,6 +1,9 @@
 package com.cccs7.co.strategy;
 
 import com.cccs7.co.service.LabelOperationService;
+import com.mongodb.lang.Nullable;
+
+import java.util.Map;
 
 /**
  * <p> 创建策略 </p>
@@ -17,7 +20,7 @@ public interface LabelOperationStrategy {
      * @param operationService 操作service
      * @return {@link T}
      */
-    <T> T execute(LabelOperationService<T> operationService);
+    <T> T execute(LabelOperationService<T> operationService, @Nullable Map<String,Object> dataMap);
 
     /**
      * 获得唯一标识符

@@ -8,6 +8,7 @@ import com.cccs7.co.service.impl.TagServiceImpl;
 import com.cccs7.co.strategy.LabelOperationStrategy;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p> 标签列表策略 </p>
@@ -19,7 +20,7 @@ import java.util.List;
 public class TagListStrategy implements LabelOperationStrategy {
 
     @Override
-    public <T> T execute(LabelOperationService<T> operationService) {
+    public <T> T execute(LabelOperationService<T> operationService, Map<String,Object> dataMap) {
 
         TagServiceImpl tagService = (TagServiceImpl) operationService;
         List<Tag> tagList = tagService.list();

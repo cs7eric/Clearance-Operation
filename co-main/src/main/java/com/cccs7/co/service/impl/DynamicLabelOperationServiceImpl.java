@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -69,7 +70,7 @@ public class DynamicLabelOperationServiceImpl implements DynamicLabelOperationSe
      * @param operationType 操作类型
      * @return {@link T}
      */
-    public <T> T performOperation(String labelType, String operationType) {
+    public <T> T performOperation(String labelType, String operationType, @Nullable Map<String,Object> dataMap) {
         String identifier = labelType + "_" + operationType;
         String identifierUpperCase = identifier.toUpperCase();
         StringBuilder sb = new StringBuilder("com.cccs7.co.service.impl.");
@@ -82,7 +83,7 @@ public class DynamicLabelOperationServiceImpl implements DynamicLabelOperationSe
         try {
             Class<?> serviceClass = Class.forName(service);
             Object serviceInstance = applicationContext.getBean(serviceClass);
-            return strategy.execute((LabelOperationService<T>) serviceInstance);
+            return strategy.execute((LabelOperationService<T>) serviceInstance, dataMap);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }

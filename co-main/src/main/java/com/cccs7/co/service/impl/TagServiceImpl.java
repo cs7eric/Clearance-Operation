@@ -27,7 +27,7 @@ public class TagServiceImpl
     private TagMapper tagMapper;
 
     @Override
-    public void create() {
+    public void create(List list) {
 
     }
 

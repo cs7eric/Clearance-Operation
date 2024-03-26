@@ -10,6 +10,7 @@ import com.cccs7.co.service.impl.TagServiceImpl;
 import com.cccs7.co.strategy.LabelOperationStrategy;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p> 分类列表策略 </p>
@@ -21,7 +22,7 @@ import java.util.List;
 public class CategoryListStrategy implements LabelOperationStrategy {
 
     @Override
-    public <T> T execute(LabelOperationService<T> operationService) {
+    public <T> T execute(LabelOperationService<T> operationService, Map<String,Object> dataMap) {
         CategoryServiceImpl categoryService = (CategoryServiceImpl) operationService;
         List<Category> categoryList = categoryService.list();
         categoryList.forEach(System.out::println);

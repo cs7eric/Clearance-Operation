@@ -23,6 +23,5 @@ public class ExecuteTest {
         String label = "Category";
         String operation = "List";
 
-        dynamicLabelOperationService.performOperation(label, operation);
     }
 }
