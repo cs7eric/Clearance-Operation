@@ -1,16 +1,22 @@
 package com.cccs7.co.controller;
 
 import com.cccs7.co.bean.dto.article.ArticleDTO;
+import com.cccs7.co.bean.dto.article.ArticlePageDTO;
+import com.cccs7.co.bean.dto.common.PageRequestDTO;
 import com.cccs7.co.bean.dto.user.UserActionDTO;
 import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.service.ArticleService;
 import com.cccs7.co.service.UserActionService;
+import com.cccs7.mybatisplus.entity.PageResult;
+import com.cccs7.web.bean.PageResponse;
 import com.cccs7.web.bean.Result;
+import javafx.print.Collation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -40,7 +46,7 @@ public class ArticleController {
         }
         Article article = articleService.getArticleById(id);
         if (Objects.isNull(article)) {
-            return Result.ok("xxxx");
+            return Result.ok(Collections.emptyList());
         }
         log.info("article:{}", article);
         return Result.ok(article);
@@ -93,4 +99,35 @@ public class ArticleController {
         userActionService.doAction(userActionDTO);
         return Result.ok("操作成功");
     }
+
+    @GetMapping("/user/{username}")
+    public Result<List<Article>> getArticlesByUsername(@PathVariable String username) {
+        List<Article> articles = articleService.getArticlesByUsername(username);
+        return Result.ok(articles);
+    }
+
+    /**
+     * 分页获取文章集合
+     *
+     * @param articlePageDTO 文章分页Dto
+     * @return {@link Result}<{@link PageResult}<{@link Article}>>
+     */
+    @PostMapping("/page")
+    public Result<List<Article>> getArticlesByPage(@RequestBody ArticlePageDTO articlePageDTO) {
+
+        Integer pageSize = articlePageDTO.getPageSize();
+        Integer pageNum = articlePageDTO.getPageNum();
+        String username = articlePageDTO.getUsername();
+
+
+        List<Article> res = articleService.getArticlesByPage(pageNum, pageSize, username);
+        return Result.ok(res);
+    }
+
+    @GetMapping("/count")
+    public Result<Long> getCountByUsername(@RequestParam String username) {
+        Long count = articleService.getCountByUsername(username);
+        return Result.ok(count);
+    }
+
 }

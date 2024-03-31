@@ -1,5 +1,6 @@
 package com.cccs7.co.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cccs7.co.bean.po.article.Tag;
@@ -43,6 +44,9 @@ public class TagServiceImpl
 
     @Override
     public List<Tag> list() {
+//        QueryWrapper<Tag> wrapper = new QueryWrapper<>();
         return tagMapper.selectList(null);
     }
+
+
 }

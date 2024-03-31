@@ -1,7 +1,9 @@
 package com.cccs7.co.service;
 
 import com.cccs7.co.bean.dto.article.ArticleDTO;
+import com.cccs7.co.bean.dto.common.PageRequestDTO;
 import com.cccs7.co.bean.po.article.Article;
+import com.cccs7.mybatisplus.entity.PageResult;
 
 import java.util.List;
 
@@ -77,4 +79,31 @@ public interface ArticleService {
      * @return {@link List}<{@link Article}>
      */
     List<Article> getIssueAnswers(String id);
+
+    /**
+     * 按用户名获取文章
+     *
+     * @param username 用户名
+     * @return {@link List}<{@link Article}>
+     */
+    List<Article> getArticlesByUsername(String username);
+
+
+    /**
+     * 得到文章通过分页
+     *
+     * @param pageNum  当前页数
+     * @param pageSize 分页大小
+     * @param username 用户名
+     * @return {@link PageResult}<{@link Article}>
+     */
+    List<Article> getArticlesByPage(Integer pageNum, Integer pageSize, String username);
+
+    /**
+     * 获取某用户的文章总数
+     *
+     * @param username 用户名
+     * @return {@link Long}
+     */
+    Long getCountByUsername(String username);
 }

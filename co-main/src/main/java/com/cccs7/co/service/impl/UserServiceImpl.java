@@ -2,6 +2,8 @@ package com.cccs7.co.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.extension.service.IService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cccs7.co.bean.dto.user.UserDTO;
 import com.cccs7.co.bean.bo.LoginUser;
 import com.cccs7.co.bean.po.user.User;
@@ -32,7 +34,9 @@ import java.util.Objects;
  * @Date 2023/9/15 23:16
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl
+        extends ServiceImpl<UserMapper, User>
+        implements UserService, IService<User> {
 
     @Autowired
     private AuthenticationManager authenticationManager;
@@ -189,5 +193,20 @@ public class UserServiceImpl implements UserService {
 
         return (LoginUser) authentication.getPrincipal();
 
+    }
+
+
+    /**
+     * 通过用户名获取用户
+     *
+     * @param username 用户名
+     * @return {@link User}
+     */
+    @Override
+    public User getUserByUsername(String username) {
+
+        LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(User::getUsername,username);
+        return userMapper.selectOne(queryWrapper);
     }
 }
