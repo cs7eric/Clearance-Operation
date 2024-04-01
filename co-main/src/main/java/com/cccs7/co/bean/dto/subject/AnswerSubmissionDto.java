@@ -1,5 +1,7 @@
 package com.cccs7.co.bean.dto.subject;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import java.util.List;
@@ -14,6 +16,7 @@ import java.util.List;
 @Data
 public class AnswerSubmissionDto {
 
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long userId;
     private Long questionId;
     private List<Long> selectedOptionIds;

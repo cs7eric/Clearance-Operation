@@ -1,6 +1,8 @@
 package com.cccs7.co.bean.dto.article;
 
 import com.cccs7.mybatisplus.entity.BaseEntity;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -23,6 +25,8 @@ public class ArticleDTO extends BaseEntity {
     private String title;
     private Date publishTime;
     private String author;
+
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long authorId;
     private Integer likes;
     private Integer replyNum;

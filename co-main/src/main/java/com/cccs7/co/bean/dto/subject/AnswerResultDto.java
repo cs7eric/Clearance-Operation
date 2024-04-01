@@ -1,5 +1,7 @@
 package com.cccs7.co.bean.dto.subject;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 /**
@@ -12,6 +14,7 @@ import lombok.Data;
 @Data
 public class AnswerResultDto {
 
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long questionId;
     private Boolean isCorrect;
 }

@@ -1,6 +1,8 @@
 package com.cccs7.co.bean.dto.user;
 
 import com.cccs7.mybatisplus.entity.BaseEntity;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 /**
@@ -13,6 +15,7 @@ import lombok.Data;
 @Data
 public class UserDTO {
 
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
 
     private String username;

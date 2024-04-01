@@ -1,5 +1,7 @@
 package com.cccs7.co.bean.dto.cases;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -15,6 +17,7 @@ import java.util.Date;
 @Data
 public class FraudCaseDTO {
 
+    @JsonSerialize(using = ToStringSerializer.class)
     private Integer id;
     private String title;
     private String description;

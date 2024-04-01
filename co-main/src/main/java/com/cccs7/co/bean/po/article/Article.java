@@ -1,5 +1,8 @@
 package com.cccs7.co.bean.po.article;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -31,6 +34,7 @@ public class Article {
 
     private String author;
 
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long authorId;
 
     private Integer likes;

@@ -1,6 +1,8 @@
 package com.cccs7.co.bean.dto.subject;
 
 import com.cccs7.co.bean.dto.subject.OptionDTO;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
 @Data
 public class QuestionDTO {
 
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long id; // 对于更新操作，需要题目ID
     private String title;
     private String content;

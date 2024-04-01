@@ -1,6 +1,8 @@
 package com.cccs7.co.bean.po.subject;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 import org.apache.ibatis.mapping.FetchType;
 import org.springframework.data.annotation.Id;
@@ -17,6 +19,7 @@ import org.springframework.data.annotation.Id;
 public class Option {
 
     @Id
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
 
     private Long questionId;

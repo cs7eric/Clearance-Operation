@@ -1,6 +1,8 @@
 package com.cccs7.co.bean.po.subject;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import java.util.ArrayList;
@@ -17,6 +19,7 @@ import java.util.List;
 @TableName("sub_questions")
 public class Question {
 
+    @JsonSerialize(using = ToStringSerializer.class)
     private Long id;
 
     private String title;

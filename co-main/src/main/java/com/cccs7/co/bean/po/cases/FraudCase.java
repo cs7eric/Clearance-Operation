@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.cccs7.mybatisplus.entity.BaseEntity;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -23,6 +25,7 @@ import java.util.Date;
 public class FraudCase {
 
     @TableId(value = "id", type = IdType.AUTO)
+    @JsonSerialize(using = ToStringSerializer.class)
     private Integer id;
 
     @TableField("title")
