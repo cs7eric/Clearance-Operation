@@ -4,7 +4,6 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cccs7.co.bean.dto.user.UserActionDTO;
-import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.bean.po.user.UserArticleAction;
 import com.cccs7.co.enums.UserActionType;
 import com.cccs7.co.factory.UserActionFactory;
@@ -45,6 +44,7 @@ public class UserActionServiceImpl
     @Lazy
     @Autowired
     private ArticleServiceImpl articleService;
+
 
     @Override
     public void doAction(UserActionDTO userActionDTO) {
@@ -110,13 +110,33 @@ public class UserActionServiceImpl
         return collected.stream().map(articleId -> articleService.getArticleById(articleId))
                 .collect(Collectors.toList());
 
-//        return userActionMapper.selectList(new LambdaQueryWrapper<UserArticleAction>()
-//                        .eq(UserArticleAction::getUsername, username)
-//                        .eq(UserArticleAction::getIsLiked, 1))
-//                .stream().map(UserArticleAction::getArticleId)
-//                .map(articleId -> articleService.getArticleById(articleId))
-//                .collect(Collectors.toList());
+
+    }
+
+    @Override
+    public List getLikesById(Long id) {
+        LambdaQueryWrapper<UserArticleAction> wrapper = new LambdaQueryWrapper<UserArticleAction>();
+
+        wrapper.eq(UserArticleAction::getUserId, id)
+                .eq(UserArticleAction::getIsLiked, 1);
+
+        List<UserArticleAction> likeList = userActionMapper.selectList(wrapper);
 
 
+        List<String> collected = likeList.stream().map(UserArticleAction::getArticleId)
+                .collect(Collectors.toList());
+        return collected.stream().map(articleId -> articleService.getArticleById(articleId))
+                .collect(Collectors.toList());
+    }
+
+
+
+    @Override
+    public void getList() {
+        Long id = 1712410707829501954L;
+        LambdaQueryWrapper<UserArticleAction> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(UserArticleAction::getUserId, id);
+        List<UserArticleAction> actions = userActionMapper.selectList(queryWrapper);
+        actions.forEach(System.out::println);
     }
 }

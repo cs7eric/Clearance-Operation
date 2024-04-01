@@ -62,4 +62,14 @@ public interface UserActionService extends IService<UserArticleAction> {
      * @return {@link List}<{@link Article}>
      */
     List getLikesByUsername(String username);
+
+    /**
+     * 按id获取点赞数据
+     *
+     * @param id id
+     * @return {@link List}
+     */
+    List getLikesById(Long id);
+
+    void getList();
 }

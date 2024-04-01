@@ -1,10 +1,12 @@
 package com.cccs7.co.service.impl;
 
+import com.cccs7.co.bean.po.user.User;
 import com.cccs7.co.bean.po.user.UserArticleAction;
 import com.cccs7.co.config.RedisKey;
 import com.cccs7.co.id.UuidUtils;
 import com.cccs7.co.mapper.ArticleActionMapper;
 import com.cccs7.co.service.DataSyncService;
+import com.cccs7.co.service.UserService;
 import com.cccs7.redis.util.RedisCache;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +32,9 @@ public class DataSyncServiceImpl implements DataSyncService {
     private RedisCache redisCache;
 
     @Autowired
+    private UserServiceImpl userService;
+
+    @Autowired
     private ArticleActionMapper articleActionMapper;
 
     public void syncDataToMysql() {
@@ -50,7 +55,8 @@ public class DataSyncServiceImpl implements DataSyncService {
                     String[] parts = key.split(":");
                     String userIdStr = parts[1];
                     Long userId = Long.parseLong(userIdStr);
-
+                    User user = userService.getById(userId);
+                    String username = user.getUsername();
 
                     System.out.println(parts[0]);
                     if (RedisKey.USER_LIKES_PREFIX.equals(parts[0] + ":")) {
@@ -58,15 +64,24 @@ public class DataSyncServiceImpl implements DataSyncService {
 
                         userArticleAction.setUserId(userId);
                         userArticleAction.setArticleId(value);
+                        userArticleAction.setCreateBy(userIdStr);
+                        userArticleAction.setCreateTime(new Date());
                         userArticleAction.setIsLiked(true);
+                        userArticleAction.setDelFlag(0);
+                        userArticleAction.setUsername(username);
                         articleActions.add(userArticleAction);
                     }
                     if (RedisKey.USER_COLLECTS_PREFIX.equals(parts[0] + ":")) {
                         UserArticleAction userArticleAction = new UserArticleAction();
 
                         userArticleAction.setUserId(userId);
+                        userArticleAction.setCreateBy(userIdStr);
+                        userArticleAction.setCreateTime(new Date());
+                        userArticleAction.setDelFlag(0);
                         userArticleAction.setArticleId(value);
                         userArticleAction.setIsCollected(true);
+                        userArticleAction.setUsername(username);
+
                         articleActions.add(userArticleAction);
                     }
 

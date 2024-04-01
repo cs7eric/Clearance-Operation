@@ -48,4 +48,9 @@ public class ArticleTest {
     public void testDsync() {
         dataSyncService.dsyncData();
     }
+
+    @Test
+    public void testActions() {
+        userActionService.getList();
+    }
 }

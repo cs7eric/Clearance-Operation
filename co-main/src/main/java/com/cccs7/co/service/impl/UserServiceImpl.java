@@ -197,16 +197,18 @@ public class UserServiceImpl
 
 
     /**
-     * 通过用户名获取用户
+     * 通过id获取用户
      *
-     * @param username 用户名
+     * @param userId 用户名
      * @return {@link User}
      */
     @Override
-    public User getUserByUsername(String username) {
+    public User getUserById(Long userId) {
 
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(User::getUsername,username);
+        queryWrapper.eq(User::getId,userId);
         return userMapper.selectOne(queryWrapper);
     }
+
+
 }

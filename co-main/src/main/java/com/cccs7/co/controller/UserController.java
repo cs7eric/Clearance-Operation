@@ -66,4 +66,10 @@ public class UserController {
         List likes = userActionService.getLikesByUsername(username);
         return Result.ok(likes);
     }
+
+    @GetMapping("likes_id")
+    public Result<List> getLikeArticlesById(@RequestParam String userId) {
+        List articles = userActionService.getLikesById(Long.parseLong(userId));
+        return Result.ok(articles);
+    }
 }

@@ -54,11 +54,12 @@ public interface UserService {
      */
     Boolean exist(UserDTO userDTO);
 
+
     /**
      * 通过用户名获取用户
      *
-     * @param username 用户名
+     * @param userId 用户id
      * @return {@link User}
      */
-    User getUserByUsername(String username);
+    User getUserById(Long userId);
 }
