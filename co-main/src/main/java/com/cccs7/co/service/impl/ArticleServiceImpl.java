@@ -19,6 +19,7 @@ import com.cccs7.co.service.UserService;
 import com.cccs7.co.strategy.PublishingStrategy;
 import com.cccs7.mybatisplus.entity.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -43,6 +44,7 @@ public class ArticleServiceImpl
     @Autowired
     private MongoTemplate mongoTemplate;
 
+    @Lazy
     @Autowired
     private UserActionService userActionService;
 

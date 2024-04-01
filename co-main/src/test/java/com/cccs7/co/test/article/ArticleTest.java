@@ -4,6 +4,7 @@ import com.cccs7.co.bean.dto.article.ArticleDTO;
 import com.cccs7.co.bean.po.user.UserArticleAction;
 import com.cccs7.co.service.ArticleService;
 import com.cccs7.co.service.UserActionService;
+import com.cccs7.co.service.impl.DataSyncServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,6 +27,9 @@ public class ArticleTest {
     @Autowired
     private UserActionService userActionService;
 
+    @Autowired
+    private DataSyncServiceImpl dataSyncService;
+
     @Test
     public void testGetArticles() {
 
@@ -38,5 +42,10 @@ public class ArticleTest {
     public void testGetAction() {
         List<UserArticleAction> list = userActionService.getArticleListByUserId(1712410707829501954L);
         list.forEach(System.out::println);
+    }
+
+    @Test
+    public void testDsync() {
+        dataSyncService.dsyncData();
     }
 }

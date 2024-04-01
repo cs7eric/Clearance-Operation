@@ -4,18 +4,22 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cccs7.co.bean.dto.user.UserActionDTO;
+import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.bean.po.user.UserArticleAction;
 import com.cccs7.co.enums.UserActionType;
 import com.cccs7.co.factory.UserActionFactory;
 import com.cccs7.co.mapper.ArticleActionMapper;
+import com.cccs7.co.mapper.UserActionMapper;
 import com.cccs7.co.service.UserActionService;
 import com.cccs7.co.strategy.UserActionStrategy;
 import com.cccs7.redis.util.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * <p> 用户行为接口实现类 </p>
@@ -26,14 +30,21 @@ import java.util.Objects;
  */
 @Service
 public class UserActionServiceImpl
-        extends ServiceImpl<ArticleActionMapper, UserArticleAction>
+        extends ServiceImpl<UserActionMapper, UserArticleAction>
         implements UserActionService {
 
     @Autowired
     private RedisCache redisCache;
 
     @Autowired
+    private UserActionMapper userActionMapper;
+
+    @Autowired
     private ArticleActionMapper articleActionMapper;
+
+    @Lazy
+    @Autowired
+    private ArticleServiceImpl articleService;
 
     @Override
     public void doAction(UserActionDTO userActionDTO) {
@@ -82,6 +93,30 @@ public class UserActionServiceImpl
 
         LambdaQueryWrapper<UserArticleAction> queryWrapper = new LambdaQueryWrapper<>();
         queryWrapper.eq(UserArticleAction::getUserId, userId);
-        return  articleActionMapper.selectList(queryWrapper);
+        return articleActionMapper.selectList(queryWrapper);
+    }
+
+
+    @Override
+    public List getLikesByUsername(String username) {
+        LambdaQueryWrapper<UserArticleAction> wrapper = new LambdaQueryWrapper<UserArticleAction>()
+                .eq(UserArticleAction::getUsername, username)
+                .eq(UserArticleAction::getIsLiked, 1);
+        List<UserArticleAction> likeList = userActionMapper.selectList(wrapper);
+
+
+        List<String> collected = likeList.stream().map(UserArticleAction::getArticleId)
+                .collect(Collectors.toList());
+        return collected.stream().map(articleId -> articleService.getArticleById(articleId))
+                .collect(Collectors.toList());
+
+//        return userActionMapper.selectList(new LambdaQueryWrapper<UserArticleAction>()
+//                        .eq(UserArticleAction::getUsername, username)
+//                        .eq(UserArticleAction::getIsLiked, 1))
+//                .stream().map(UserArticleAction::getArticleId)
+//                .map(articleId -> articleService.getArticleById(articleId))
+//                .collect(Collectors.toList());
+
+
     }
 }

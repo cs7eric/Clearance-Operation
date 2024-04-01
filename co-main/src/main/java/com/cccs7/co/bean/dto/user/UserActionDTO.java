@@ -15,6 +15,8 @@ public class UserActionDTO {
 
     private Long userId;
 
+    private String username;
+
     private String articleId;
 
     private String userActionType;

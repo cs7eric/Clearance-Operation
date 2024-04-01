@@ -23,6 +23,8 @@ public class UserArticleAction extends BaseEntity {
 
     private Long userId;
 
+    private String username;
+
     private String articleId;
 
     private Boolean isLiked;

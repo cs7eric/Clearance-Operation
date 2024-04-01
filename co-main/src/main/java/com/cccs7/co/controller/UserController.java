@@ -1,13 +1,17 @@
 package com.cccs7.co.controller;
 
 import com.cccs7.co.bean.dto.user.UserDTO;
+import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.bean.po.user.User;
+import com.cccs7.co.service.UserActionService;
 import com.cccs7.co.service.UserService;
 import com.cccs7.web.bean.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * <p> 用户控制层 </p>
@@ -24,6 +28,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private UserActionService userActionService;
+
     /**
      * 注册  - 普通用户注册
      *
@@ -32,7 +39,7 @@ public class UserController {
      */
     @ApiOperation("用户注册、登录功能")
     @PostMapping("/verify")
-    public Result verify(@RequestBody UserDTO userDTO){
+    public Result verify(@RequestBody UserDTO userDTO) {
         return userService.verify(userDTO);
     }
 
@@ -44,7 +51,7 @@ public class UserController {
      */
     @ApiOperation("用户登录")
     @PostMapping("/logino")
-    public Result login (@RequestBody UserDTO userDTO) {
+    public Result login(@RequestBody UserDTO userDTO) {
         return userService.login(userDTO);
     }
 
@@ -54,7 +61,9 @@ public class UserController {
         return Result.ok("用户信息更新成功");
     }
 
-
-
-
+    @GetMapping("/likes")
+    public Result<List> getLikeArticles(@RequestParam String username) {
+        List likes = userActionService.getLikesByUsername(username);
+        return Result.ok(likes);
+    }
 }

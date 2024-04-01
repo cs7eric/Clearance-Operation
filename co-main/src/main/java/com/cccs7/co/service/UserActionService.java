@@ -2,6 +2,7 @@ package com.cccs7.co.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.cccs7.co.bean.dto.user.UserActionDTO;
+import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.bean.po.user.UserArticleAction;
 
 import java.util.List;
@@ -53,4 +54,12 @@ public interface UserActionService extends IService<UserArticleAction> {
      * @return {@link List}<{@link UserArticleAction}>
      */
     List<UserArticleAction> getArticleListByUserId(Long  userId);
+
+    /**
+     * 通过用户名获得用户点赞列表
+     *
+     * @param username 用户名
+     * @return {@link List}<{@link Article}>
+     */
+    List getLikesByUsername(String username);
 }
