@@ -18,6 +18,7 @@ import com.cccs7.co.service.UserActionService;
 import com.cccs7.co.service.UserService;
 import com.cccs7.co.strategy.PublishingStrategy;
 import com.cccs7.mybatisplus.entity.PageResult;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -148,7 +149,9 @@ public class ArticleServiceImpl
     @Override
     public List<Article> getArticlesByPage(Integer pageNum, Integer pageSize, String username) {
         Query query = new Query();
-        query.addCriteria(Criteria.where("author").is(username));
+        if (StringUtils.isNotBlank(username)) {
+            query.addCriteria(Criteria.where("author").is(username));
+        }
         int skip = (pageNum - 1) * pageSize;
         return mongoTemplate.find(query.skip(skip).limit(pageSize), Article.class);
     }
@@ -156,6 +159,10 @@ public class ArticleServiceImpl
 
     @Override
     public Long getCountByUsername(String username) {
-        return mongoTemplate.count(new Query().addCriteria(Criteria.where("author").is(username)), Article.class);
+
+        if (StringUtils.isNotBlank(username)) {
+            return mongoTemplate.count(new Query().addCriteria(Criteria.where("author").is(username)), Article.class);
+        }
+        return mongoTemplate.count(new Query(), Article.class);
     }
 }

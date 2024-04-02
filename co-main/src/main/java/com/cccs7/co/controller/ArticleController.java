@@ -10,6 +10,7 @@ import com.cccs7.co.service.UserActionService;
 import com.cccs7.mybatisplus.entity.PageResult;
 import com.cccs7.web.bean.PageResponse;
 import com.cccs7.web.bean.Result;
+import com.mongodb.lang.Nullable;
 import javafx.print.Collation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -125,7 +126,7 @@ public class ArticleController {
     }
 
     @GetMapping("/count")
-    public Result<Long> getCountByUsername(@RequestParam String username) {
+    public Result<Long> getCountByUsername(@RequestParam @Nullable String username) {
         Long count = articleService.getCountByUsername(username);
         return Result.ok(count);
     }

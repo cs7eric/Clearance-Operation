@@ -4,6 +4,7 @@ import com.cccs7.co.bean.dto.article.ArticleDTO;
 import com.cccs7.co.bean.dto.common.PageRequestDTO;
 import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.mybatisplus.entity.PageResult;
+import com.mongodb.lang.Nullable;
 
 import java.util.List;
 
@@ -97,7 +98,7 @@ public interface ArticleService {
      * @param username 用户名
      * @return {@link PageResult}<{@link Article}>
      */
-    List<Article> getArticlesByPage(Integer pageNum, Integer pageSize, String username);
+    List<Article> getArticlesByPage(Integer pageNum, Integer pageSize,@Nullable String username);
 
     /**
      * 获取某用户的文章总数
@@ -105,5 +106,5 @@ public interface ArticleService {
      * @param username 用户名
      * @return {@link Long}
      */
-    Long getCountByUsername(String username);
+    Long getCountByUsername(@Nullable String username);
 }
