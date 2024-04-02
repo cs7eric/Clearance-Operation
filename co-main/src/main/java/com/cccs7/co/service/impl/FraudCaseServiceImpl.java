@@ -11,6 +11,8 @@ import com.cccs7.mybatisplus.entity.PageResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p> FraudCase 服务实现类 </p>
  *
@@ -34,5 +36,10 @@ public class FraudCaseServiceImpl
         PageResult<FraudCase> pageResult = new PageResult<>();
         pageResult.loadData(pageData);
         return pageResult;
+    }
+
+    @Override
+    public List findList(Integer count) {
+        return fraudCaseMapper.selectRandom(count);
     }
 }

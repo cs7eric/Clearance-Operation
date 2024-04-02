@@ -9,6 +9,8 @@ import com.cccs7.web.bean.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * <p> FraudCase Controller </p>
  *
@@ -33,6 +35,15 @@ public class FraudCaseController {
         Integer pageSize = pageRequestDTO.getPageSize();
 
         return Result.ok(fraudCaseService.findPage(pageSize, pageNum));
+    }
 
+    /**
+     * 列表
+     *
+     * @return {@link Result}<{@link List}<{@link FraudCase}>>
+     */
+    @GetMapping("/list")
+    public Result<List> getCaseList(@RequestParam Integer count) {
+        return Result.ok(fraudCaseService.findList(count));
     }
 }

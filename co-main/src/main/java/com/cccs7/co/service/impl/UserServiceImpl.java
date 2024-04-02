@@ -210,5 +210,8 @@ public class UserServiceImpl
         return userMapper.selectOne(queryWrapper);
     }
 
-
+    @Override
+    public List getRandomUser(Integer count) {
+        return userMapper.selectRandom(count);
+    }
 }

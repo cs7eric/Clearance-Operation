@@ -5,6 +5,8 @@ import com.cccs7.co.bean.po.user.User;
 import com.cccs7.web.bean.Result;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * <p> User服务接口 </p>
  *
@@ -62,4 +64,12 @@ public interface UserService {
      * @return {@link User}
      */
     User getUserById(Long userId);
+
+    /**
+     * 随机获取指定数量用户
+     *
+     * @param count 数
+     * @return {@link List}
+     */
+    List getRandomUser(Integer count);
 }

@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.cccs7.mybatisplus.entity.PageResult;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
+
 /**
  * <p> FraudCase 服务类 </p>
  *
@@ -13,5 +15,21 @@ import org.springframework.data.domain.Page;
  */
 public interface FraudCaseService  {
 
+    /**
+     * 分页查询
+     *
+     * @param pageSize 分页大小
+     * @param pageNum  当前页数
+     * @return {@link PageResult}
+     */
     PageResult findPage(Integer pageSize, Integer pageNum);
+
+    /**
+     * 找到列表
+     * 随机查询指定数量案例
+     *
+     * @param count 数量
+     * @return {@link List}
+     */
+    List findList(Integer count);
 }

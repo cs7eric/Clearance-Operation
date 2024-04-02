@@ -72,4 +72,9 @@ public class UserController {
         List articles = userActionService.getLikesById(Long.parseLong(userId));
         return Result.ok(articles);
     }
+
+    @GetMapping("/random")
+    public Result<List> getRandomUser(Integer count) {
+        return Result.ok(userService.getRandomUser(count));
+    }
 }
