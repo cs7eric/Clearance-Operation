@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cccs7.co.mapper.UserMapper">
+
+
+    <select id="searchUsersFuzzy" resultType="com.cccs7.co.bean.po.user.User" >
+        SELECT *
+        FROM `sys_user`
+        WHERE `username` LIKE CONCAT('%', #{keyword}, '%')
+    </select>
 </mapper>

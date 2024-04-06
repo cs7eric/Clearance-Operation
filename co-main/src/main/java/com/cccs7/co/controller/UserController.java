@@ -5,12 +5,14 @@ import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.bean.po.user.User;
 import com.cccs7.co.service.UserActionService;
 import com.cccs7.co.service.UserService;
+import com.cccs7.mybatisplus.entity.PageResult;
 import com.cccs7.web.bean.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 /**
@@ -76,5 +78,12 @@ public class UserController {
     @GetMapping("/random")
     public Result<List> getRandomUser(Integer count) {
         return Result.ok(userService.getRandomUser(count));
+    }
+
+    @GetMapping("/search_fuzzy")
+    public Result<PageResult> searchFuzzy(@RequestParam Integer pageNum,
+                                            @RequestParam Integer pageSize,
+                                            @Nullable @RequestParam String keyword) {
+        return Result.ok(userService.searchFuzzy(pageSize, pageNum, keyword));
     }
 }

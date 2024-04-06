@@ -3,6 +3,7 @@ package com.cccs7.co.controller;
 import com.cccs7.co.encrypt.EncryptUtil;
 import com.cccs7.co.service.FileService;
 import com.cccs7.co.service.MailService;
+import com.cccs7.web.bean.PageResponse;
 import com.cccs7.web.bean.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -35,7 +36,7 @@ public class CommonController {
      * @return {@link Result}<{@link String}>
      */
     @PostMapping("/sendCode")
-    public Result<String> sendCode(@RequestParam String email){
+    public Result<String> sendCode(@RequestParam String email) {
         mailService.sendMailMessage(email);
         return Result.ok("发送成功");
     }
@@ -48,8 +49,9 @@ public class CommonController {
     }
 
     @GetMapping("/encrypt")
-    public Result<String> encrypt (@RequestParam("content") String content) {
+    public Result<String> encrypt(@RequestParam("content") String content) {
         String encrypted = encryptUtil.encrypt(content);
         return Result.ok(encrypted);
     }
+
 }

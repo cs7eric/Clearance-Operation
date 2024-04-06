@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
@@ -95,7 +96,7 @@ public class ArticleController {
      * @return {@link Result}<{@link String}>
      */
     @PostMapping("/action")
-    public Result<String> doAction(@RequestBody UserActionDTO userActionDTO){
+    public Result<String> doAction(@RequestBody UserActionDTO userActionDTO) {
 
         userActionService.doAction(userActionDTO);
         return Result.ok("操作成功");
@@ -131,4 +132,14 @@ public class ArticleController {
         return Result.ok(count);
     }
 
+    @GetMapping("/search")
+    public Result<ArticlePageDTO> search(@RequestParam String likeKey,
+                                            @RequestParam Integer pageSize,
+                                            @RequestParam Integer pageNum) {
+
+        HashMap<String, Object> dataMap = new HashMap<>();
+        ArticlePageDTO res = articleService.queryFuzzily(pageSize, pageNum, likeKey);
+
+        return Result.ok(res);
+    }
 }

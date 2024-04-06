@@ -1,7 +1,10 @@
 package com.cccs7.co.bean.dto.article;
 
 import com.cccs7.co.bean.dto.common.PageRequestDTO;
+import com.cccs7.co.bean.po.article.Article;
 import lombok.Data;
+
+import java.util.List;
 
 /**
  * <p> 文章分页DTO </p>
@@ -14,4 +17,9 @@ import lombok.Data;
 public class ArticlePageDTO extends PageRequestDTO {
 
     private String username;
+
+
+    private List<Article> data;
+
+    private Long total;
 }

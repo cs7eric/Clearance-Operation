@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cccs7.co.bean.bo.ArticleStatusBO;
 import com.cccs7.co.bean.dto.article.ArticleDTO;
+import com.cccs7.co.bean.dto.article.ArticlePageDTO;
 import com.cccs7.co.bean.dto.common.PageRequestDTO;
 import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.bean.po.user.User;
@@ -21,12 +22,18 @@ import com.cccs7.mybatisplus.entity.PageResult;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.TextCriteria;
+import org.springframework.data.mongodb.core.query.TextQuery;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 /**
@@ -157,6 +164,12 @@ public class ArticleServiceImpl
     }
 
 
+    /**
+     * 按用户名获取计数
+     *
+     * @param username 用户名
+     * @return {@link Long}
+     */
     @Override
     public Long getCountByUsername(String username) {
 
@@ -164,5 +177,44 @@ public class ArticleServiceImpl
             return mongoTemplate.count(new Query().addCriteria(Criteria.where("author").is(username)), Article.class);
         }
         return mongoTemplate.count(new Query(), Article.class);
+    }
+
+
+    @Override
+    public ArticlePageDTO queryFuzzily(Integer pageSize, Integer pageNum, String likeKey) {
+
+        ArticlePageDTO pageDTO = new ArticlePageDTO();
+
+        Pageable pageable = PageRequest.of(pageNum, pageSize);
+
+        if ((StringUtils.isBlank(likeKey))) {
+            pageDTO.setData(Collections.emptyList());
+            pageDTO.setTotal(0L);
+            return pageDTO;
+        }
+
+
+        TextCriteria criteria = TextCriteria.forDefaultLanguage().matching(likeKey);
+        Query query = TextQuery.queryText(criteria).with(pageable);
+
+        List<Article> articles;
+        long total;
+        try {
+            articles = mongoTemplate.find(query, Article.class);
+            total =  mongoTemplate.count(query.limit(-1).skip(-1), Article.class);
+        } catch (Exception e) {
+
+            return pageDTO;
+        }
+
+
+//        Query fuzzyQuery = new Query().with(pageable);
+//        fuzzyQuery.addCriteria(Criteria.where("content").regex(Pattern.compile(likeKey, Pattern.CASE_INSENSITIVE)));
+//        List<Article> fuzzyList = mongoTemplate.find(fuzzyQuery, Article.class);
+
+
+        pageDTO.setData(articles);
+        pageDTO.setTotal(total);
+        return pageDTO;
     }
 }

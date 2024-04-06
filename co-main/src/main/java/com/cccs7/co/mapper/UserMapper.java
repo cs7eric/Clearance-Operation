@@ -1,9 +1,12 @@
 package com.cccs7.co.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.cccs7.co.bean.po.cases.FraudCase;
 import com.cccs7.co.bean.po.user.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -26,4 +29,7 @@ public interface UserMapper extends BaseMapper<User> {
      */
     @Select("SELECT * FROM `sys_user` ORDER BY RAND() LIMIT #{limit}")
     List<User> selectRandom(Integer limit);
+
+
+    IPage<User> searchUsersFuzzy(Page<User> page, @Param("keyword") String keyword);
 }

@@ -2,6 +2,8 @@ package com.cccs7.co.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cccs7.co.bean.dto.user.UserDTO;
@@ -12,6 +14,7 @@ import com.cccs7.co.mapper.MenuMapper;
 import com.cccs7.co.mapper.UserMapper;
 import com.cccs7.co.service.UserService;
 import com.cccs7.co.util.JwtUtils;
+import com.cccs7.mybatisplus.entity.PageResult;
 import com.cccs7.redis.util.RedisCache;
 import com.cccs7.web.bean.Result;
 import com.cccs7.web.exception.CodeException;
@@ -213,5 +216,14 @@ public class UserServiceImpl
     @Override
     public List getRandomUser(Integer count) {
         return userMapper.selectRandom(count);
+    }
+
+    @Override
+    public PageResult<User> searchFuzzy(Integer pageSize, Integer pageNum, String keyword) {
+        Page<User> page = new Page<>(pageNum, pageSize);
+        IPage<User> pageData = userMapper.searchUsersFuzzy(page, keyword);
+        PageResult<User> pageResult = new PageResult<>();
+        pageResult.loadData(pageData);
+        return pageResult;
     }
 }

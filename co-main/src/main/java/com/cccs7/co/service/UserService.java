@@ -1,7 +1,9 @@
 package com.cccs7.co.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.cccs7.co.bean.dto.user.UserDTO;
 import com.cccs7.co.bean.po.user.User;
+import com.cccs7.mybatisplus.entity.PageResult;
 import com.cccs7.web.bean.Result;
 import org.springframework.stereotype.Service;
 
@@ -72,4 +74,14 @@ public interface UserService {
      * @return {@link List}
      */
     List getRandomUser(Integer count);
+
+    /**
+     * 模糊查询
+     *
+     * @param pageSize 分页大小
+     * @param pageNum  当前页数
+     * @param keyword  关键字
+     * @return {@link IPage}
+     */
+    PageResult searchFuzzy(Integer pageSize, Integer pageNum, String keyword);
 }

@@ -1,6 +1,7 @@
 package com.cccs7.co.service;
 
 import com.cccs7.co.bean.dto.article.ArticleDTO;
+import com.cccs7.co.bean.dto.article.ArticlePageDTO;
 import com.cccs7.co.bean.dto.common.PageRequestDTO;
 import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.mybatisplus.entity.PageResult;
@@ -107,4 +108,15 @@ public interface ArticleService {
      * @return {@link Long}
      */
     Long getCountByUsername(@Nullable String username);
-}
+
+    /**
+     * 模糊查询
+     *
+     * @param likeKey  模糊key
+     * @param pageSize 分页大小
+     * @param pageNum  当前页数
+     * @return {@link ArticlePageDTO}
+     */
+    ArticlePageDTO queryFuzzily(Integer pageSize, Integer pageNum, String likeKey);
+
+    }
