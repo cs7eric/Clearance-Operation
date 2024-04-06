@@ -193,25 +193,22 @@ public class ArticleServiceImpl
             return pageDTO;
         }
 
+        Query query = new Query();
 
-        TextCriteria criteria = TextCriteria.forDefaultLanguage().matching(likeKey);
-        Query query = TextQuery.queryText(criteria).with(pageable);
+
+        Query fuzzyQuery = new Query().with(pageable);
+        fuzzyQuery.addCriteria(Criteria.where("content").regex(Pattern.compile(likeKey, Pattern.CASE_INSENSITIVE)));
+
 
         List<Article> articles;
         long total;
         try {
-            articles = mongoTemplate.find(query, Article.class);
-            total =  mongoTemplate.count(query.limit(-1).skip(-1), Article.class);
+            articles = mongoTemplate.find(fuzzyQuery, Article.class);
+            total =  mongoTemplate.count(fuzzyQuery.limit(-1).skip(-1), Article.class);
         } catch (Exception e) {
 
             return pageDTO;
         }
-
-
-//        Query fuzzyQuery = new Query().with(pageable);
-//        fuzzyQuery.addCriteria(Criteria.where("content").regex(Pattern.compile(likeKey, Pattern.CASE_INSENSITIVE)));
-//        List<Article> fuzzyList = mongoTemplate.find(fuzzyQuery, Article.class);
-
 
         pageDTO.setData(articles);
         pageDTO.setTotal(total);
