@@ -86,4 +86,14 @@ public class UserController {
                                             @Nullable @RequestParam String keyword) {
         return Result.ok(userService.searchFuzzy(pageSize, pageNum, keyword));
     }
+
+    @GetMapping("/action_page")
+    public Result<PageResult> pageLikes (@RequestParam Integer pageNum,
+                                            @RequestParam Integer pageSize,
+                                            @RequestParam String userId,
+                                            @RequestParam String actionType) {
+
+        PageResult pageResult = userActionService.findPageLikes(pageNum, pageSize, userId, actionType);
+        return Result.ok(pageResult);
+    }
 }

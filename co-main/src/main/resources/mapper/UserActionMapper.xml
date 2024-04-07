@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cccs7.co.mapper.UserActionMapper">
+
+
+    <select id="findPageLikesByUsernameWithType" resultType="com.cccs7.co.bean.po.user.UserArticleAction">
+        SELECT *
+        FROM `user_article_action`
+        WHERE user_id = #{userId}
+        <if test="isLiked != null and isLiked">
+            AND is_liked = 1
+        </if>
+        <if test="isCollected != null and isCollected">
+            AND is_collected = 1
+        </if>
+    </select>
+
+</mapper>

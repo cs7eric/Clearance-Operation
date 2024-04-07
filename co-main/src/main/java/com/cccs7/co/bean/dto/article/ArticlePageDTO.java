@@ -18,8 +18,9 @@ public class ArticlePageDTO extends PageRequestDTO {
 
     private String username;
 
-
     private List<Article> data;
 
     private Long total;
+
+    private String actionType;
 }

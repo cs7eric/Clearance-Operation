@@ -2,8 +2,11 @@ package com.cccs7.co.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cccs7.co.bean.dto.user.UserActionDTO;
+import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.bean.po.user.UserArticleAction;
 import com.cccs7.co.enums.UserActionType;
 import com.cccs7.co.factory.UserActionFactory;
@@ -11,6 +14,7 @@ import com.cccs7.co.mapper.ArticleActionMapper;
 import com.cccs7.co.mapper.UserActionMapper;
 import com.cccs7.co.service.UserActionService;
 import com.cccs7.co.strategy.UserActionStrategy;
+import com.cccs7.mybatisplus.entity.PageResult;
 import com.cccs7.redis.util.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
@@ -130,7 +134,6 @@ public class UserActionServiceImpl
     }
 
 
-
     @Override
     public void getList() {
         Long id = 1712410707829501954L;
@@ -138,5 +141,26 @@ public class UserActionServiceImpl
         queryWrapper.eq(UserArticleAction::getUserId, id);
         List<UserArticleAction> actions = userActionMapper.selectList(queryWrapper);
         actions.forEach(System.out::println);
+    }
+
+
+    @Override
+    public PageResult findPageLikes(Integer pageNum, Integer pageSize, String userId, String actionType) {
+
+        Page<Article> page = new Page<>(pageNum, pageSize);
+
+        Boolean isLiked = "like".equals(actionType);
+        Boolean isCollected = "collect".equals(actionType);
+
+        IPage lists = userActionMapper.findPageLikesByUsernameWithType(page, userId, isLiked, isCollected);
+        List<UserArticleAction> actionList = lists.getRecords();
+        List<String> idList = actionList.stream().map(UserArticleAction::getArticleId).collect(Collectors.toList());
+        List<Article> articleList = idList.stream().map(articleId -> articleService.getArticleById(articleId)).collect(Collectors.toList());
+
+        lists.setRecords(actionList);
+
+        PageResult<Article> pageResult = new PageResult<>();
+        pageResult.loadData(lists);
+        return pageResult;
     }
 }

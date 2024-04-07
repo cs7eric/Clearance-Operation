@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.cccs7.co.bean.dto.user.UserActionDTO;
 import com.cccs7.co.bean.po.article.Article;
 import com.cccs7.co.bean.po.user.UserArticleAction;
+import com.cccs7.mybatisplus.entity.PageResult;
 
 import java.util.List;
 
@@ -72,4 +73,15 @@ public interface UserActionService extends IService<UserArticleAction> {
     List getLikesById(Long id);
 
     void getList();
+
+    /**
+     * 分页查询用户喜欢列表
+     *
+     * @param pageNum    当前页数
+     * @param pageSize   分页大小
+     * @param userId   用户ID
+     * @param actionType 动作类型
+     * @return {@link PageResult}
+     */
+    PageResult findPageLikes(Integer pageNum, Integer pageSize, String userId, String actionType);
 }
