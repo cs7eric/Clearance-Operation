@@ -5,6 +5,7 @@ import com.cccs7.co.bean.po.cases.FraudCase;
 import com.cccs7.co.mapper.FraudCaseMapper;
 import com.cccs7.co.service.FraudCaseService;
 import com.cccs7.mybatisplus.entity.PageResult;
+import com.cccs7.web.bean.PageResponse;
 import com.cccs7.web.bean.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -46,4 +47,14 @@ public class FraudCaseController {
     public Result<List> getCaseList(@RequestParam Integer count) {
         return Result.ok(fraudCaseService.findList(count));
     }
+
+    @GetMapping("/page_fuzzy")
+    public Result<PageResult<FraudCase>> pageFuzzy(@RequestParam Integer pageNum,
+                                                        @RequestParam Integer pageSize,
+                                                        @RequestParam String key) {
+
+        PageResult<FraudCase> pageFuzzy = fraudCaseService.findPageFuzzy(pageNum, pageSize, key);
+        return Result.ok(pageFuzzy);
+    }
+
 }

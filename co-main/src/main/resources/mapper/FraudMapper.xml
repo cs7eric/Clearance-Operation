@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cccs7.co.mapper.FraudCaseMapper">
+
+    <select id="pageFuzzy" resultType="com.cccs7.co.bean.po.cases.FraudCase" >
+        SELECT *
+        FROM `case_fraud`
+        WHERE `description` LIKE CONCAT('%', #{key}, '%')
+    </select>
+</mapper>
