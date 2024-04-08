@@ -154,13 +154,31 @@ public class ArticleServiceImpl
     }
 
     @Override
-    public List<Article> getArticlesByPage(Integer pageNum, Integer pageSize, String username) {
+    public PageResult<Article> getArticlesByPage(Integer pageNum, Integer pageSize, String username) {
+        PageRequest pageable     = PageRequest.of(pageNum - 1, pageSize);
         Query query = new Query();
         if (StringUtils.isNotBlank(username)) {
             query.addCriteria(Criteria.where("author").is(username));
         }
-        int skip = (pageNum - 1) * pageSize;
-        return mongoTemplate.find(query.skip(skip).limit(pageSize), Article.class);
+//        int skip = (pageNum - 1) * pageSize;
+        query.with(pageable);
+
+        PageResult<Article> pageResult = new PageResult<>();
+        List<Article> articleList;
+        long total;
+
+        try {
+            articleList = mongoTemplate.find(query, Article.class);
+            total = mongoTemplate.count(query.limit(-1).skip(-1), Article.class);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        pageResult.setRecords(articleList);
+        pageResult.setTotal(total);
+        pageResult.setCurrent(pageNum.longValue());
+        pageResult.setSize(pageSize.longValue());
+        pageResult.setPages(total/pageSize);
+        return pageResult;
     }
 
 

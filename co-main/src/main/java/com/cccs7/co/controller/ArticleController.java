@@ -115,14 +115,14 @@ public class ArticleController {
      * @return {@link Result}<{@link PageResult}<{@link Article}>>
      */
     @PostMapping("/page")
-    public Result<List<Article>> getArticlesByPage(@RequestBody ArticlePageDTO articlePageDTO) {
+    public Result<PageResult<Article>> getArticlesByPage(@RequestBody ArticlePageDTO articlePageDTO) {
 
         Integer pageSize = articlePageDTO.getPageSize();
         Integer pageNum = articlePageDTO.getPageNum();
         String username = articlePageDTO.getUsername();
 
 
-        List<Article> res = articleService.getArticlesByPage(pageNum, pageSize, username);
+        PageResult<Article> res = articleService.getArticlesByPage(pageNum, pageSize, username);
         return Result.ok(res);
     }
 

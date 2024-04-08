@@ -99,7 +99,7 @@ public interface ArticleService {
      * @param username 用户名
      * @return {@link PageResult}<{@link Article}>
      */
-    List<Article> getArticlesByPage(Integer pageNum, Integer pageSize,@Nullable String username);
+    PageResult<Article> getArticlesByPage(Integer pageNum, Integer pageSize,@Nullable String username);
 
     /**
      * 获取某用户的文章总数

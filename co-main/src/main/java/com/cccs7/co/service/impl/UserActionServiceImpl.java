@@ -157,9 +157,11 @@ public class UserActionServiceImpl
         List<String> idList = actionList.stream().map(UserArticleAction::getArticleId).collect(Collectors.toList());
         List<Article> articleList = idList.stream().map(articleId -> articleService.getArticleById(articleId)).collect(Collectors.toList());
 
-        lists.setRecords(actionList);
+        lists.setRecords(articleList);
 
         PageResult<Article> pageResult = new PageResult<>();
+        pageResult.setRecords(articleList);
+//        pageResult.setTotal();
         pageResult.loadData(lists);
         return pageResult;
     }
