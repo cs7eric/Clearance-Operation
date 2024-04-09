@@ -36,5 +36,7 @@ public class UserDTO {
 
     private String code;
 
+    private String introduction;
+
 }
 

@@ -84,4 +84,36 @@ public interface UserService {
      * @return {@link IPage}
      */
     PageResult searchFuzzy(Integer pageSize, Integer pageNum, String keyword);
+
+    /**
+     * 关注用户
+     *
+     * @param userId   用户id
+     * @param followId 被关注id
+     */
+    void follow(Long userId, Long followId);
+
+    /**
+     * 取消关注
+     *
+     * @param userId   用户id
+     * @param followId 被关注id
+     */
+    void unfollow(Long userId, Long followId);
+
+    /**
+     * 获取某用户粉丝列表
+     *
+     * @param userId 用户id
+     * @return {@link List}
+     */
+    List getFollowers(Long userId);
+
+    /**
+     *  获取某用户正在关注列表
+     *
+     * @param userId 用户id
+     * @return {@link List}
+     */
+    List getFollowing(Long userId);
 }

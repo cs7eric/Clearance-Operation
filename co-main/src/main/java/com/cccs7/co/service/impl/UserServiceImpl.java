@@ -2,6 +2,7 @@ package com.cccs7.co.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
@@ -9,10 +10,14 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.cccs7.co.bean.dto.user.UserDTO;
 import com.cccs7.co.bean.bo.LoginUser;
 import com.cccs7.co.bean.po.user.User;
+import com.cccs7.co.bean.po.user.UserFollowAction;
 import com.cccs7.co.convert.UserConverter;
 import com.cccs7.co.mapper.MenuMapper;
+import com.cccs7.co.mapper.UserFollowMapper;
 import com.cccs7.co.mapper.UserMapper;
+import com.cccs7.co.service.UserFollowService;
 import com.cccs7.co.service.UserService;
+import com.cccs7.co.tool.UuidUtils;
 import com.cccs7.co.util.JwtUtils;
 import com.cccs7.mybatisplus.entity.PageResult;
 import com.cccs7.redis.util.RedisCache;
@@ -25,9 +30,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * <p> 用户服务接口 </p>
@@ -53,6 +60,12 @@ public class UserServiceImpl
     @Autowired
     private MenuMapper menuMapper;
 
+
+    @Autowired
+    private UserFollowServiceImpl userFollowService;
+
+    @Autowired
+    private UserFollowMapper userFollowMapper;
 
     /**
      * 登录
@@ -209,7 +222,7 @@ public class UserServiceImpl
     public User getUserById(Long userId) {
 
         LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(User::getId,userId);
+        queryWrapper.eq(User::getId, userId);
         return userMapper.selectOne(queryWrapper);
     }
 
@@ -225,5 +238,64 @@ public class UserServiceImpl
         PageResult<User> pageResult = new PageResult<>();
         pageResult.loadData(pageData);
         return pageResult;
+    }
+
+
+    @Override
+    public void follow(Long userId, Long followId) {
+        UserFollowAction followAction = new UserFollowAction();
+        followAction.setUserId(userId);
+        followAction.setFollowId(followId);
+        followAction.setId(UuidUtils.getUuid());
+        followAction.setIsFollowed(1);
+        followAction.setCreateTime(new Date());
+        userFollowService.save(followAction);
+        updateFollowStatus(followId, true);
+
+    }
+
+    @Override
+    public void unfollow(Long userId, Long followId) {
+        //isFollowed 0 未关注 1 已关注
+        LambdaUpdateWrapper<UserFollowAction> updateWrapper = new LambdaUpdateWrapper<>();
+        updateWrapper.eq(UserFollowAction::getUserId, userId)
+                .eq(UserFollowAction::getFollowId, followId)
+                .set(UserFollowAction::getIsFollowed, 0);
+        //更新被关注用户的关注数量
+        userFollowService.update(updateWrapper);
+
+        updateFollowStatus(followId, false);
+    }
+
+    @Override
+    public List getFollowers(Long userId) {
+        //isFollowed 0 未关注 1 已关注
+        LambdaQueryWrapper<UserFollowAction> queryWrapper = new LambdaQueryWrapper<>();
+        queryWrapper.eq(UserFollowAction::getFollowId, userId)
+                .eq(UserFollowAction::getIsFollowed, 1);
+        List<Long> followersId = userFollowService.list(queryWrapper)
+                .stream().map(UserFollowAction::getUserId).collect(Collectors.toList());
+
+
+        return followersId.stream()
+                .map(id -> userMapper.selectById(id))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List getFollowing(Long userId) {
+        return null;
+    }
+
+    /**
+     * 更新关注数量
+     *
+     * @param userId      用户id
+     * @param isFollowing 是后
+     */
+    public void updateFollowStatus(Long userId, boolean isFollowing) {
+        // 根据传递的关注状态增减关注数量
+        int increment = isFollowing ? 1 : -1;
+        userMapper.updateFollowNum(userId, increment);
     }
 }

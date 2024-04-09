@@ -39,6 +39,8 @@ public class User extends BaseEntity {
 
     private String userType;
 
+    private String introduction;
+
 }
 
 

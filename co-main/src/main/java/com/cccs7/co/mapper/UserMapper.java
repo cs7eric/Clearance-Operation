@@ -8,6 +8,7 @@ import com.cccs7.co.bean.po.user.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -32,4 +33,13 @@ public interface UserMapper extends BaseMapper<User> {
 
 
     IPage<User> searchUsersFuzzy(Page<User> page, @Param("keyword") String keyword);
+
+    /**
+     * 更新关注数
+     *
+     * @param userId    用户id
+     * @param increment 增量
+     */
+    @Update("UPDATE `sys_user` SET follows_num = follows_num + #{increment} WHERE id = #{userId}")
+    void updateFollowNum(@Param("userId") Long userId, @Param("increment") int increment);
 }
